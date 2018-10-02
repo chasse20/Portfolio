@@ -1,0 +1,121 @@
+.background-image, .background, .overlay
+{
+	width: inherit;
+}
+
+.selected .read-more
+{
+	pointer-events: auto;
+}
+
+.background
+{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.background, .background-image, .overlay, .text, .title
+{
+	position: absolute;
+}
+
+.background-image
+{
+	background-size: cover;
+	background-position: center;
+}
+
+.selected .background-image
+{
+	transform: scale( 1.2 );
+}
+
+.background-image, .overlay, .text
+{
+	height: inherit;
+}
+
+.overlay, .selected .title, .text
+{
+	opacity: 0;
+}
+	
+.overlay
+{
+	background-color: rgba( 33, 43, 53, 0.6 );
+}
+
+.selected .overlay, .selected .text
+{
+	opacity: 1;
+}
+
+.project-tile
+{
+	height: calc( 100vh - var( --navbar-size ) );
+	position: relative;
+}
+
+.project-tile:nth-child(n+2) .title
+{
+	left: var( --spacing-large );
+	right: auto;
+}
+
+.title
+{
+	right: var( --spacing-large );
+	bottom: var( --spacing-large );
+	background-color: var( --navbar-bg );
+}
+
+.title, .text
+{
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
+	box-sizing: border-box;
+	justify-content: center;
+}
+
+.title
+{
+	padding: var( --spacing-small );
+}
+
+.title h1, .title h2
+{
+	font-size: 1em;
+}
+
+.title h1, .text h1
+{
+	margin-bottom: -01.em;
+}
+
+.text
+{
+	padding: var( --spacing-large );
+}
+
+.text > *:not(:first-child)
+{
+	margin-top: var( --spacing-large );
+}
+
+.text header
+{
+	text-shadow: 0px 3px 3px #212121;
+}
+
+.text h1
+{
+	font-size: 1.5em;
+}
+
+.text h2
+{
+	font-size: 1.2em;
+	color: #fff;
+}

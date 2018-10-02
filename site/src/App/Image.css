@@ -1,0 +1,20 @@
+.image
+{
+	box-sizing: border-box;
+}
+
+.image img
+{
+	width: 100%;
+}
+
+.image, .image img
+{
+	display: block;
+}
+
+.image img:hover
+{
+	outline: 5px solid var( --link-color-hover );
+	outline-offset: -5px;
+}
