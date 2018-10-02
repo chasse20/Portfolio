@@ -97,3 +97,52 @@
 	top: 0;
 	height: 100%;
 }
+
+.website
+{
+	box-sizing: border-box;
+	padding: var( --spacing-small );
+	font-family: Rajdhani, sans-serif;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 0.9em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var( --link-color-hover );
+}
+
+.website svg
+{
+	height: 1.3em;
+	width: 1.3em;
+	margin-left: 0.5em;
+	fill: #fff;
+}
+
+.image
+{
+	box-sizing: border-box;
+}
+
+.image img
+{
+	width: 100%;
+}
+
+.image, .image img
+{
+	display: block;
+}
+
+.image img:hover
+{
+	outline: 5px solid var( --link-color-hover );
+	outline-offset: -5px;
+}
+
+.credit span
+{
+	margin-left: 0.5em;
+}
