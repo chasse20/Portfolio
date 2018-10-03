@@ -21,8 +21,10 @@ export default class Projects extends Component
 						
 						return (
 							<Link className="project-tile" key={ tempProject.name } to={ tProjectKey }>
-								<div className="background">
-									<div className="background-image" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }/>
+								<div className="image">
+									<div className="background" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }>
+										<div className="reflection"/>
+									</div>
 									<div className="overlay"/>
 								</div>
 								<header>
