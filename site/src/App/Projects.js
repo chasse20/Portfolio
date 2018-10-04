@@ -12,31 +12,36 @@ export default class Projects extends Component
 	render()
 	{
 		return (
-			<nav id="projects" className={ this.props.isOpen ? "open" : null }>
-			{
-				Object.keys( this.props.projects ).map(
-					( tProjectKey ) =>
+			<div id="projects" className={ this.props.isOpen ? "open" : null }>
+				<div id="controls">
+				</div>
+				<div id="container">
 					{
-						const tempProject = this.props.projects[ tProjectKey ];
-						
-						return (
-							<Link className="project-tile" key={ tempProject.name } to={ tProjectKey }>
-								<div className="image">
-									<div className="background" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }>
-										<div className="reflection"/>
+						Object.keys( this.props.projects ).map(
+							( tProjectKey ) =>
+							{
+								const tempProject = this.props.projects[ tProjectKey ];
+								
+								return (
+									<div className="project-tile" key={ tempProject.name }>
+										<div className="image" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }/>
+										<div id="tile-overlay"/>
+										<div className="info">
+											<div className="text">
+												<h1>{ tempProject.name }</h1>
+												<h2>{ tempProject.platform }</h2>
+											</div>
+											<Link className="more" to={ tProjectKey }>
+												<h3>Read More</h3>
+											</Link>
+										</div>
 									</div>
-									<div className="overlay"/>
-								</div>
-								<header>
-									<h1>{ tempProject.name }</h1>
-									<h2>{ tempProject.platform }</h2>
-								</header>
-							</Link>
-						);
+								);
+							}
+						)
 					}
-				)
-			}
-			</nav>
+				</div>
+			</div>
 		);
 	}
 }

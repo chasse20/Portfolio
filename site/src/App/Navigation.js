@@ -27,7 +27,7 @@ export default class Navigation extends Component
 	render()
 	{
 		return (
-			<div id="navigation">
+			<nav>
 				<header>
 					<Link to="/" id="logo">
 						<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -52,13 +52,13 @@ export default class Navigation extends Component
 						</svg>
 						<h1>Chris Hassebrook</h1>
 					</Link>
-					<svg viewBox="0 0 20 30" xmlns="http://www.w3.org/1999/xlink" id="menu-toggle" onClick={ () => { this.onMenuToggle(); } }>
+					<svg viewBox="0 0 20 30" xmlns="http://www.w3.org/1999/xlink" id="menu-toggle" className={ this.state.isOpen ? "open" : null } onClick={ () => { this.onMenuToggle(); } }>
 						<rect height="2" width="20" y="7" x="0"/>
 						<rect height="2" width="20" y="14" x="0"/>
 						<rect height="2" width="20" y="21" x="0"/>
 					</svg>
 				</header>
-				<nav className={ this.state.isOpen ? "open" : null }>
+				<div id="links" className={ this.state.isOpen ? "open" : null }>
 					<a href="Resume.pdf" target="_blank">
 						<svg viewBox="0 0 550.801 550.801" xmlns="http://www.w3.org/2000/svg">
 							<g>
@@ -125,8 +125,8 @@ export default class Navigation extends Component
 						</svg>
 						<h2>Email</h2>
 					</a>
-				</nav>
-			</div>
+				</div>
+			</nav>
 		);
 	}
 }

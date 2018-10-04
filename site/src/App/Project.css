@@ -1,8 +1,8 @@
 #project
 {
 	padding: var( --spacing-large );
-	position: fixed;
-	overflow-y: scroll;
+	position: absolute;
+	left: 0;
 	height: calc( 100% - var( --navbar-size ) );
 }
 

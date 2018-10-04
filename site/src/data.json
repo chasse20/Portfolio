@@ -6,7 +6,7 @@
 			"name": "Red Orchestra 2",
 			"platform": "PC Game",
 			"shortDescription": "Multiplayer first-person shooter game. Responsible for programming core gameplay for the \"Search and Destroy\" game mode.",
-			"tileImage": "images/RO2.jpg",
+			"tileImage": "images/hwrm_08.jpg",
 			"tools":
 			[
 				"Unreal Engine 3",

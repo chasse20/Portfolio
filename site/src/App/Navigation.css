@@ -1,49 +1,50 @@
-#navigation
+nav
 {
 	position: fixed;
 	z-index: 999;
+	width: 100vw;
 }
 
-#navigation, #navigation header
+nav, nav header
 {
 	top: 0;
 }
 
-#navigation, #navigation header, #navigation nav
+nav, nav header, nav #links
 {
-	width: 100%;
 	left: 0;
 }
 
-#navigation h1, #navigation h2
+nav h1, nav h2
 {
 	font-size: 0.9em;
 }
 
-#navigation header
+nav header
 {
 	height: var( --navbar-size );
 	padding: 0 var( --spacing-medium );
 	background-color: var( --navbar-bg );
 }
 
-#navigation header, #logo
+nav header, #logo
 {
 	align-items: center;
 }
 
-#navigation header, #navigation nav, #logo
+nav header, nav #links, #logo
 {
 	display: flex;
 }
 
-#navigation header, #navigation nav
+nav header, nav #links
 {
 	box-sizing: border-box;
 	position: absolute;
+	width: inherit;
 }
 
-#navigation nav
+nav #links
 {
 	z-index: -1;
 	transform: translateY( -100% );
@@ -53,12 +54,12 @@
 	justify-content: space-between;
 }
 
-#navigation nav.open
+nav #links.open
 {
 	transform: translateY( var( --navbar-size ) );
 }
 
-#navigation nav svg
+nav #links svg
 {
 	fill: #fff;
 	height: 50px;
@@ -84,7 +85,12 @@
 
 #menu-toggle
 {
-	fill: #00aeff;
+	fill: #9e9e9e;
 	height: 30px;
 	width: 20px;
+}
+
+#menu-toggle.open
+{
+	fill: #00aeff;
 }
