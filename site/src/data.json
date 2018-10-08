@@ -91,6 +91,11 @@
 					"role": "core gameplay programming including network replication"
 				}
 			]
+		},
+		"Cool":
+		{
+			"name": "Cool",
+			"platform": "Unity Plugin"
 		}
 	}
 }

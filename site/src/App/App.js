@@ -28,8 +28,8 @@ export default class App extends Component
 							// Render
 							return (
 								<React.Fragment>
-									<Projects projects={ this.props.projects } isOpen={ tempProject == null }/>
 									<Project project={ tempProject }/>
+									<Projects projects={ this.props.projects } isOpen={ tempProject == null }/>
 								</React.Fragment>
 							);
 						}

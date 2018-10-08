@@ -5,6 +5,7 @@
 	--navbar-size: 50px;
 	--navbar-bg: #2f3543;
 	--link-color-hover: #2a95cc;
+	--menu-toggle-color: #9e9e9e;
 	--spacing-small: 10px;
 	--spacing-medium: 16px;
 	--spacing-large: 30px;
@@ -34,6 +35,7 @@ h1, h2, h3
 h2, h3
 {
 	font-weight: 500;
+	font-size: 1em;
 }
 
 a
@@ -49,6 +51,18 @@ a:link, a:hover, a:visited, a:active
 b
 {
 	font-weight: 500;
+}
+
+button
+{
+	background: transparent;
+	border: none;
+	padding: 0;
+}
+
+button:focus
+{
+	outline: none;
 }
 
 main

@@ -52,11 +52,17 @@ export default class Navigation extends Component
 						</svg>
 						<h1>Chris Hassebrook</h1>
 					</Link>
-					<svg viewBox="0 0 20 30" xmlns="http://www.w3.org/1999/xlink" id="menu-toggle" className={ this.state.isOpen ? "open" : null } onClick={ () => { this.onMenuToggle(); } }>
-						<rect height="2" width="20" y="7" x="0"/>
-						<rect height="2" width="20" y="14" x="0"/>
-						<rect height="2" width="20" y="21" x="0"/>
-					</svg>
+					<button id="menu-toggle" className={ this.state.isOpen ? "open" : null } onClick={ () => { this.onMenuToggle(); } }>
+						<svg viewBox="0 0 20 30" xmlns="http://www.w3.org/1999/xlink" id="menu-toggle-closed" xmlSpace ="preserve">
+							<rect height="2" width="20" y="7" x="0"/>
+							<rect height="2" width="20" y="14" x="0"/>
+							<rect height="2" width="20" y="21" x="0"/>
+						</svg>
+						<svg viewBox="0 0 20 30" xmlns="http://www.w3.org/1999/xlink" id="menu-toggle-open" xmlSpace ="preserve">
+							<rect transform="matrix(0.7071 0.7071 -0.7071 0.7071 13.5355 -2.6777)" height="2" width="20" y="14" x="0"/>
+							<rect transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 27.6777 18.5355)" height="2" width="20" y="14" x="0"/>
+						</svg>
+					</button>
 				</header>
 				<div id="links" className={ this.state.isOpen ? "open" : null }>
 					<a href="Resume.pdf" target="_blank">
