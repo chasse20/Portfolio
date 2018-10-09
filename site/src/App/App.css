@@ -1,6 +1,6 @@
 :root
 {
-	--bg-raw: 228, 223, 230;
+	--bg-raw: 255, 255, 255;
 	--bg: rgb( var( --bg-raw ) );
 	--navbar-size: 50px;
 	--navbar-bg: #2f3543;
