@@ -6,7 +6,7 @@
 	overflow: hidden;
 }
 
-#projects, #container, .project-tile .image, .project-tile .overlay, .control
+#projects, #container, .project-tile .image, .control
 {
 	position: absolute;
 }
@@ -16,7 +16,7 @@
 	left: 0;
 }
 
-#projects, .project-tile .image, .project-tile .overlay, .project-tile .info
+#projects, .project-tile .image, .project-tile .info
 {
 	width: inherit;
 }
@@ -27,7 +27,7 @@
 	pointer-events: auto;
 }
 
-#container, .project-tile .overlay
+#container
 {
 	height: 100%;
 }
@@ -58,14 +58,6 @@
 {
 	background-size: cover;
 	background-position: center top;
-}
-
-.project-tile .overlay
-{
-	background: -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 50%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(255,255,255,0) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
 .project-tile .info

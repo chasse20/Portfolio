@@ -4,8 +4,8 @@
 	--bg: rgb( var( --bg-raw ) );
 	--navbar-size: 50px;
 	--navbar-bg: #2f3543;
-	--link-color-hover: #2a95cc;
-	--menu-toggle-color: #9e9e9e;
+	--link-color-hover: rgb(42, 149, 204);
+	--menu-toggle-color: rgba( 255, 255, 255, 0.5 );
 	--spacing-small: 10px;
 	--spacing-medium: 16px;
 	--spacing-large: 30px;
