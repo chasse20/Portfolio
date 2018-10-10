@@ -4,16 +4,78 @@ article
 	left: 0;
 	height: calc( 100% - var( --navbar-size ) );
 	color: var( --navbar-bg );
+	width: inherit;
 }
 
-#content
+section
+{
+	padding: var( --spacing-large ) var( --spacing-medium );
+	width: inherit;
+	box-sizing: border-box;
+}
+
+#title header
+{
+	padding: 0 var( --spacing-medium );
+	color: #fff;
+	text-align: center;
+}
+
+#title
+{
+}
+
+#title h1
+{
+	font-size: 3em;
+	line-height: 0.9em;
+}
+
+#title h2
+{
+	font-size: 1.6em;
+	margin-top: var( --spacing-medium );
+}
+
+#websites > *:not(:first-child)
+{
+	margin-top: var( --spacing-medium );
+}
+
+#video
+{
+	position: relative;
+	height: 0;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	width: 100%;
+}
+
+#video iframe
+{
+	display: block;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: inherit;
+}
+
+#images
 {
 	padding: var( --spacing-medium );
 }
 
-article, #overlay, .video iframe
+#background
 {
+	position: absolute;
+	z-index: -1;
 	left: 0;
+	opacity: 0.7;
+	background-size: cover;
+	background-position: left center;
+	overflow: hidden;
+	width: inherit;
+	height: 100%;
 }
 
 article, article h3
@@ -21,21 +83,10 @@ article, article h3
 	box-sizing: border-box;
 }
 
-article h1, article h2, article h3
+article h3
 {
 	text-align: center;
 	color: #fff;
-}
-
-article h1
-{
-	font-size: 1.5em;
-	margin-bottom: -0.1em;
-}
-
-article h2
-{
-	font-size: 1.2em;
 }
 
 article h3
@@ -50,40 +101,6 @@ article ul
 	padding-left: 1.25em;
 }
 
-article header
-{
-	text-shadow: 0px 3px 3px #212121;
-}
-
-article section, article section > *:not(:first-child), #images > *:not(:first-child)
-{
-	margin-top: var( --spacing-medium );
-}
-
-#background
-{
-	position: fixed;
-	z-index: -1;
-	left: 0;
-	opacity: 0.7;
-	background-repeat: no-repeat;
-	background-size: auto 100%;
-	overflow: hidden;
-	height: 100vh;
-}
-
-.video
-{
-	height: 0;
-	padding-bottom: 56.25%;
-	overflow: hidden;
-}
-
-#background, .video, .video iframe
-{
-	width: 100%;
-}
-
 #overlay
 {
 	background: -moz-linear-gradient(top, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
@@ -92,19 +109,6 @@ article section, article section > *:not(:first-child), #images > *:not(:first-c
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	height: 100%;
 	width: inherit;
-}
-
-.video
-{
-	position: relative;
-}
-
-.video iframe
-{
-	display: block;
-	position: absolute;
-	top: 0;
-	height: 100%;
 }
 
 .website

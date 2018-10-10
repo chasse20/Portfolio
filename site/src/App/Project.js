@@ -18,15 +18,17 @@ export default class Project extends Component
 
 		return (
 			<article>
-				<div id="background" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }>
-					<div id="overlay"/>
+				<div id="bottom-bg">
+					<div className="overlay"/>
 				</div>
-				<div id="content">
-					<header>
-						<h1>{ tempProject.name }</h1>
-						<h2>{ tempProject.platform }</h2>
-					</header>
-					<section>
+				<div id="top-bg" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }>
+					<div className="overlay"/>
+				</div>
+				<header>
+					<h1>{ tempProject.name }</h1>
+					<h2>{ tempProject.platform }</h2>
+				</header>
+				<section>
 					{
 						tempProject.websites.map(
 							( tWebsite ) =>
@@ -42,37 +44,33 @@ export default class Project extends Component
 							)
 						)
 					}
-					</section>
-					<section>
+				</section>
+				<section>
 					{
 						tempProject.video != null &&
-							<div className="video">
+							<div id="video">
 								<iframe src={ tempProject.video } frameBorder="0" allow="encrypted-media" allowFullScreen title="video" aria-hidden="true"></iframe>
 							</div>
 					}
 					{
 						tempProject.images != null &&
-							<div id="images">
-							{
-								tempProject.images.map(
-									( tImage ) =>
-									(
-										<a className="image" key={ tImage.url } href={ tImage.url } target="_blank">
-											<img src={ tImage.thumbnail } alt=""/>
-										</a>
-									)
+							tempProject.images.map(
+								( tImage ) =>
+								(
+									<a className="image" key={ tImage.url } href={ tImage.url } target="_blank">
+										<img src={ tImage.thumbnail } alt=""/>
+									</a>
 								)
-							}
-							</div>
+							)
 					}
-					</section>
-					<section>
-						<h3>Overview</h3>
-						<p>{ tempProject.description }</p>
-					</section>
-					<section>
-						<h3>Tools</h3>
-						<ul>
+				</section>
+				<section>
+					<h3>Overview</h3>
+					<p>{ tempProject.description }</p>
+				</section>
+				<section>
+					<h3>Tools</h3>
+					<ul>
 						{
 							tempProject.tools.map(
 								( tTool ) =>
@@ -83,28 +81,27 @@ export default class Project extends Component
 								)
 							)
 						}
-						</ul>
-					</section>
-					{
-						tempProject.credits != null &&
+					</ul>
+				</section>
+				{
+					tempProject.credits != null &&
 						<section>
 							<h3>Credits</h3>
 							<ul>
-							{
-								tempProject.credits.map(
-									( tCredit ) =>
-									(
-										<li className="credit" key={ tCredit.name }>
-											<b>{ tCredit.name }:</b>
-											<span>{ tCredit.role }</span>
-										</li>
+								{
+									tempProject.credits.map(
+										( tCredit ) =>
+										(
+											<li className="credit" key={ tCredit.name }>
+												<b>{ tCredit.name }:</b>
+												<span>{ tCredit.role }</span>
+											</li>
+										)
 									)
-								)
-							}
+								}
 							</ul>
 						</section>
 				}
-				</div>
 			</article>
 		);
 	}
