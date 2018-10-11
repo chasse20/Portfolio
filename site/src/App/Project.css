@@ -156,3 +156,12 @@ article .image, .image img
 {
 	margin-left: 0.5em;
 }
+
+@media only screen and ( min-width: 600px )
+{
+	#bottom-bg
+	{
+		height: 200vh;
+		background-size: 150% auto;
+	}
+}
