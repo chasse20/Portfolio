@@ -107,7 +107,7 @@ export default class Projects extends Component
 											<h1>{ tempProject.name }</h1>
 											<h2>{ tempProject.platform }</h2>
 											<Link className="more" to={ tProjectKey }>
-												<h3>Read More</h3>
+												<h3>Learn More</h3>
 											</Link>
 										</div>
 									</div>

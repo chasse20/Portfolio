@@ -1,12 +1,12 @@
 :root
 {
-	--bg-raw: 49, 49, 49;
+	--bg-raw: 68, 68, 68;
 	--bg: rgb( var( --bg-raw ) );
 	--navbar-size: 50px;
 	--navbar-bg: #2f3543;
 	--link-color-hover: #2a95cc;
 	--menu-toggle-color: rgba( 255, 255, 255, 0.5 );
-	--spacing-small: 10px;
+	--spacing-small: 12px;
 	--spacing-medium: 16px;
 	--spacing-large: 30px;
 	--spacing-huge: 70px;
