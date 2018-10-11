@@ -27,20 +27,17 @@
 	display: flex;
 }
 
-.button .left
+.button .right
 {
 	flex-grow: 1;
-}
-
-.button .left, .button .icon
-{
 	background-color: var( --button-color );
 }
 
 .button .icon
 {
+	background-color: var( --link-color-hover );
 	width: calc( 1.2em + ( 2 * var( --spacing-small ) ) );
-	margin-left: 2px;
+	margin-right: 2px;
 	padding: 8px;
 	box-sizing: border-box;
 	justify-content: center;

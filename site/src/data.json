@@ -24,7 +24,7 @@
 				{
 					"name": "Steam Page",
 					"url": "https://store.steampowered.com/app/35450/",
-					"icon": "images/buy.svg"
+					"icon": "images/store.svg"
 				}
 			],
 			"video": "https://www.youtube.com/embed/OIk6pl6WWB8",
@@ -72,7 +72,7 @@
 				{
 					"name": "Asset Store",
 					"url": "https://store.steampowered.com/app/35450/",
-					"icon": "images/buy.svg"
+					"icon": "images/store.svg"
 				}
 			],
 			"video": "https://www.youtube.com/embed/OIk6pl6WWB8",
