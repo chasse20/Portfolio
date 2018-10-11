@@ -94,7 +94,7 @@ article h2
 	margin-top: var( --spacing-huge );
 }
 
-section
+section, .link
 {
 	width: inherit;
 }
@@ -104,27 +104,14 @@ section > *:not(:first-child)
 	margin-top: var( --spacing-medium );
 }
 
-.website
+.link
 {
-	box-sizing: border-box;
-	padding: var( --spacing-small );
-	font-family: Rajdhani, sans-serif;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 0.9em;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: var( --link-color-hover );
+	display: block;
 }
 
-.website svg
+.link .button
 {
-	height: 1.3em;
-	width: 1.3em;
-	margin-left: 0.5em;
-	fill: #fff;
+	--button-color: var( --link-color-hover );
 }
 
 #video

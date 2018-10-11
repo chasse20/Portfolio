@@ -1,0 +1,54 @@
+.button
+{
+	position: relative;
+}
+
+.button, .button .bar
+{
+	width: inherit;
+}
+
+.button h3
+{
+	text-align: center;
+	padding: var( --spacing-small ) 0;
+}
+
+.button .bar
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.button .bar, .button .icon
+{
+	display: flex;
+}
+
+.button .left
+{
+	flex-grow: 1;
+}
+
+.button .left, .button .icon
+{
+	background-color: var( --button-color );
+}
+
+.button .icon
+{
+	width: calc( 1.2em + ( 2 * var( --spacing-small ) ) );
+	margin-left: 2px;
+	padding: 8px;
+	box-sizing: border-box;
+	justify-content: center;
+	align-items: center;
+}
+
+.button img
+{
+	height: 100%;
+	width: 100%;
+}

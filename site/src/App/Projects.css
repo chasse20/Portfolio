@@ -95,12 +95,8 @@
 {
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.more h3
-{
 	background-color: var( --link-color-hover );
-	padding: var( --spacing-medium );
+	padding: var( --spacing-small );
 }
 
 .control
@@ -109,13 +105,13 @@
 	padding: 6px var( --spacing-medium );
 }
 
-.control svg
+.control img
 {
-	fill: var( --menu-toggle-color );
 	height: 50px;
 }
 
 #right-control
 {
 	right: 0;
+	transform: scaleX( -1 );
 }

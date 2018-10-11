@@ -59,9 +59,8 @@ nav #links.open
 	transform: translateY( var( --navbar-size ) );
 }
 
-nav #links svg
+nav #links img
 {
-	fill: #fff;
 	height: 50px;
 	width: 50px;
 }
@@ -77,7 +76,7 @@ nav #links svg
 	margin-left: var( --spacing-small );
 }
 
-#logo svg
+#logo img
 {
 	height: 30px;
 	width: 30px;
@@ -90,7 +89,7 @@ nav #links svg
 	width: 20px;
 }
 
-#menu-toggle-closed, #menu-toggle-open
+#menu-toggle-closed, #menu-toggle-opened
 {
 	top: 0;
 	left: 0;
@@ -101,7 +100,6 @@ nav #links svg
 #menu-toggle-closed
 {
 	opacity: 1;
-	fill: var( --menu-toggle-color );
 }
 
 .open #menu-toggle-closed
@@ -109,13 +107,12 @@ nav #links svg
 	opacity: 0;
 }
 
-#menu-toggle-open
+#menu-toggle-opened
 {
 	opacity: 0;
-	fill: #00aeff;
 }
 
-.open #menu-toggle-open
+.open #menu-toggle-opened
 {
 	opacity: 1;
 }

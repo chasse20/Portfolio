@@ -14,15 +14,17 @@
 				"Scaleform",
 				"AS2"
 			],
-			"websites":
+			"links":
 			[
 				{
 					"name": "Website",
-					"url": "http://www.heroesofstalingrad.com/"
+					"url": "http://www.heroesofstalingrad.com/",
+					"icon": "images/website.svg"
 				},
 				{
 					"name": "Steam Page",
-					"url": "https://store.steampowered.com/app/35450/"
+					"url": "https://store.steampowered.com/app/35450/",
+					"icon": "images/buy.svg"
 				}
 			],
 			"video": "https://www.youtube.com/embed/OIk6pl6WWB8",
@@ -60,15 +62,17 @@
 				"JS",
 				"CSS3"
 			],
-			"websites":
+			"links":
 			[
 				{
 					"name": "Website",
-					"url": "http://www.heroesofstalingrad.com/"
+					"url": "http://www.heroesofstalingrad.com/",
+					"icon": "images/website.svg"
 				},
 				{
 					"name": "Asset Store",
-					"url": "https://store.steampowered.com/app/35450/"
+					"url": "https://store.steampowered.com/app/35450/",
+					"icon": "images/buy.svg"
 				}
 			],
 			"video": "https://www.youtube.com/embed/OIk6pl6WWB8",

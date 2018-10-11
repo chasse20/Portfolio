@@ -117,14 +117,10 @@ export default class Projects extends Component
 					}
 				</div>
 				<button className="control" id="left-control" onClick={ () => { this.onScroll( -1 ); } }>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 28 13 30" xmlSpace ="preserve">
-						<path d="M12.3,53l-10-10l10-10l2.4,2.3L7,43l7.6,7.7L12.3,53z"/>
-					</svg>
+					<img src="images/arrow.svg"/>
 				</button>
 				<button className="control" id="right-control" onClick={ () => { this.onScroll( 1 ); } }>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 28 13 30" xmlSpace ="preserve">
-						<path d="M2.3,50.7L10,43l-7.6-7.7L4.7,33l10,10l-10,10L2.3,50.7z"/>
-					</svg>
+					<img src="images/arrow.svg"/>
 				</button>
 			</div>
 		);
