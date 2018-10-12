@@ -117,10 +117,10 @@ export default class Projects extends Component
 					}
 				</div>
 				<button className="control" id="left-control" onClick={ () => { this.onScroll( -1 ); } }>
-					<img src="images/arrow.svg"/>
+					<img src="images/arrow.svg" alt="left arrow"/>
 				</button>
 				<button className="control" id="right-control" onClick={ () => { this.onScroll( 1 ); } }>
-					<img src="images/arrow.svg"/>
+					<img src="images/arrow.svg" alt="right arrow"/>
 				</button>
 			</div>
 		);

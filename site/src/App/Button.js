@@ -15,7 +15,7 @@ export default class Button extends Component
 				<h3>{ this.props.text }</h3>
 				<div class="bar">
 					<div class="icon">
-						<img src={ this.props.icon }/>
+						<img src={ this.props.icon } alt=""/>
 					</div>
 					<div class="right"/>
 				</div>
