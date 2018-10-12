@@ -148,9 +148,33 @@ section > *:not(:first-child)
 
 @media only screen and ( min-width: 600px )
 {
-	#bottom-bg
+	#top-bg, #bottom-bg
 	{
 		height: 200vh;
+	}
+
+	#bottom-bg
+	{
 		background-size: 150% auto;
+	}
+
+	#content #media
+	{
+		margin-top: calc( var( --spacing-huge ) - var( --spacing-medium ) );
+		margin-left: calc( -1 * var( --spacing-medium ) );
+		width: initial;
+	}
+
+	#media > *
+	{
+		margin-top: var( --spacing-medium );
+		margin-left: var( --spacing-medium );
+		width: calc( 50% - var( --spacing-medium ) );
+	}
+
+	#media
+	{
+		display: flex;
+		flex-wrap: wrap;
 	}
 }
