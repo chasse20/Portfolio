@@ -42,11 +42,13 @@ export default class Project extends Component
 							)
 						}
 					</section>
-					<section>
+					<section id="media">
 						{
 							tempProject.video != null &&
-								<div id="video">
-									<iframe src={ tempProject.video } frameBorder="0" allow="encrypted-media" allowFullScreen title="video" aria-hidden="true"></iframe>
+								<div id="video-wrapper">
+									<div id="video">
+										<iframe src={ tempProject.video } frameBorder="0" allow="encrypted-media" allowFullScreen title="video" aria-hidden="true"></iframe>
+									</div>
 								</div>
 						}
 						{

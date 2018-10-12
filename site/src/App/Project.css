@@ -1,9 +1,20 @@
 article
 {
-	position: absolute;
-	left: 0;
 	min-height: calc( 100% - var( --navbar-size ) );
+}
+
+article, #top-bg, #bottom-bg, #video iframe
+{
+	position: absolute;
+}
+
+article, #top-bg, #top-bg .overlay, #bottom-bg, #bottom-bg .overlay, #content, section, .link, #video-wrapper, #video iframe
+{
 	width: inherit;
+}
+
+article, #content, #video-wrapper, article .image
+{
 	box-sizing: border-box;
 }
 
@@ -16,14 +27,18 @@ article ul
 #top-bg
 {
 	height: calc( 100vh - var( --navbar-size ) );
-	position: absolute;
 	z-index: -1;
-	top: 0;
-	left: 0;
-	background-size: cover;
 	background-position: left center;
+}
+
+#top-bg, #bottom-bg
+{
+	background-size: cover;
+}
+
+#top-bg, #bottom-bg, #video
+{
 	overflow: hidden;
-	width: inherit;
 }
 
 #top-bg .overlay
@@ -31,22 +46,20 @@ article ul
 	background: -moz-linear-gradient( top, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
 	background: -webkit-linear-gradient( top, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient( to bottom, rgba( var(--bg-raw ), 0 ) 50%,rgba( var(--bg-raw ), 1 ) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#top-bg .overlay, #bottom-bg .overlay
+{
 	height: inherit;
-	width: inherit;
 }
 
 #bottom-bg
 {
 	height: 100vh;
-	position: absolute;
 	z-index: -2;
 	bottom: 0;
-	left: 0;
 	background-image: url( "/images/bg.jpg" );
-	background-size: cover;
 	background-position: 30% bottom;
-	overflow: hidden;
-	width: inherit;
 }
 
 #bottom-bg .overlay
@@ -54,8 +67,6 @@ article ul
 	background: -moz-linear-gradient( bottom, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
 	background: -webkit-linear-gradient( bottom, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient( to top, rgba( var(--bg-raw ), 0 ) 50%,rgba( var(--bg-raw ), 1 ) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	height: inherit;
-	width: inherit;
 }
 
 article header
@@ -85,8 +96,6 @@ article h2
 {
 	padding: 0 var( --spacing-medium );
 	padding-bottom: var( --spacing-huge );
-	box-sizing: border-box;
-	width: inherit;
 }
 
 #content > *:not(:first-child)
@@ -94,62 +103,42 @@ article h2
 	margin-top: var( --spacing-huge );
 }
 
-section, .link
-{
-	width: inherit;
-}
-
 section > *:not(:first-child)
 {
 	margin-top: var( --spacing-medium );
 }
 
-.link
+.link, #video iframe, article .image, .image img
 {
 	display: block;
 }
 
-.link .button
+.link .button .right
 {
-	--button-color: var( --link-color-hover );
+	background-color: var( --link-color-hover );
+}
+
+#video-wrapper, article .image
+{
+	border: 1px solid var( --link-color-hover );
+	box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.35 );
 }
 
 #video
 {
-	box-sizing: border-box;
 	position: relative;
 	height: 0;
 	padding-bottom: 56.25%;
-	overflow: hidden;
-	width: inherit;
-	border: 1px solid var( --link-color-hover );
-	box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.35 );
 }
 
-#video iframe
-{
-	display: block;
-	position: absolute;
-	top: 0;
-	height: 100%;
-	width: inherit;
-}
-
-article .image
-{
-	box-sizing: border-box;
-	border: 1px solid var( --link-color-hover );
-	box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.35 );
-}
-
-article .image img
+#video, article .image img
 {
 	width: 100%;
 }
 
-article .image, .image img
+#video iframe
 {
-	display: block;
+	height: 100%;
 }
 
 .credit span

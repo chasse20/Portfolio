@@ -30,7 +30,7 @@
 .button .right
 {
 	flex-grow: 1;
-	background-color: var( --button-color );
+	background-color: #313131;
 }
 
 .button .icon
