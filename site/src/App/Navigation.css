@@ -2,7 +2,7 @@ nav
 {
 	position: fixed;
 	z-index: 999;
-	width: 100vw;
+	width: 100%;
 }
 
 nav, nav header
@@ -10,7 +10,7 @@ nav, nav header
 	top: 0;
 }
 
-nav, nav header, nav #links
+nav, nav header, #links
 {
 	left: 0;
 }
@@ -23,7 +23,6 @@ nav h1
 nav header
 {
 	height: var( --navbar-size );
-	padding: 0 var( --spacing-medium );
 	background-color: var( --navbar-bg );
 }
 
@@ -32,20 +31,20 @@ nav header, #logo
 	align-items: center;
 }
 
-nav header, nav #links, #logo
+nav header, #links, #logo
 {
 	display: flex;
-}
-
-nav header, nav #links
-{
-	box-sizing: border-box;
-	position: absolute;
 	width: inherit;
 }
 
-nav #links
+nav header, #links, #logo, #menu-toggle
 {
+	position: absolute;
+}
+
+#links
+{
+	box-sizing: border-box;
 	z-index: -1;
 	transform: translateY( -100% );
 	padding: 18px 10% 14px 10%;
@@ -54,12 +53,12 @@ nav #links
 	justify-content: space-between;
 }
 
-nav #links.open
+#links.open
 {
 	transform: translateY( var( --navbar-size ) );
 }
 
-nav #links img
+#links img
 {
 	height: 50px;
 	width: 50px;
@@ -67,8 +66,7 @@ nav #links img
 
 #logo
 {
-	margin-left: auto;
-	margin-right: auto;
+	justify-content: center;
 }
 
 #logo h1
@@ -84,9 +82,9 @@ nav #links img
 
 #menu-toggle
 {
-	position: relative;
 	height: 30px;
 	width: 20px;
+	right: var( --spacing-small );
 }
 
 #menu-toggle-closed, #menu-toggle-opened

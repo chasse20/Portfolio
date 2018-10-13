@@ -13,11 +13,11 @@ export default class Button extends Component
 		return (
 			<div className="button">
 				<h3>{ this.props.text }</h3>
-				<div class="bar">
-					<div class="icon">
+				<div className="bar">
+					<div className="icon">
 						<img src={ this.props.icon } alt=""/>
 					</div>
-					<div class="right"/>
+					<div className="right"/>
 				</div>
 			</div>
 		);
