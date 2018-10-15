@@ -3,7 +3,6 @@
 	--bg-raw: 68, 68, 68;
 	--bg: rgb( var( --bg-raw ) );
 	--navbar-size: 50px;
-	--navbar-bg: #2f3543;
 	--link-color-hover: #2a95cc;
 	--spacing-small: 10px;
 	--spacing-medium: 16px;
@@ -69,4 +68,21 @@ main
 {
 	margin-top: var( --navbar-size );
 	width: 100%;
+}
+
+@media only screen and ( min-width : 768px )
+{
+	:root
+	{
+		--navbar-size: 80px;
+	}
+	
+	body
+	{
+		background-image: url( "/images/bg.jpg" );
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center top;
+		background-size: cover;
+	}
 }

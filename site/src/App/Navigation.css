@@ -23,7 +23,7 @@ nav h1
 nav header
 {
 	height: var( --navbar-size );
-	background-color: var( --navbar-bg );
+	background-color: #2f3543;
 }
 
 nav header, #logo
