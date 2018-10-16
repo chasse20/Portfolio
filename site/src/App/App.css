@@ -66,15 +66,22 @@ button:focus
 
 main
 {
-	margin-top: var( --navbar-size );
 	width: 100%;
+}
+
+@media only screen and ( max-width: 767px )
+{
+	main
+	{
+		margin-top: var( --navbar-size );
+	}
 }
 
 @media only screen and ( min-width : 768px )
 {
 	:root
 	{
-		--navbar-size: 80px;
+		--navbar-size: 100px;
 	}
 	
 	body
