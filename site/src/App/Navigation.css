@@ -176,11 +176,6 @@ nav
 		align-items: center;
 	}
 	
-	#links a > *
-	{
-		display: inline-block;
-	}
-	
 	#links a > *:not(:first-child)
 	{
 		margin-left: var( --spacing-small );
