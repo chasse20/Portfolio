@@ -138,7 +138,7 @@
 		height: inherit;
 		display: grid;
 		grid-template-columns: 33.33% auto 33.33%;
-		grid-gap: 5px;
+		grid-gap: var( --spacing-medium );
 	}
 	
 	#left-control, #right-control
