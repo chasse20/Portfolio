@@ -71,6 +71,7 @@ main
 	width: 100%;
 }
 
+/* Mobile */
 @media only screen and ( max-width: 767px )
 {
 	main
@@ -79,11 +80,17 @@ main
 	}
 }
 
+/* Table */
 @media only screen and ( min-width : 768px )
 {
 	:root
 	{
 		--navbar-size: 100px;
+	}
+	
+	html, body
+	{
+		height: 100%;
 	}
 	
 	body
@@ -102,10 +109,18 @@ main
 	
 	#root
 	{
+		height: inherit;
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 900px;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+	}
+	
+	main
+	{
+		height: calc( 100% - var( --navbar-size ) );
+		padding: 0 var( --spacing-medium );
+		box-sizing: border-box;
 	}
 }

@@ -1,117 +1,153 @@
 #projects
 {
-	height: calc( 100% - var( --navbar-size ) );
-	pointer-events: none;
-	opacity: 0;
-	overflow: hidden;
-}
-
-#projects, #container, .project-tile .image, .control
-{
-	position: absolute;
-}
-
-#projects, #container, .project-tile .image, #left-control
-{
-	left: 0;
-}
-
-#projects, .project-tile .image, .project-tile .info
-{
 	width: inherit;
 }
 
-#projects.open
+/* Mobile */
+@media only screen and ( max-width: 767px )
 {
-	opacity: 1;
-	pointer-events: auto;
+	#projects
+	{
+		height: calc( 100% - var( --navbar-size ) );
+		pointer-events: none;
+		opacity: 0;
+		overflow: hidden;
+	}
+
+	#projects, #container, .project-tile .image, .control
+	{
+		position: absolute;
+	}
+
+	#projects, #container, .project-tile .image, #left-control
+	{
+		left: 0;
+	}
+
+	#projects.open
+	{
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	#container
+	{
+		height: 100%;
+	}
+
+	#container, .project-tile .info
+	{
+		display: flex;
+	}
+
+	#container, .project-tile .image
+	{
+		top: 0;
+	}
+
+	.project-tile
+	{
+		position: relative;
+		display: inline-flex;
+		width: 100vw;
+	}
+
+	.project-tile, .project-tile .image
+	{
+		height: inherit;
+	}
+
+	.project-tile .image
+	{
+		background-size: cover;
+		background-position: center top;
+	}
+	
+	.project-tile .image, .project-tile .info
+	{
+		width: inherit;
+	}
+
+	.project-tile .info
+	{
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0 var( --spacing-large );
+		box-sizing: border-box;
+	}
+
+	.project-tile .info > *:not(:first-child)
+	{
+		margin-top: var( --spacing-large );
+	}
+
+	.project-tile .info, .control
+	{
+		z-index: 1;
+	}
+
+	.project-tile h1
+	{
+		font-size: 3em;
+		line-height: 0.9em;
+	}
+
+	.project-tile h2
+	{
+		font-size: 1.6em;
+		margin-top: 0;
+	}
+
+	.more
+	{
+		margin-left: auto;
+		margin-right: auto;
+		background-color: var( --button-color );
+		padding: var( --spacing-small );
+	}
+
+	.control
+	{
+		bottom: 0;
+		padding: 6px var( --spacing-medium );
+	}
+
+	.control img
+	{
+		height: 50px;
+	}
+
+	#right-control
+	{
+		right: 0;
+		transform: scaleX( -1 );
+	}
 }
 
-#container
+/* Tablet */
+@media only screen and ( min-width : 768px )
 {
-	height: 100%;
-}
-
-#container, .project-tile .info
-{
-	display: flex;
-}
-
-#container, .project-tile .image
-{
-	top: 0;
-}
-
-.project-tile
-{
-	position: relative;
-	display: inline-flex;
-	width: 100vw;
-}
-
-.project-tile, .project-tile .image
-{
-	height: inherit;
-}
-
-.project-tile .image
-{
-	background-size: cover;
-	background-position: center top;
-}
-
-.project-tile .info
-{
-	text-align: center;
-	flex-direction: column;
-	justify-content: center;
-	padding: 0 var( --spacing-large );
-	box-sizing: border-box;
-}
-
-.project-tile .info > *:not(:first-child)
-{
-	margin-top: var( --spacing-large );
-}
-
-.project-tile .info, .control
-{
-	z-index: 1;
-}
-
-.project-tile h1
-{
-	font-size: 3em;
-	line-height: 0.9em;
-}
-
-.project-tile h2
-{
-	font-size: 1.6em;
-	margin-top: 0;
-}
-
-.more
-{
-	margin-left: auto;
-	margin-right: auto;
-	background-color: var( --button-color );
-	padding: var( --spacing-small );
-}
-
-.control
-{
-	bottom: 0;
-	padding: 6px var( --spacing-medium );
-}
-
-.control img
-{
-	height: 50px;
-}
-
-#right-control
-{
-	right: 0;
-	transform: scaleX( -1 );
+	#projects
+	{
+		height: 100%;
+	}
+	
+	#container
+	{
+		height: inherit;
+		display: grid;
+		grid-template-columns: 33.33% auto 33.33%;
+		grid-gap: 5px;
+	}
+	
+	#left-control, #right-control
+	{
+		display: none;
+	}
+	
+	.more
+	{
+		display: none;
+	}
 }
