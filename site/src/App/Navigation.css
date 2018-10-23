@@ -9,6 +9,11 @@ nav
 	align-items: center;
 }
 
+#links svg
+{
+	fill:  var( --link-color );
+}
+
 /* Mobile */
 @media only screen and ( max-width: 767px )
 {
@@ -68,7 +73,7 @@ nav
 		z-index: -1;
 		transform: translateY( -100% );
 		padding: 18px 10% 14px 10%;
-		background: var( --link-color-hover );
+		background: var( --button-color );
 		text-align: center;
 		justify-content: space-between;
 	}
@@ -78,7 +83,7 @@ nav
 		transform: translateY( var( --navbar-size ) );
 	}
 	
-	#links img
+	#links svg
 	{
 		height: 50px;
 		width: 50px;
@@ -154,7 +159,7 @@ nav
 		display: none;
 	}
 	
-	#links img
+	#links svg
 	{
 		height: 40px;
 		width: 40px;
@@ -179,5 +184,10 @@ nav
 	#links a > *:not(:first-child)
 	{
 		margin-left: var( --spacing-small );
+	}
+	
+	#links a:hover svg
+	{
+		fill: var( --link-color-hover );
 	}
 }

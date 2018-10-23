@@ -3,7 +3,9 @@
 	--bg-raw: 68, 68, 68;
 	--bg: rgb( var( --bg-raw ) );
 	--navbar-size: 50px;
-	--link-color-hover: #2a95cc;
+	--link-color: #ffffff;
+	--link-color-hover: #00aeff;
+	--button-color: #2a95cc;
 	--spacing-small: 10px;
 	--spacing-medium: 16px;
 	--spacing-large: 30px;
@@ -13,7 +15,7 @@
 body
 {
 	font-family: Roboto;
-	color: #fff;
+	color: var( --link-color );
 	background-color: var( --bg );
 	letter-spacing: 0.02em;
 	font-weight: 300;
@@ -91,5 +93,19 @@ main
 		background-attachment: fixed;
 		background-position: center top;
 		background-size: cover;
+	}
+	
+	a:hover, a:active
+	{
+		color: var( --link-color-hover );
+	}
+	
+	#root
+	{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 900px;
+		display: flex;
+		justify-content: center;
 	}
 }
