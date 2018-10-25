@@ -150,7 +150,7 @@ section > *:not(:first-child)
 {
 	#top-bg, #bottom-bg
 	{
-		height: 200vh;
+		height: 150vh;
 	}
 
 	#bottom-bg

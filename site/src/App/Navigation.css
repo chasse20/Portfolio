@@ -1,21 +1,11 @@
-nav
+nav header,  #logo, #links
 {
-	width: 100%;
-}
-
-nav header, #links
-{
-	display: flex;
+	align-items: center;
 }
 
 #logo
 {
 	display: inline-flex;
-}
-
- #logo, #links
-{
-	align-items: center;
 }
 
 #links svg
@@ -28,8 +18,14 @@ nav header, #links
 {
 	nav
 	{
+		width: 100%;
 		position: fixed;
 		z-index: 999;
+	}
+	
+	nav header,  #links
+	{
+		display: flex;
 	}
 
 	nav, nav header, #menu-toggle-closed, #menu-toggle-opened
@@ -136,12 +132,16 @@ nav header, #links
 		padding: 0 var( --spacing-medium );
 		box-sizing: border-box;
 		justify-content: space-between;
-		align-items: center;
 	}
 	
 	nav h1
 	{
 		font-size: 1em;
+	}
+	
+	nav header,  #links, #links a
+	{
+		display: inline-flex;
 	}
 	
 	#logo h1
@@ -178,7 +178,6 @@ nav header, #links
 	
 	#links a
 	{
-		display: inline-flex;
 		align-items: center;
 	}
 	
