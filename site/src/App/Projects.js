@@ -148,6 +148,9 @@ export default class Projects extends Component
 											<Link className="more" to={ tProjectKey }>
 												<h3>Learn More</h3>
 											</Link>
+											<div className="arrow">
+												<img src="images/arrow.svg" alt="right arrow"/>
+											</div>
 										</div>
 									</div>
 								);
