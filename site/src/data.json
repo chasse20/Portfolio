@@ -5,8 +5,7 @@
 		{
 			"name": "Red Orchestra 2",
 			"platform": "PC Game",
-			"shortDescription": "Multiplayer first-person shooter game. Responsible for programming core gameplay for the \"Search and Destroy\" game mode.",
-			"tileImage": "images/hwrm_08.jpg",
+			"tileImage": "images/RO2.jpg",
 			"tools":
 			[
 				"Unreal Engine 3",
@@ -35,8 +34,8 @@
 					"url": "images/RO2_1.jpg"
 				},
 				{
-					"thumbnail": "images/RO2_1_s.jpg",
-					"url": "images/RO2_12.jpg"
+					"thumbnail": "images/RO2_2_s.jpg",
+					"url": "images/RO2_2.jpg"
 				}
 			],
 			"description": "Red Orchestra 2 is a realistic, World War 2 shooter created by Tripwire Interactive. I worked with a small development team of other programmers and artists to specifically create the \"Search and Destroy\" mode. \"Search and-Destroy\" is an objective-based game mode where an attacking team of players has to plant a timed bomb onto an objective while the defending team is required to guard that objective.",
@@ -44,7 +43,47 @@
 			[
 				{
 					"name": "Chris Hassebrook",
-					"role": "core gameplay programming including network replication"
+					"role": "Principal gameplay and network programming"
+				},
+				{
+					"name": "Alexandre \"THOR\" Thibodeau",
+					"role": "Project lead and programming lead"
+				},
+				{
+					"name": "Sebastian \"ShirtyKezRat\" Weilhammer",
+					"role": "Level design and additional programming"
+				},
+				{
+					"name": "\"Mad_Fred\"",
+					"role": "Lead level design and art"
+				},
+				{
+					"name": "\"met\"",
+					"role": "Level design"
+				},
+				{
+					"name": "\"GrimReality\"",
+					"role": "Level design and art"
+				},
+				{
+					"name": "\"Piriou\"",
+					"role": "Level design"
+				},
+				{
+					"name": "\"Spaehling\"",
+					"role": "Level design"
+				},
+				{
+					"name": "\"Sauron974\"",
+					"role": "Audio design"
+				},
+				{
+					"name": "Ian Runnels",
+					"role": "Hero asset 3D art"
+				},
+				{
+					"name": "\"Gordon Freeman\"",
+					"role": "Art"
 				}
 			]
 		},
@@ -52,8 +91,7 @@
 		{
 			"name": "Events Plus",
 			"platform": "Unity Plugin",
-			"shortDescription": "Multiplayer first-person shooter game. Responsible for programming core gameplay for the \"Search and Destroy\" game mode.",
-			"tileImage": "images/RO2.jpg",
+			"tileImage": "images/EP.png",
 			"tools":
 			[
 				"Unity3D",
@@ -66,51 +104,51 @@
 			[
 				{
 					"name": "Website",
-					"url": "http://www.heroesofstalingrad.com/",
+					"url": "http://www.eventsplusplugin.com/",
 					"icon": "images/website.svg"
 				},
 				{
 					"name": "Asset Store",
-					"url": "https://store.steampowered.com/app/35450/",
+					"url": "https://assetstore.unity.com/packages/tools/utilities/events-plus-88827",
 					"icon": "images/store.svg"
 				}
 			],
-			"video": "https://www.youtube.com/embed/OIk6pl6WWB8",
+			"video": "https://www.youtube.com/embed/yZjW0vAGO78",
 			"images":
 			[
 				{
-					"thumbnail": "images/RO2_1_s.jpg",
-					"url": "images/RO2_1.jpg"
+					"thumbnail": "images/EP_1_s.jpg",
+					"url": "images/EP_1.jpg"
 				},
 				{
-					"thumbnail": "images/RO2_1_s.jpg",
-					"url": "images/RO2_12.jpg"
+					"thumbnail": "images/EP_2_s.jpg",
+					"url": "images/EP_2.jpg"
 				}
 			],
-			"description": "Red Orchestra 2 is a realistic, World War 2 shooter created by Tripwire Interactive. I worked with a small development team of other programmers and artists to specifically create the \"Search and Destroy\" mode. \"Search and-Destroy\" is an objective-based game mode where an attacking team of players has to plant a timed bomb onto an objective while the defending team is required to guard that objective.",
+			"description": "Events Plus is a commercial Unity Plugin that gives developers the power to quickly prototype gameplay and wire up events without the need for code. It incorporates automatic linking and serialization of C# delegates within the Unity3D interface. As the sole developer, I am responsible for programming, support and marketing aspects of the plugin.",
 			"credits":
 			[
 				{
 					"name": "Chris Hassebrook",
-					"role": "core gameplay programming including network replication"
+					"role": "Programming, support, web design and marketing"
+				},
+				{
+					"name": "Duncan Yewell",
+					"role": "Marketing graphics"
 				}
 			]
 		},
-		"Cool":
+		"ODIN":
 		{
-			"name": "Cool",
-			"platform": "Unity Plugin"
-		},
-		"Test":
-		{
-			"name": "Events Plus",
-			"platform": "Unity Plugin",
-			"shortDescription": "Multiplayer first-person shooter game. Responsible for programming core gameplay for the \"Search and Destroy\" game mode.",
-			"tileImage": "images/RO2.jpg",
+			"name": "ODIN",
+			"platform": "Military Web Application",
+			"tileImage": "images/ODIN.jpg",
+			"backgroundPosition": "center top",
 			"tools":
 			[
-				"Unity3D",
-				"C#",
+				"Angular",
+				"PHP",
+				"SQL",
 				"HTML5",
 				"JS",
 				"CSS3"
@@ -119,33 +157,52 @@
 			[
 				{
 					"name": "Website",
-					"url": "http://www.heroesofstalingrad.com/",
+					"url": "http://odin.tradoc.army.mil/",
 					"icon": "images/website.svg"
-				},
-				{
-					"name": "Asset Store",
-					"url": "https://store.steampowered.com/app/35450/",
-					"icon": "images/store.svg"
 				}
 			],
-			"video": "https://www.youtube.com/embed/OIk6pl6WWB8",
+			"video": "https://www.youtube.com/embed/3-olyNchb8I",
 			"images":
 			[
 				{
-					"thumbnail": "images/RO2_1_s.jpg",
-					"url": "images/RO2_1.jpg"
+					"thumbnail": "images/ODIN_1_s.jpg",
+					"url": "images/ODIN_1.jpg"
 				},
 				{
-					"thumbnail": "images/RO2_1_s.jpg",
-					"url": "images/RO2_12.jpg"
+					"thumbnail": "images/ODIN_2_s.jpg",
+					"url": "images/ODIN_2.jpg"
+				},
+				{
+					"thumbnail": "images/ODIN_3_s.jpg",
+					"url": "images/ODIN_3.jpg"
 				}
 			],
-			"description": "Red Orchestra 2 is a realistic, World War 2 shooter created by Tripwire Interactive. I worked with a small development team of other programmers and artists to specifically create the \"Search and Destroy\" mode. \"Search and-Destroy\" is an objective-based game mode where an attacking team of players has to plant a timed bomb onto an objective while the defending team is required to guard that objective.",
+			"description": "The Operational Environment Data Integration Network (ODIN) is a training resource designed for the United States Army Training and Doctrine Command (TRADOC). The goal of the project was to digitize all existing Worldwide Equipment Guide (WEG), Decisive Action Training Environment (DATE 3.0), Force Structures (FS) and Training Publication (TC) data into one, online authoritative resource. It includes both a user-friendly frontend, a visual editor for content management, and machine-readable API endpoints for use in simulations. It has been highly acclaimed by TRADOC and is the flagship for future training digitization efforts.",
 			"credits":
 			[
 				{
+					"name": "Ryan O'Donnell",
+					"role": "Project lead and user interface design"
+				},
+				{
 					"name": "Chris Hassebrook",
-					"role": "core gameplay programming including network replication"
+					"role": "Principal full-stack development for frontend, backend and database development"
+				},
+				{
+					"name": "Jenny Seburn",
+					"role": "Frontend development and lead developer of the Force Structure tool"
+				},
+				{
+					"name": "Eric Monachello",
+					"role": "Frontend development and user interface design"
+				},
+				{
+					"name": "Nadia Aly",
+					"role": "Backend and database development"
+				},
+				{
+					"name": "James McCollum",
+					"role": "Backend and database development"
 				}
 			]
 		}

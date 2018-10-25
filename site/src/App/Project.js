@@ -17,12 +17,23 @@ export default class Project extends Component
 			return null;
 		}
 
+		const tempBackgroundStyle =
+		{
+			backgroundImage: "url(" + tempProject.tileImage + ")"
+		};
+
+		if ( tempProject.backgroundPosition != null )
+		{
+			console.log( "??" );
+			tempBackgroundStyle.backgroundPosition = tempProject.backgroundPosition;
+		}
+
 		return (
 			<article>
 				<div id="bottom-bg">
 					<div className="overlay"/>
 				</div>
-				<div id="top-bg" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }>
+				<div id="top-bg" style={ tempBackgroundStyle }>
 					<div className="overlay"/>
 				</div>
 				<header>

@@ -13,6 +13,11 @@
 	display: none;
 }
 
+.project-tile h1, .project-tile h2
+{
+	text-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.35 );
+}
+
 /* Mobile */
 @media only screen and ( max-width: 767px )
 {

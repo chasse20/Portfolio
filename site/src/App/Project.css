@@ -86,6 +86,11 @@ article h1
 	line-height: 0.9em;
 }
 
+article h1, article h2
+{
+	text-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.35 );
+}
+
 article h2
 {
 	font-size: 1.6em;
@@ -146,11 +151,12 @@ section > *:not(:first-child)
 	margin-left: 0.5em;
 }
 
+/* Mobile wide */
 @media only screen and ( min-width: 600px )
 {
 	#top-bg, #bottom-bg
 	{
-		height: 150vh;
+		height: 70vh;
 	}
 
 	#bottom-bg
@@ -176,5 +182,24 @@ section > *:not(:first-child)
 	{
 		display: flex;
 		flex-wrap: wrap;
+	}
+}
+
+/* Tablet */
+@media only screen and ( min-width : 768px )
+{
+	article
+	{
+		position: relative;
+	}
+
+	.link:hover
+	{
+		color: var( --link-color );
+	}
+
+	#bottom-bg
+	{
+		display: none;
 	}
 }
