@@ -7,7 +7,7 @@ import Data from "./data";
 ReactDOM.render(
 	(
 		<BrowserRouter>
-			<App projects={ Data.projects }/>
+			<App projects={ Data.projects } isTouch={ window.navigator.msMaxTouchPoints || "ontouchstart" in document.createElement( "div" ) }/>
 		</BrowserRouter>
 	),
 	document.getElementById( "root" )

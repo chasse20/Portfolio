@@ -29,7 +29,7 @@ export default class App extends Component
 							return (
 								<React.Fragment>
 									<Project project={ tempProject }/>
-									<Projects projects={ this.props.projects } isOpen={ tempProject == null }/>
+									<Projects projects={ this.props.projects } isOpen={ tempProject == null } isTouch={ this.props.isTouch } history={ tProps.history }/>
 								</React.Fragment>
 							);
 						}

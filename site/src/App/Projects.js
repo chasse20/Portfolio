@@ -8,11 +8,18 @@ export default class Projects extends Component
 	{
 		super( tProps );
 		
-		this._swipeStart = 0;
-		
 		this.state =
 		{
-			projectKeys: Projects.GenerateKeys( this.props.projects )
+			projectKeys: Projects.GenerateKeys( this.props.projects ),
+			selectedProject: null
+		};
+		
+		this._element = null;
+		this._swipeStart = 0;
+		this._isMobile = false;
+		this._onPageClick = ( tEvent ) =>
+		{
+			this.onPageClick( tEvent );
 		};
 	}
 	
@@ -41,7 +48,7 @@ export default class Projects extends Component
 			return true;
 		}
 		
-		return tNextState.projectKeys !== this.state.projectKeys || tNextProps.isOpen !== this.props.isOpen;
+		return tNextState.projectKeys !== this.state.projectKeys || tNextProps.isOpen !== this.props.isOpen || tNextState.selectedProject !== this.state.selectedProject;
 	}
 
 	onScroll( tDirection )
@@ -71,28 +78,57 @@ export default class Projects extends Component
 		this.setState( { projectKeys: tempArray } );
 	}
 	
-	onTouchStart( tEvent )
+	onProjectSwipeStart( tEvent )
 	{
-		this._swipeStart = tEvent.touches[0].clientX;
+		this._isMobile = window.getComputedStyle( document.documentElement ).getPropertyValue( "--mobile" ).indexOf( "1" ) >= 0; // a hack to only allow mobile resolutions to swipe
+		if ( this._isMobile )
+		{
+			this._swipeStart = tEvent.touches[0].clientX;
+		}
 	}
 	
-	onTouchEnd( tEvent )
+	onProjectSwipeEnd( tEvent )
 	{
-		const tempDistance = this._swipeStart - tEvent.changedTouches[0].clientX;
-		if ( tempDistance <= -60 )
+		if ( this._isMobile )
 		{
-			this.onScroll( -1 );
+			const tempDistance = this._swipeStart - tEvent.changedTouches[0].clientX;
+			if ( tempDistance <= -60 )
+			{
+				this.onScroll( -1 );
+			}
+			else if ( tempDistance >= 60 )
+			{
+				this.onScroll( 1 );
+			}
 		}
-		else if ( tempDistance >= 60 )
+	}
+	
+	onProjectClick( tEvent, tProjectKey )
+	{
+		tEvent.stopPropagation();
+		if ( !this.props.isTouch || this.state.selectedProject === tProjectKey )
 		{
-			this.onScroll( 1 );
+			this.setState( { selectedProject: null } );
+			window.removeEventListener( "click", this._onPageClick );
+			this.props.history.push( tProjectKey );
 		}
+		else
+		{
+			this.setState( { selectedProject: tProjectKey } );
+			window.addEventListener( "click", this._onPageClick );
+		}
+	}
+	
+	onPageClick( tEvent )
+	{
+		this.setState( { selectedProject: null } );
+		window.removeEventListener( "click", this._onPageClick );
 	}
 	
 	render()
 	{
 		return (
-			<div id="projects" className={ this.props.isOpen ? "open" : null } onTouchStart={ ( tEvent ) => { this.onTouchStart( tEvent ); } } onTouchEnd={ ( tEvent ) => { this.onTouchEnd( tEvent ); } }>
+			<div id="projects" className={ this.props.isOpen ? "open" : null } onTouchStart={ ( tEvent ) => { this.onProjectSwipeStart( tEvent ); } } onTouchEnd={ ( tEvent ) => { this.onProjectSwipeEnd( tEvent ); } }>
 				<div id="container">
 					{
 						this.state.projectKeys.map(
@@ -101,7 +137,7 @@ export default class Projects extends Component
 								const tempProject = this.props.projects[ tProjectKey ];
 								
 								return (
-									<div className="project-tile" key={ tProjectKey }>
+									<div className={ "project-tile" + ( this.state.selectedProject === tProjectKey ? " selected" : "" ) } key={ tProjectKey } onClick={ ( tEvent ) => { this.onProjectClick( tEvent, tProjectKey ); } }>
 										<div className="image-container">
 											<div className="image" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }/>
 											<div className="image-outline"/>

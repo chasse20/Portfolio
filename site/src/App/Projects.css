@@ -148,7 +148,7 @@
 		cursor: pointer;
 	}
 	
-	.project-tile:hover
+	.project-tile:hover, .project-tile.selected
 	{
 		box-shadow: var( --box-shadow );
 	}
@@ -164,7 +164,7 @@
 		overflow: hidden;
 	}
 	
-	.project-tile:hover .image-container
+	.project-tile:hover .image-container, .project-tile.selected .image-container
 	{
 		height: calc( 250px - 1.3em );
 	}
@@ -175,7 +175,7 @@
 		background-position: center center;
 	}
 	
-	.project-tile:hover .image
+	.project-tile:hover .image, .project-tile.selected .image
 	{
 		background-size: auto 150%;
 	}
@@ -189,7 +189,7 @@
 		height: 100%;
 	}
 	
-	.project-tile:hover .image-outline
+	.project-tile:hover .image-outline, .project-tile.selected .image-outline
 	{
 		outline: 1px solid var(  --button-color );
 		outline-offset: -1px;
@@ -202,7 +202,7 @@
 		background-color: var( --button-color-dark );
 	}
 	
-	.project-tile:hover .info
+	.project-tile:hover .info, .project-tile.selected .info
 	{
 		background-color: var( --button-color );
 		height: calc( 2.6em + var( --spacing-small ) + var( --spacing-small ) );
@@ -220,7 +220,7 @@
 		opacity: 0;
 	}
 	
-	.project-tile:hover h2
+	.project-tile:hover h2, .project-tile.selected h2
 	{
 		opacity: 1;
 	}
