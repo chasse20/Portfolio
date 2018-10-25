@@ -102,7 +102,10 @@ export default class Projects extends Component
 								
 								return (
 									<div className="project-tile" key={ tProjectKey }>
-										<div className="image" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }/>
+										<div className="image-container">
+											<div className="image" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }/>
+											<div className="image-outline"/>
+										</div>
 										<div className="info">
 											<h1>{ tempProject.name }</h1>
 											<h2>{ tempProject.platform }</h2>

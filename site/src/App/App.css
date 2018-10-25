@@ -6,6 +6,8 @@
 	--link-color: #ffffff;
 	--link-color-hover: #00aeff;
 	--button-color: #2a95cc;
+	--button-color-dark: #313131;
+	--box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.35 );
 	--spacing-small: 10px;
 	--spacing-medium: 16px;
 	--spacing-large: 30px;

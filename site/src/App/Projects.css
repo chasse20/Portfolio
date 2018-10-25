@@ -1,6 +1,12 @@
-#projects
+#projects, .project-tile .image-container, .project-tile .info
 {
 	width: inherit;
+}
+
+.project-tile .image
+{
+	background-size: cover;
+	width: 100%;
 }
 
 /* Mobile */
@@ -14,12 +20,12 @@
 		overflow: hidden;
 	}
 
-	#projects, #container, .project-tile .image, .control
+	#projects, #container, .project-tile .image-container, .control
 	{
 		position: absolute;
 	}
 
-	#projects, #container, .project-tile .image, #left-control
+	#projects, #container, .project-tile .image-container, #left-control
 	{
 		left: 0;
 	}
@@ -40,7 +46,7 @@
 		display: flex;
 	}
 
-	#container, .project-tile .image
+	#container, .project-tile .image-container
 	{
 		top: 0;
 	}
@@ -51,21 +57,20 @@
 		display: inline-flex;
 		width: 100vw;
 	}
-
-	.project-tile, .project-tile .image
-	{
-		height: inherit;
-	}
-
+	
 	.project-tile .image
 	{
-		background-size: cover;
 		background-position: center top;
 	}
 	
-	.project-tile .image, .project-tile .info
+	.project-tile, .project-tile .image-container, .project-tile .image
 	{
-		width: inherit;
+		height: inherit;
+	}
+	
+	.project-tile .image-outline
+	{
+		display: none;
 	}
 
 	.project-tile .info
@@ -137,7 +142,8 @@
 	{
 		height: inherit;
 		display: grid;
-		grid-template-columns: 33.33% auto 33.33%;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
 		grid-gap: var( --spacing-medium );
 	}
 	
@@ -149,5 +155,88 @@
 	.more
 	{
 		display: none;
+	}
+	
+	.project-tile
+	{
+		cursor: pointer;
+	}
+	
+	.project-tile:hover
+	{
+		box-shadow: var( --box-shadow );
+	}
+	
+	.project-tile .image-container
+	{
+		height: 250px;
+		position: relative;
+		overflow: hidden;
+		
+	}
+	
+	.project-tile:hover .image-container
+	{
+		height: calc( 250px - 1.3em );
+	}
+	
+	.project-tile:hover .image
+	{
+		background-size: auto 150%;
+	}
+	
+	.project-tile .image
+	{
+		height: 300px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-position: center center;
+	}
+	
+	.project-tile .image-outline
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.project-tile:hover .image-outline
+	{
+		outline: 1px solid var(  --button-color );
+		outline-offset: -1px;
+	}
+	
+	.project-tile:hover .info
+	{
+		background-color: var( --button-color );
+		height: calc( 2.6em + var( --spacing-small ) + var( --spacing-small ) );
+	}
+	
+	.project-tile .info
+	{
+		overflow: hidden;
+		height: calc( 1.3em + var( --spacing-small ) + var( --spacing-small ) );
+		margin-top: 2px;
+		background-color: var( --button-color-dark );
+		text-align: center;
+	}
+	
+	.project-tile h1
+	{
+		font-size: 1em;
+		padding: var( --spacing-small );
+	}
+	
+	.project-tile h2
+	{
+		padding-bottom: var( --spacing-small );
+	}
+	
+	.project-tile:hover h2
+	{
+		margin-top: calc( -1 * var( --spacing-small ) );
 	}
 }

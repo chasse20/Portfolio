@@ -100,6 +100,54 @@
 		{
 			"name": "Cool",
 			"platform": "Unity Plugin"
+		},
+		"Test":
+		{
+			"name": "Events Plus",
+			"platform": "Unity Plugin",
+			"shortDescription": "Multiplayer first-person shooter game. Responsible for programming core gameplay for the \"Search and Destroy\" game mode.",
+			"tileImage": "images/RO2.jpg",
+			"tools":
+			[
+				"Unity3D",
+				"C#",
+				"HTML5",
+				"JS",
+				"CSS3"
+			],
+			"links":
+			[
+				{
+					"name": "Website",
+					"url": "http://www.heroesofstalingrad.com/",
+					"icon": "images/website.svg"
+				},
+				{
+					"name": "Asset Store",
+					"url": "https://store.steampowered.com/app/35450/",
+					"icon": "images/store.svg"
+				}
+			],
+			"video": "https://www.youtube.com/embed/OIk6pl6WWB8",
+			"images":
+			[
+				{
+					"thumbnail": "images/RO2_1_s.jpg",
+					"url": "images/RO2_1.jpg"
+				},
+				{
+					"thumbnail": "images/RO2_1_s.jpg",
+					"url": "images/RO2_12.jpg"
+				}
+			],
+			"description": "Red Orchestra 2 is a realistic, World War 2 shooter created by Tripwire Interactive. I worked with a small development team of other programmers and artists to specifically create the \"Search and Destroy\" mode. \"Search and-Destroy\" is an objective-based game mode where an attacking team of players has to plant a timed bomb onto an objective while the defending team is required to guard that objective.",
+			"credits":
+			[
+				{
+					"name": "Chris Hassebrook",
+					"role": "core gameplay programming including network replication"
+				}
+			]
 		}
 	}
 }
