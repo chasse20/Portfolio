@@ -41,77 +41,81 @@ export default class Project extends Component
 					<h2>{ tempProject.platform }</h2>
 				</header>
 				<div id="content">
-					<section>
-						{
-							tempProject.links.map(
-								( tLink ) =>
-								(
-									<a className="link" key={ tLink.url } href={ tLink.url } target="_blank">
-										<Button text={ tLink.name } icon={ tLink.icon }/>
-									</a>
-								)
-							)
-						}
-					</section>
-					<section id="media">
-						{
-							tempProject.video != null &&
-								<div id="video-wrapper">
-									<div id="video">
-										<iframe src={ tempProject.video } frameBorder="0" allow="encrypted-media" allowFullScreen title="video" aria-hidden="true"></iframe>
-									</div>
-								</div>
-						}
-						{
-							tempProject.images != null &&
-								tempProject.images.map(
-									( tImage ) =>
+					<div id="content-left">
+						<section>
+							{
+								tempProject.links.map(
+									( tLink ) =>
 									(
-										<a className="image" key={ tImage.url } href={ tImage.url } target="_blank">
-											<img src={ tImage.thumbnail } alt=""/>
+										<a className="link" key={ tLink.url } href={ tLink.url } target="_blank">
+											<Button text={ tLink.name } icon={ tLink.icon }/>
 										</a>
 									)
 								)
-						}
-					</section>
-					<section>
-						<Button text="Overview" icon="images/overview.svg"/>
-						<p>{ tempProject.description }</p>
-					</section>
-					<section>
-						<Button text="Tools" icon="images/tools.svg"/>
-						<ul>
-							{
-								tempProject.tools.map(
-									( tTool ) =>
-									(
-										<li className="tool" key={ tTool }>
-											{ tTool }
-										</li>
-									)
-								)
 							}
-						</ul>
-					</section>
-					{
-						tempProject.credits != null &&
-							<section>
-								<Button text="Credits" icon="images/credits.svg"/>
-								<ul>
-									{
-										tempProject.credits.map(
-											( tCredit ) =>
-											(
-												<li className="credit" key={ tCredit.name }>
-													<b>{ tCredit.name }:</b>
-													<span>{ tCredit.role }</span>
-												</li>
-											)
+						</section>
+						<section id="media">
+							{
+								tempProject.video != null &&
+									<div id="video-wrapper">
+										<div id="video">
+											<iframe src={ tempProject.video } frameBorder="0" allow="encrypted-media" allowFullScreen title="video" aria-hidden="true"></iframe>
+										</div>
+									</div>
+							}
+							{
+								tempProject.images != null &&
+									tempProject.images.map(
+										( tImage ) =>
+										(
+											<a className="image" key={ tImage.url } href={ tImage.url } target="_blank">
+												<img src={ tImage.thumbnail } alt=""/>
+											</a>
 										)
-									}
-								</ul>
-							</section>
-					}
+									)
+							}
+						</section>
+					</div>
+					<div id="content-right">
+						<section>
+							<Button text="Overview" icon="images/overview.svg"/>
+							<p>{ tempProject.description }</p>
+						</section>
+						<section>
+							<Button text="Tools" icon="images/tools.svg"/>
+							<ul>
+								{
+									tempProject.tools.map(
+										( tTool ) =>
+										(
+											<li className="tool" key={ tTool }>
+												{ tTool }
+											</li>
+										)
+									)
+								}
+							</ul>
+						</section>
+						{
+							tempProject.credits != null &&
+								<section>
+									<Button text="Credits" icon="images/credits.svg"/>
+									<ul>
+										{
+											tempProject.credits.map(
+												( tCredit ) =>
+												(
+													<li className="credit" key={ tCredit.name }>
+														<b>{ tCredit.name }:</b>
+														<span>{ tCredit.role }</span>
+													</li>
+												)
+											)
+										}
+									</ul>
+								</section>
+						}
+					</div>
 				</div>
 			</article>
 		);

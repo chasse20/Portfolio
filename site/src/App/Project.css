@@ -8,12 +8,12 @@ article, #top-bg, #bottom-bg, #video iframe
 	position: absolute;
 }
 
-article, #top-bg, #top-bg .overlay, #bottom-bg, #bottom-bg .overlay, #content, section, .link, #video-wrapper, #video iframe
+article, #top-bg, #top-bg .overlay, #bottom-bg, #bottom-bg .overlay, #content, #content-left, #content-right, .link, #video-wrapper, #video iframe
 {
 	width: inherit;
 }
 
-article, #content, #video-wrapper, article .image
+article, #content-left, #content-right, #video-wrapper, article .image
 {
 	box-sizing: border-box;
 }
@@ -99,11 +99,15 @@ article h2
 
 #content
 {
-	padding: 0 var( --spacing-medium );
 	padding-bottom: var( --spacing-huge );
 }
 
-#content > *:not(:first-child)
+#content-left, #content-right
+{
+	padding: 0 var( --spacing-medium );
+}
+
+#content-left > *:not(:first-child), #content-right > *:not(:first-child), #content-right
 {
 	margin-top: var( --spacing-huge );
 }
@@ -135,7 +139,7 @@ section > *:not(:first-child)
 	padding-bottom: 56.25%;
 }
 
-#video, article .image img
+section, #video, article .image img
 {
 	width: 100%;
 }
@@ -196,9 +200,68 @@ section > *:not(:first-child)
 	{
 		color: var( --link-color );
 	}
+	
+	#top-bg .overlay
+	{
+		background: -moz-linear-gradient( top, rgba( var(--bg-raw ),0 ) 200px, rgba( var(--bg-raw ), 0.5 ) 300px, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
+		background: -webkit-linear-gradient( top, rgba( var(--bg-raw ),0 ) 200px, rgba( var(--bg-raw ), 0.5 ) 300px, rgba( var(--bg-raw ),1 ) 100% ); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient( to bottom, rgba( var(--bg-raw ), 0 ) 200px, rgba( var(--bg-raw ), 0.5 ) 300px, rgba( var(--bg-raw ), 1 ) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	}
 
 	#bottom-bg
 	{
 		display: none;
+	}
+	
+	article header > *:not(:first-child)
+	{
+		margin-top: 0;
+	}
+}
+
+/* Desktop */
+@media only screen and ( min-width : 1000px )
+{	
+	#content
+	{
+		display: flex;
+		padding-bottom: 0;
+	}
+	
+	#top-bg
+	{
+		height: 100%;
+	}
+	
+	#content-left
+	{
+		float: left;
+		width: 30%;
+		padding-right: 0;
+	}
+	
+	#content #content-left > *
+	{
+		margin-top: 0;
+	}
+	
+	#content-right
+	{
+		float: right;
+		width: 70%;
+		flex-grow: 1;
+		margin-top: 0;
+		padding: 0 var(--spacing-huge);
+	}
+	
+	#media > *
+	{
+		margin-left: 0;
+		width: 100%;
+	}
+	
+	#content #media
+	{
+		margin-left: 0;
 	}
 }
