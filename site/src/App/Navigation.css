@@ -46,9 +46,9 @@ nav header,  #logo, #links
 	nav header
 	{
 		height: var( --navbar-size );
-		background-color: #2f3543;
+		background-color: #000000;
 		align-items: center;
-		padding: 0 var( --spacing-small );
+		padding: 0 var( --spacing-medium );
 		justify-content: space-between;
 	}
 	

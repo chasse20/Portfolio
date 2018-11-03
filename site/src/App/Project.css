@@ -125,7 +125,6 @@ section > *:not(:first-child)
 
 #video-wrapper, article .image
 {
-	border: 1px solid var( --button-color );
 	box-shadow: var( --box-shadow );
 }
 
