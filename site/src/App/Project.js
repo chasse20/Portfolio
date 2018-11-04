@@ -24,7 +24,6 @@ export default class Project extends Component
 
 		if ( tempProject.backgroundPosition != null )
 		{
-			console.log( "??" );
 			tempBackgroundStyle.backgroundPosition = tempProject.backgroundPosition;
 		}
 

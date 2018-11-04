@@ -35,7 +35,6 @@ export default class App extends Component
 						}
 					}/>
 				</main>
-				<footer/>
 			</React.Fragment>
 		);
 	}

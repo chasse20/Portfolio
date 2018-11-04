@@ -46,7 +46,7 @@ nav header,  #logo, #links
 	nav header
 	{
 		height: var( --navbar-size );
-		background-color: #000000;
+		background-color: var( --navbar-bg );
 		align-items: center;
 		padding: 0 var( --spacing-medium );
 		justify-content: space-between;
@@ -129,9 +129,10 @@ nav header,  #logo, #links
 	{
 		height: var( --navbar-size );
 		display: flex;
-		padding: 0 var( --spacing-medium );
 		box-sizing: border-box;
 		justify-content: space-between;
+		background-color: var( --navbar-bg );
+		padding: 0 var( --spacing-large );
 	}
 	
 	nav h1

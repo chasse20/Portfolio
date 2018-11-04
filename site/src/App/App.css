@@ -3,11 +3,13 @@
 	--bg-raw: 68, 68, 68;
 	--bg: rgb( var( --bg-raw ) );
 	--navbar-size: 50px;
+	--navbar-bg: #000000;
 	--link-color: #ffffff;
 	--link-color-hover: #00aeff;
 	--button-color: #148bca;
 	--button-color-dark: #313131;
 	--box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.35 );
+	--spacing-tiny: 2px;
 	--spacing-small: 10px;
 	--spacing-medium: 16px;
 	--spacing-large: 30px;
@@ -86,11 +88,6 @@ main
 	{
 		margin-top: var( --navbar-size );
 	}
-	
-	footer
-	{
-		display: none;
-	}
 }
 
 /* Table */
@@ -99,6 +96,12 @@ main
 	:root
 	{
 		--navbar-size: 100px;
+	}
+	
+	html, body
+	{
+		height: 100%;
+		width: 100%;
 	}
 	
 	body
@@ -114,28 +117,21 @@ main
 	{
 		color: var( --link-color-hover );
 	}
-	
-	#root
-	{
-		margin-left: auto;
-		margin-right: auto;
-	}
-	
+
 	main
 	{
-		padding: 0 var( --spacing-medium );
 		box-sizing: border-box;
-	}
-	
-	footer
-	{
-		height: var( --navbar-size );
 	}
 }
 
 /* Desktop */
 @media only screen and ( min-width : 1000px )
 {
+	body
+	{
+		overflow-y: scroll;
+	}
+	
 	#root
 	{
 		margin-left: auto;

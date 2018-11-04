@@ -105,17 +105,20 @@ export default class Projects extends Component
 	
 	onProjectClick( tEvent, tProjectKey )
 	{
-		tEvent.stopPropagation();
-		if ( !this.props.isTouch || this.state.selectedProject === tProjectKey )
+		if ( !this._isMobile )
 		{
-			this.setState( { selectedProject: null } );
-			window.removeEventListener( "click", this._onPageClick );
-			this.props.history.push( tProjectKey );
-		}
-		else
-		{
-			this.setState( { selectedProject: tProjectKey } );
-			window.addEventListener( "click", this._onPageClick );
+			tEvent.stopPropagation();
+			if ( !this.props.isTouch || this.state.selectedProject === tProjectKey )
+			{
+				this.setState( { selectedProject: null } );
+				window.removeEventListener( "click", this._onPageClick );
+				this.props.history.push( tProjectKey );
+			}
+			else
+			{
+				this.setState( { selectedProject: tProjectKey } );
+				window.addEventListener( "click", this._onPageClick );
+			}
 		}
 	}
 	
