@@ -12,6 +12,8 @@
 {
 	text-align: center;
 	padding: var( --spacing-small ) 0;
+	position: relative;
+	z-index: 1;
 }
 
 .button .bar
@@ -19,7 +21,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -1;
 }
 
 .button .bar, .button .icon
