@@ -82,6 +82,7 @@ nav header,  #logo, #links
 	{
 		z-index: -1;
 		transform: translateY( -100% );
+		transition: transform 0.3s ease;
 		padding: 18px 10% 14px 10%;
 		background: var( --button-color );
 		text-align: center;
