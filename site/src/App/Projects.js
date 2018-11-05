@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import $ from "jquery"; 
 import "./Projects.css";
 
 export default class Projects extends Component
@@ -14,8 +15,10 @@ export default class Projects extends Component
 			selectedProject: null
 		};
 		
-		this._element = null;
+		this._scrollElement = null;
 		this._swipeStart = 0;
+		this._isScrolling = false;
+		this._scrollTimeout = null;
 		this._isMobile = false;
 		this._onPageClick = ( tEvent ) =>
 		{
@@ -51,8 +54,28 @@ export default class Projects extends Component
 		return tNextState.projectKeys !== this.state.projectKeys || tNextProps.isOpen !== this.props.isOpen || tNextState.selectedProject !== this.state.selectedProject;
 	}
 
+	componentWillUnmount()
+	{
+		this.window.clearTimeout( this._scrollTimeout );
+	}
+
 	onScroll( tDirection )
 	{
+		if ( !this._isAnimating )
+		{
+			this._isAnimating = true;
+			this._scrollElement.classList.add( "sliding" );
+			this._scrollElement.style.transform = "translateX(" + -tDirection * 100 + "vw)";
+			this._scrollTimeout = window.setTimeout( this.onScrollFinish.bind( this, tDirection ), 200 );
+		}
+	}
+
+	onScrollFinish( tDirection )
+	{
+		this._isAnimating = false;
+
+		// Swap elements
+		console.log( this.state )
 		const tempArray = [];
 		var tempLastIndex = this.state.projectKeys.length;
 		tempArray.length = tempLastIndex;
@@ -75,6 +98,10 @@ export default class Projects extends Component
 			tempArray[ tempLastIndex ] = this.state.projectKeys[0];
 		}
 		
+		this._scrollElement.classList.remove( "sliding" );
+		this._scrollElement.style.transform = "translateX(0)";
+
+		console.log( this );
 		this.setState( { projectKeys: tempArray } );
 	}
 	
@@ -132,7 +159,7 @@ export default class Projects extends Component
 	{
 		return (
 			<div id="projects" className={ this.props.isOpen ? "open" : null } onTouchStart={ ( tEvent ) => { this.onProjectSwipeStart( tEvent ); } } onTouchEnd={ ( tEvent ) => { this.onProjectSwipeEnd( tEvent ); } }>
-				<div id="container">
+				<div id="container" ref={ ( tElement ) => { this._scrollElement = tElement; } }>
 					{
 						this.state.projectKeys.map(
 							( tProjectKey ) =>

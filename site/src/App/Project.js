@@ -46,7 +46,7 @@ export default class Project extends Component
 								tempProject.links.map(
 									( tLink ) =>
 									(
-										<a className="link" key={ tLink.url } href={ tLink.url } target="_blank">
+										<a className="link" key={ tLink.url } href={ tLink.url } target="_blank" rel="noopener noreferrer">
 											<Button text={ tLink.name } icon={ tLink.icon }/>
 										</a>
 									)
@@ -67,7 +67,7 @@ export default class Project extends Component
 									tempProject.images.map(
 										( tImage ) =>
 										(
-											<a className="image" key={ tImage.url } href={ tImage.url } target="_blank">
+											<a className="image" key={ tImage.url } href={ tImage.url } target="_blank" rel="noopener noreferrer">
 												<img src={ tImage.thumbnail } alt=""/>
 											</a>
 										)

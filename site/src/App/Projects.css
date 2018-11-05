@@ -40,6 +40,12 @@
 		pointer-events: auto;
 	}
 
+	#container.sliding
+	{
+		transition: transform 0.2s ease-out;
+		transition-property: "transform";
+	}
+
 	#container, .project-tile .image-container
 	{
 		height: 100%;
