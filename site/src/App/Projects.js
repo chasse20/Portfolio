@@ -63,6 +63,11 @@ export default class Projects extends Component
 	{
 		if ( !this._isAnimating )
 		{
+			if ( tDirection < 0 )
+			{
+				// swap last to first, set translateX from 100vw to 0
+			}
+
 			this._isAnimating = true;
 			this._scrollElement.classList.add( "sliding" );
 			this._scrollElement.style.transform = "translateX(" + -tDirection * 100 + "vw)";
