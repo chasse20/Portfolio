@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import $ from "jquery"; 
 import "./Projects.css";
 
 export default class Projects extends Component
@@ -9,9 +8,11 @@ export default class Projects extends Component
 	{
 		super( tProps );
 		
+		this._isMobile = this.isMobile;
+		
 		this.state =
 		{
-			projectKeys: Projects.GenerateKeys( this.props.projects ),
+			projectKeys: Projects.GenerateKeys( this.props.projects, this._isMobile ),
 			selectedProject: null
 		};
 		
@@ -19,14 +20,13 @@ export default class Projects extends Component
 		this._swipeStart = 0;
 		this._isScrolling = false;
 		this._scrollTimeout = null;
-		this._isMobile = false;
 		this._onPageClick = ( tEvent ) =>
 		{
 			this.onPageClick( tEvent );
 		};
 	}
 	
-	static GenerateKeys( tProjects )
+	static GenerateKeys( tProjects, tIsMobile )
 	{
 		if ( tProjects != null )
 		{
@@ -34,6 +34,11 @@ export default class Projects extends Component
 			for ( let tempKey in tProjects )
 			{
 				tempProjects.push( tempKey );
+			}
+			
+			if ( tIsMobile )
+			{
+				tempProjects.unshift( tempProjects.pop() );
 			}
 			
 			return tempProjects;
@@ -46,7 +51,7 @@ export default class Projects extends Component
 	{
 		if ( tNextProps.projects !== this.props.projects )
 		{
-			this.setState( { projectKeys: Projects.GenerateKeys( this.props.projects ) } );
+			this.setState( { projectKeys: Projects.GenerateKeys( this.props.projects, this._isMobile ) } );
 			
 			return true;
 		}
@@ -57,6 +62,11 @@ export default class Projects extends Component
 	componentWillUnmount()
 	{
 		this.window.clearTimeout( this._scrollTimeout );
+	}
+	
+	get isMobile()
+	{
+		return window.getComputedStyle( document.documentElement ).getPropertyValue( "--mobile" ).indexOf( "1" ) >= 0;
 	}
 
 	onScroll( tDirection )
@@ -69,9 +79,8 @@ export default class Projects extends Component
 			}
 
 			this._isAnimating = true;
-			this._scrollElement.classList.add( "sliding" );
-			this._scrollElement.style.transform = "translateX(" + -tDirection * 100 + "vw)";
-			this._scrollTimeout = window.setTimeout( this.onScrollFinish.bind( this, tDirection ), 200 );
+			this._scrollElement.classList.add( tDirection > 0 ? "sliding-right" : "sliding-left" );
+			this._scrollTimeout = window.setTimeout( this.onScrollFinish.bind( this, tDirection ), 400 );
 		}
 	}
 
@@ -93,6 +102,8 @@ export default class Projects extends Component
 				tempArray[i] = this.state.projectKeys[ i - 1 ];
 			}
 			tempArray[0] = this.state.projectKeys[ tempLastIndex  ];
+			
+			this._scrollElement.classList.remove( "sliding-left" );
 		}
 		else if ( tDirection > 0 )
 		{
@@ -101,18 +112,16 @@ export default class Projects extends Component
 				tempArray[i] = this.state.projectKeys[ i + 1 ];
 			}
 			tempArray[ tempLastIndex ] = this.state.projectKeys[0];
+			
+			this._scrollElement.classList.remove( "sliding-right" );
 		}
-		
-		this._scrollElement.classList.remove( "sliding" );
-		this._scrollElement.style.transform = "translateX(0)";
 
-		console.log( this );
 		this.setState( { projectKeys: tempArray } );
 	}
 	
 	onProjectSwipeStart( tEvent )
 	{
-		this._isMobile = window.getComputedStyle( document.documentElement ).getPropertyValue( "--mobile" ).indexOf( "1" ) >= 0; // a hack to only allow mobile resolutions to swipe
+		this._isMobile = this.isMobile; // a hack to only allow mobile resolutions to swipe
 		if ( this._isMobile )
 		{
 			this._swipeStart = tEvent.touches[0].clientX;
@@ -175,7 +184,6 @@ export default class Projects extends Component
 									<div className={ "project-tile" + ( this.state.selectedProject === tProjectKey ? " selected" : "" ) } key={ tProjectKey } onClick={ ( tEvent ) => { this.onProjectClick( tEvent, tProjectKey ); } }>
 										<div className="image-container">
 											<div className="image" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }/>
-											<div className="image-outline"/>
 										</div>
 										<div className="info">
 											<h1>{ tempProject.name }</h1>

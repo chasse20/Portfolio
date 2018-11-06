@@ -39,11 +39,26 @@
 		opacity: 1;
 		pointer-events: auto;
 	}
-
-	#container.sliding
+	
+	#container
 	{
-		transition: transform 0.2s ease-out;
-		transition-property: "transform";
+		transform: translateX( -100vw );
+	}
+	
+	#container.sliding-right, #container.sliding-left
+	{
+		transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+		transition-property: transform;
+	}
+
+	#container.sliding-right
+	{
+		transform: translateX( -200vw );
+	}
+	
+	#container.sliding-left
+	{
+		transform: translateX( 0 );
 	}
 
 	#container, .project-tile .image-container
@@ -74,7 +89,7 @@
 		height: inherit;
 	}
 	
-	.project-tile .image-outline, .project-tile .arrow
+	.project-tile .arrow
 	{
 		display: none;
 	}
@@ -181,6 +196,8 @@
 	
 	.project-tile .image-container, .project-tile .info
 	{
+		transition-property: height;
+		transition: height 0.3s ease;
 		position: relative;
 	}
 	
@@ -198,26 +215,16 @@
 	{
 		height: 300px;
 		background-position: center center;
+		transition: transform 0.5s ease;
+		transition-property: transform;
+		transform: scale( 1 );
 	}
 	
 	.project-tile:hover .image, .project-tile.selected .image
 	{
-		background-size: auto 150%;
+		transform: scale( 1.25 );
 	}
-	
-	.project-tile .image-outline
-	{
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-	
-	.project-tile .image-outline, .project-tile.selected .arrow
-	{
-		position: absolute;
-		top: 0;
-	}
-	
+
 	.project-tile .info
 	{
 		height: calc( 1.3em + var( --spacing-small ) + var( --spacing-small ) );
@@ -240,6 +247,8 @@
 	.project-tile h2
 	{
 		margin-top: calc( -1 * var( --spacing-small ) );
+		transition-property: opacity;
+		transition: opacity 0.3s ease;
 		opacity: 0;
 	}
 	
@@ -250,6 +259,8 @@
 	
 	.project-tile.selected .arrow
 	{
+		position: absolute;
+		top: 0;
 		display: flex;
 		transform: scaleX( -1 );
 		height: inherit;

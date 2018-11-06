@@ -141,6 +141,12 @@ nav header,  #logo, #links
 		font-size: 1em;
 	}
 	
+	nav a
+	{
+		transition-property: color;
+		transition: color 0.2s;
+	}
+	
 	nav header,  #links, #links a
 	{
 		display: inline-flex;
@@ -186,6 +192,12 @@ nav header,  #logo, #links
 	#links a > *:not(:first-child)
 	{
 		margin-left: var( --spacing-small );
+	}
+	
+	#links a svg
+	{
+		transition-property: fill;
+		transition: fill 0.2s;
 	}
 	
 	#links a:hover svg
