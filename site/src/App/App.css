@@ -121,6 +121,7 @@ main
 	main
 	{
 		box-sizing: border-box;
+		position: relative;
 	}
 }
 

@@ -58,7 +58,7 @@ article h2
 	height: 100%;
 }
 
- #top-bg, #video iframe
+ article, #top-bg, #video iframe
 {
 	position: absolute;
 }
@@ -117,7 +117,7 @@ section > *:not(:first-child)
 /* Mobile */
 @media only screen and ( max-width: 767px )
 {
-	article, #bottom-bg
+	#bottom-bg
 	{
 		position: absolute;
 	}
@@ -198,7 +198,17 @@ section > *:not(:first-child)
 {
 	article
 	{
-		position: relative;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		transition-property: opacity;
+		pointer-events: none;
+	}
+	
+	article.open
+	{
+		opacity: 1;
+		pointer-events: auto;
+		transition-delay: 0.2s;
 	}
 
 	.link:hover

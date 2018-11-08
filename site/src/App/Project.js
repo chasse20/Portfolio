@@ -4,14 +4,26 @@ import "./Project.css";
 
 export default class Project extends Component
 {
+	constructor( tProps )
+	{
+		super( tProps );
+		
+		this._activeProject = tProps.project;
+	}
+	
 	shouldComponentUpdate( tNextProps, tNextState )
 	{
+		if ( tNextProps.project != null )
+		{
+			this._activeProject = tNextProps.project;
+		}
+		
 		return tNextProps.project !== this.props.project;
 	}
 
 	render()
 	{
-		const tempProject = this.props.project;
+		const tempProject = this._activeProject;
 		if ( tempProject == null )
 		{
 			return null;
@@ -28,7 +40,7 @@ export default class Project extends Component
 		}
 
 		return (
-			<article>
+			<article className={ this.props.project == null ? null : "open" }>
 				<div id="bottom-bg">
 					<div className="overlay"/>
 				</div>

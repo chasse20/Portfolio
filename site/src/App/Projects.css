@@ -1,3 +1,16 @@
+#projects
+{
+	position: absolute;
+	left: 0;
+	width: inherit;
+	pointer-events: none;
+}
+
+#projects.open
+{
+	pointer-events: auto;
+}
+
 .project-tile .image
 {
 	background-size: cover;
@@ -14,22 +27,16 @@
 	#projects
 	{
 		height: calc( 100% - var( --navbar-size ) );
-		pointer-events: none;
 		opacity: 0;
 		overflow: hidden;
 	}
-	
-	#projects, .project-tile .image-container, .project-tile .info
-	{
-		width: inherit;
-	}
 
-	#projects, #container, .project-tile .image-container, .control
+	#container, .project-tile .image-container, .control
 	{
 		position: absolute;
 	}
 
-	#projects, #container, .project-tile .image-container, #left-control
+	#container, .project-tile .image-container, #left-control
 	{
 		left: 0;
 	}
@@ -37,7 +44,6 @@
 	#projects.open
 	{
 		opacity: 1;
-		pointer-events: auto;
 	}
 	
 	#container
@@ -81,6 +87,11 @@
 		position: relative;
 		display: inline-flex;
 		width: 100vw;
+	}
+	
+	.project-tile .image-container, .project-tile .info
+	{
+		width: inherit;
 	}
 	
 	.project-tile .image
@@ -160,16 +171,19 @@
 	#projects
 	{
 		padding: var( --spacing-tiny );
-	}
-	
-	#projects, #left-control, #right-control, .more
-	{
-		display: none;
+		transition: opacity 0.3s ease;
+		opacity: 0;
 	}
 	
 	#projects.open
 	{
-		display: block;
+		opacity: 1;
+		transition-delay: 0.2s;
+	}
+	
+	#left-control, #right-control, .more
+	{
+		display: none;
 	}
 	
 	#container
@@ -182,6 +196,7 @@
 	.project-tile
 	{
 		cursor: pointer;
+		transition: transform 0.5s ease;
 	}
 	
 	.project-tile:hover, .project-tile.selected
@@ -189,7 +204,7 @@
 		box-shadow: var( --box-shadow );
 	}
 	
-	.project-tile .image-container
+	.project-tile .image-container, .project-tile .image
 	{
 		height: 250px;
 	}
@@ -213,7 +228,6 @@
 	
 	.project-tile .image
 	{
-		height: 300px;
 		background-position: center center;
 		transition: transform 0.5s ease;
 		transition-property: transform;
