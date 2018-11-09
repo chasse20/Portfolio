@@ -218,7 +218,7 @@ section > *:not(:first-child)
 	
 	#top-bg
 	{
-		height: 80%;
+		height: 80vh;
 		min-height: 400px;
 		max-height: 100vh;
 	}

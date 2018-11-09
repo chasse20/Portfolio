@@ -4,6 +4,7 @@
 	left: 0;
 	width: inherit;
 	pointer-events: none;
+	box-sizing: border-box;
 }
 
 #projects.open
