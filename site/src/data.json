@@ -91,7 +91,7 @@
 		{
 			"name": "Events Plus",
 			"platform": "Unity Plugin",
-			"tileImage": "images/EP.png",
+			"tileImage": "images/EP.jpg",
 			"tools":
 			[
 				"Unity3D",

@@ -28,10 +28,20 @@
 	#projects
 	{
 		height: calc( 100% - var( --navbar-size ) );
-		opacity: 0;
+		display: none;
 		overflow: hidden;
 	}
-
+	
+	#projects.open
+	{
+		display: block;
+	}
+	
+	#container
+	{
+		transform: translateX( -100vw );
+	}
+	
 	#container, .project-tile .image-container, .control
 	{
 		position: absolute;
@@ -42,15 +52,6 @@
 		left: 0;
 	}
 
-	#projects.open
-	{
-		opacity: 1;
-	}
-	
-	#container
-	{
-		transform: translateX( -100vw );
-	}
 	
 	#container.sliding-right, #container.sliding-left
 	{

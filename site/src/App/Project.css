@@ -117,6 +117,16 @@ section > *:not(:first-child)
 /* Mobile */
 @media only screen and ( max-width: 767px )
 {
+	article
+	{
+		display: none;
+	}
+	
+	article.open
+	{
+		display: block;
+	}
+	
 	#bottom-bg
 	{
 		position: absolute;
@@ -163,14 +173,17 @@ section > *:not(:first-child)
 	}
 }
 
-/* Mobile wide */
-@media only screen and ( min-width: 600px )
+@media only screen and ( max-width: 767px ) and ( orientation: landscape )
 {
 	#top-bg
 	{
 		height: 150vh;
 	}
-	
+}
+
+/* Wide */
+@media only screen and ( min-width: 600px )
+{
 	#bottom-bg
 	{
 		background-size: 150% auto;
@@ -218,8 +231,8 @@ section > *:not(:first-child)
 	
 	#top-bg
 	{
-		height: 80vh;
-		min-height: 400px;
+		height: 60vh;
+		min-height: 768px;
 		max-height: 100vh;
 	}
 	
