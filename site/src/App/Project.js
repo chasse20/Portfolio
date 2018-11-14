@@ -35,8 +35,8 @@ export default class Project extends Component
 					<div className="overlay"/>
 				</div>
 				<div className="top-bg">
-					<div className="mobile-bg" style={ backgroundImage: "url(" + tempProject.mobileImage + ")" }/>
-					<div className="full-bg" style={ backgroundImage: "url(" + tempProject.image + ")" }/>
+					<div className="mobile" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
+					<div className="full" style={ { backgroundImage: "url(" + tempProject.image + ")" } }/>
 					<div className="overlay"/>
 				</div>
 				<header>

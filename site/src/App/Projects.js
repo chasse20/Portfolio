@@ -172,7 +172,7 @@ export default class Projects extends Component
 	render()
 	{
 		return (
-			<div className="projects" className={ this.props.isOpen ? "open" : null } onTouchStart={ ( tEvent ) => { this.onProjectSwipeStart( tEvent ); } } onTouchEnd={ ( tEvent ) => { this.onProjectSwipeEnd( tEvent ); } }>
+			<div className={ "projects" + ( this.props.isOpen ? " open" : "" ) } onTouchStart={ ( tEvent ) => { this.onProjectSwipeStart( tEvent ); } } onTouchEnd={ ( tEvent ) => { this.onProjectSwipeEnd( tEvent ); } }>
 				<div className="container" ref={ ( tElement ) => { this._scrollElement = tElement; } }>
 					{
 						this.state.projectKeys.map(
@@ -182,7 +182,7 @@ export default class Projects extends Component
 								
 								return (
 									<div className={ "project-tile" + ( this.state.selectedProject === tProjectKey ? " selected" : "" ) } key={ tProjectKey } onClick={ ( tEvent ) => { this.onProjectClick( tEvent, tProjectKey ); } }>
-										<div className="image-container">
+										<div className="bg">
 											<div className="mobile-tile" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
 											<div className="wide-tile" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
 											<div className="button-tile" style={ { backgroundImage: "url(" + tempProject.buttonImage + ")" } }/>
@@ -203,10 +203,10 @@ export default class Projects extends Component
 						)
 					}
 				</div>
-				<button className="control" className="left-control" onClick={ () => { this.onScroll( -1 ); } }>
+				<button className="left-control" onClick={ () => { this.onScroll( -1 ); } }>
 					<img src="images/arrow.svg" alt="left arrow"/>
 				</button>
-				<button className="control" className="right-control" onClick={ () => { this.onScroll( 1 ); } }>
+				<button className="right-control" onClick={ () => { this.onScroll( 1 ); } }>
 					<img src="images/arrow.svg" alt="right arrow"/>
 				</button>
 			</div>

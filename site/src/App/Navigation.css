@@ -1,4 +1,4 @@
-nav header,  .logo, .links
+nav header, .logo, .links
 {
 	align-items: center;
 }
@@ -23,7 +23,7 @@ nav header,  .logo, .links
 		z-index: 999;
 	}
 	
-	nav header,  .links
+	nav header, .links
 	{
 		display: flex;
 	}
