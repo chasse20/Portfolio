@@ -29,30 +29,22 @@ export default class Project extends Component
 			return null;
 		}
 
-		const tempBackgroundStyle =
-		{
-			backgroundImage: "url(" + tempProject.tileImage + ")"
-		};
-
-		if ( tempProject.backgroundPosition != null )
-		{
-			tempBackgroundStyle.backgroundPosition = tempProject.backgroundPosition;
-		}
-
 		return (
 			<article className={ this.props.project == null ? null : "open" }>
-				<div id="bottom-bg">
+				<div className="bottom-bg">
 					<div className="overlay"/>
 				</div>
-				<div id="top-bg" style={ tempBackgroundStyle }>
+				<div className="top-bg">
+					<div className="mobile-bg" style={ backgroundImage: "url(" + tempProject.mobileImage + ")" }/>
+					<div className="full-bg" style={ backgroundImage: "url(" + tempProject.image + ")" }/>
 					<div className="overlay"/>
 				</div>
 				<header>
 					<h1>{ tempProject.name }</h1>
 					<h2>{ tempProject.platform }</h2>
 				</header>
-				<div id="content">
-					<div id="content-left">
+				<div className="content">
+					<div className="content-left">
 						<section>
 							{
 								tempProject.links.map(
@@ -65,11 +57,11 @@ export default class Project extends Component
 								)
 							}
 						</section>
-						<section id="media">
+						<section className="media">
 							{
 								tempProject.video != null &&
-									<div id="video-wrapper">
-										<div id="video">
+									<div className="video-wrapper">
+										<div className="video">
 											<iframe src={ tempProject.video } frameBorder="0" allow="encrypted-media" allowFullScreen title="video" aria-hidden="true"></iframe>
 										</div>
 									</div>
@@ -87,7 +79,7 @@ export default class Project extends Component
 							}
 						</section>
 					</div>
-					<div id="content-right">
+					<div className="content-right">
 						<section>
 							<Button text="Overview" icon="images/overview.svg"/>
 							<p>{ tempProject.description }</p>

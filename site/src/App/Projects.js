@@ -172,8 +172,8 @@ export default class Projects extends Component
 	render()
 	{
 		return (
-			<div id="projects" className={ this.props.isOpen ? "open" : null } onTouchStart={ ( tEvent ) => { this.onProjectSwipeStart( tEvent ); } } onTouchEnd={ ( tEvent ) => { this.onProjectSwipeEnd( tEvent ); } }>
-				<div id="container" ref={ ( tElement ) => { this._scrollElement = tElement; } }>
+			<div className="projects" className={ this.props.isOpen ? "open" : null } onTouchStart={ ( tEvent ) => { this.onProjectSwipeStart( tEvent ); } } onTouchEnd={ ( tEvent ) => { this.onProjectSwipeEnd( tEvent ); } }>
+				<div className="container" ref={ ( tElement ) => { this._scrollElement = tElement; } }>
 					{
 						this.state.projectKeys.map(
 							( tProjectKey ) =>
@@ -183,7 +183,9 @@ export default class Projects extends Component
 								return (
 									<div className={ "project-tile" + ( this.state.selectedProject === tProjectKey ? " selected" : "" ) } key={ tProjectKey } onClick={ ( tEvent ) => { this.onProjectClick( tEvent, tProjectKey ); } }>
 										<div className="image-container">
-											<div className="image" style={ { backgroundImage: "url(" + tempProject.tileImage + ")" } }/>
+											<div className="mobile-tile" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
+											<div className="wide-tile" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
+											<div className="button-tile" style={ { backgroundImage: "url(" + tempProject.buttonImage + ")" } }/>
 										</div>
 										<div className="info">
 											<h1>{ tempProject.name }</h1>
@@ -201,10 +203,10 @@ export default class Projects extends Component
 						)
 					}
 				</div>
-				<button className="control" id="left-control" onClick={ () => { this.onScroll( -1 ); } }>
+				<button className="control" className="left-control" onClick={ () => { this.onScroll( -1 ); } }>
 					<img src="images/arrow.svg" alt="left arrow"/>
 				</button>
-				<button className="control" id="right-control" onClick={ () => { this.onScroll( 1 ); } }>
+				<button className="control" className="right-control" onClick={ () => { this.onScroll( 1 ); } }>
 					<img src="images/arrow.svg" alt="right arrow"/>
 				</button>
 			</div>

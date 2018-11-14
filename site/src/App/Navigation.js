@@ -29,16 +29,16 @@ export default class Navigation extends Component
 		return (
 			<nav>
 				<header>
-					<Link to="/" id="logo">
+					<Link to="/" className="logo">
 						<img src="images/logo.svg" alt="logo"/>
 						<h1>Chris Hassebrook</h1>
 					</Link>
-					<button id="menu-toggle" className={ this.state.isOpen ? "open" : null } onClick={ () => { this.onMenuToggle(); } }>
-						<img src="images/menuClosed.svg" id="menu-toggle-closed" alt="close navigation"/>
-						<img src="images/menuOpened.svg" id="menu-toggle-opened" alt="open navigation"/>
+					<button className="menu-toggle" className={ this.state.isOpen ? "open" : null } onClick={ () => { this.onMenuToggle(); } }>
+						<img src="images/menuClosed.svg" className="menu-toggle-closed" alt="close navigation"/>
+						<img src="images/menuOpened.svg" className="menu-toggle-opened" alt="open navigation"/>
 					</button>
 				</header>
-				<div id="links" className={ this.state.isOpen ? "open" : null }>
+				<div className="links" className={ this.state.isOpen ? "open" : null }>
 					<a href="Resume.pdf" target="_blank">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550.801 550.801">
 							<g>

@@ -1,14 +1,14 @@
-nav header,  #logo, #links
+nav header,  .logo, .links
 {
 	align-items: center;
 }
 
-#logo
+.logo
 {
 	display: inline-flex;
 }
 
-#links svg
+.links svg
 {
 	fill:  var( --link-color );
 }
@@ -23,17 +23,17 @@ nav header,  #logo, #links
 		z-index: 999;
 	}
 	
-	nav header,  #links
+	nav header,  .links
 	{
 		display: flex;
 	}
 
-	nav, nav header, #menu-toggle-closed, #menu-toggle-opened
+	nav, nav header, .menu-toggle-closed, .menu-toggle-opened
 	{
 		top: 0;
 	}
 
-	nav, nav header, #links, #menu-toggle-closed, #menu-toggle-opened
+	nav, nav header, .links, .menu-toggle-closed, .menu-toggle-opened
 	{
 		left: 0;
 	}
@@ -52,33 +52,33 @@ nav header,  #logo, #links
 		justify-content: space-between;
 	}
 	
-	nav header, #links
+	nav header, .links
 	{
 		box-sizing: border-box;
 	}
 	
-	nav header, #links
+	nav header, .links
 	{
 		width: inherit;
 	}
 
-	nav header, #links, #menu-toggle-closed, #menu-toggle-opened
+	nav header, .links, .menu-toggle-closed, .menu-toggle-opened
 	{
 		position: absolute;
 	}
 	
-	#logo h1
+	.logo h1
 	{
 		margin-left: var( --spacing-small );
 	}
 	
-	#logo img
+	.logo img
 	{
 		height: 30px;
 		width: 30px;
 	}
 
-	#links
+	.links
 	{
 		z-index: -1;
 		transform: translateY( -100% );
@@ -89,35 +89,35 @@ nav header,  #logo, #links
 		justify-content: space-between;
 	}
 
-	#links.open
+	.links.open
 	{
 		transform: translateY( var( --navbar-size ) );
 	}
 	
-	#links svg
+	.links svg
 	{
 		height: 50px;
 		width: 50px;
 	}
 
-	#menu-toggle
+	.menu-toggle
 	{
 		height: 30px;
 		width: 20px;
 		position: relative;
 	}
 
-	#menu-toggle-closed, #menu-toggle-opened
+	.menu-toggle-closed, .menu-toggle-opened
 	{
 		height: inherit;
 	}
 
-	#menu-toggle-closed, .open #menu-toggle-opened
+	.menu-toggle-closed, .open .menu-toggle-opened
 	{
 		opacity: 1;
 	}
 
-	#menu-toggle-opened, .open #menu-toggle-closed
+	.menu-toggle-opened, .open .menu-toggle-closed
 	{
 		opacity: 0;
 	}
@@ -147,60 +147,60 @@ nav header,  #logo, #links
 		transition: color 0.2s;
 	}
 	
-	nav header,  #links, #links a
+	nav header,  .links, .links a
 	{
 		display: inline-flex;
 	}
 	
-	#logo h1
+	.logo h1
 	{
 		margin-left: var( --spacing-medium );
 	}
 	
-	#logo img
+	.logo img
 	{
 		height: 50px;
 		width: 50px;
 	}
 	
-	#menu-toggle
+	.menu-toggle
 	{
 		display: none;
 	}
 	
-	#links svg
+	.links svg
 	{
 		height: 40px;
 		width: 40px;
 	}
 	
-	#links h2
+	.links h2
 	{
 		text-transform: lowercase;
 	}
 	
-	#links > *:not(:first-child)
+	.links > *:not(:first-child)
 	{
 		margin-left: var( --spacing-large );
 	}
 	
-	#links a
+	.links a
 	{
 		align-items: center;
 	}
 	
-	#links a > *:not(:first-child)
+	.links a > *:not(:first-child)
 	{
 		margin-left: var( --spacing-small );
 	}
 	
-	#links a svg
+	.links a svg
 	{
 		transition-property: fill;
 		transition: fill 0.2s;
 	}
 	
-	#links a:hover svg
+	.links a:hover svg
 	{
 		fill: var( --link-color-hover );
 	}

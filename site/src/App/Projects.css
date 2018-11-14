@@ -1,4 +1,4 @@
-#projects
+.projects
 {
 	position: absolute;
 	left: 0;
@@ -7,7 +7,7 @@
 	box-sizing: border-box;
 }
 
-#projects.open
+.projects.open
 {
 	pointer-events: auto;
 }
@@ -25,61 +25,61 @@
 /* Mobile */
 @media only screen and ( max-width: 767px )
 {
-	#projects
+	.projects
 	{
 		height: calc( 100% - var( --navbar-size ) );
 		display: none;
 		overflow: hidden;
 	}
 	
-	#projects.open
+	.projects.open
 	{
 		display: block;
 	}
 	
-	#container
+	.container
 	{
 		transform: translateX( -100vw );
 	}
 	
-	#container, .project-tile .image-container, .control
+	.container, .project-tile .image-container, .control
 	{
 		position: absolute;
 	}
 
-	#container, .project-tile .image-container, #left-control
+	.container, .project-tile .image-container, .left-control
 	{
 		left: 0;
 	}
 
 	
-	#container.sliding-right, #container.sliding-left
+	.container.sliding-right, .container.sliding-left
 	{
 		transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 		transition-property: transform;
 	}
 
-	#container.sliding-right
+	.container.sliding-right
 	{
 		transform: translateX( -200vw );
 	}
 	
-	#container.sliding-left
+	.container.sliding-left
 	{
 		transform: translateX( 0 );
 	}
 
-	#container, .project-tile .image-container
+	.container, .project-tile .image-container
 	{
 		height: 100%;
 	}
 
-	#container, .project-tile .info
+	.container, .project-tile .info
 	{
 		display: flex;
 	}
 
-	#container, .project-tile .image-container
+	.container, .project-tile .image-container
 	{
 		top: 0;
 	}
@@ -160,7 +160,7 @@
 		height: 50px;
 	}
 
-	#right-control
+	.right-control
 	{
 		right: 0;
 		transform: scaleX( -1 );
@@ -170,25 +170,25 @@
 /* Tablet */
 @media only screen and ( min-width : 768px )
 {
-	#projects
+	.projects
 	{
 		padding: var( --spacing-tiny );
 		transition: opacity 0.3s ease;
 		opacity: 0;
 	}
 	
-	#projects.open
+	.projects.open
 	{
 		opacity: 1;
 		transition-delay: 0.2s;
 	}
 	
-	#left-control, #right-control, .more
+	.left-control, .right-control, .more
 	{
 		display: none;
 	}
 	
-	#container
+	.container
 	{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -293,7 +293,7 @@
 /* Desktop */
 @media only screen and ( min-width : 1000px )
 {	
-	#container
+	.container
 	{
 		grid-template-columns: 1fr 1fr 1fr;
 	}
@@ -301,7 +301,7 @@
 
 @media only screen and ( min-width: 1100px )
 {
-	#projects
+	.projects
 	{
 		padding-left: 0;
 		padding-right: 0;
