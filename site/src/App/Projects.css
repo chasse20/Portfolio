@@ -9,7 +9,7 @@
 	left: 0;
 }
 
-.projects, .bg, .bg > *
+.projects, .bg
 {
 	width: inherit;
 }
@@ -19,6 +19,8 @@
 	top: 0;
 	background-size: cover;
 	height: inherit;
+	width: 100%;
+	display: none;
 }
 
 .info
@@ -165,6 +167,22 @@
 	}
 }
 
+@media only screen and ( max-width: 767px ) and ( orientation: portrait )
+{
+	.mobile-tile
+	{
+		display: block;
+	}
+}
+
+@media only screen and ( max-width: 767px ) and ( orientation: landscape )
+{
+	.wide-tile
+	{
+		display: block;
+	}
+}
+
 /* Tablet */
 @media only screen and ( min-width : 768px )
 {
@@ -281,6 +299,11 @@
 		transition-property: transform;
 		transform: scale( 1 );
 	}
+	
+	.button-tile
+	{
+		display: block;
+	}
 
 	.info
 	{
@@ -292,7 +315,7 @@
 
 /* Desktop */
 @media only screen and ( min-width : 1000px )
-{	
+{
 	.container
 	{
 		grid-template-columns: 1fr 1fr 1fr;

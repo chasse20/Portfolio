@@ -3,9 +3,14 @@ article
 	min-height: calc( 100% - var( --navbar-size ) );
 }
 
-article, .top-bg, .top-bg .overlay, .content, .content-left, .content-right, .link, .video-wrapper, .video iframe
+article, .top-bg, .content, .content-left, .content-right, .link, .video-wrapper, .video iframe
 {
 	width: inherit;
+}
+
+ article, .top-bg, .top-bg > *, .video iframe
+{
+	position: absolute;
 }
 
 article ul
@@ -53,14 +58,19 @@ article h2
 	overflow: hidden;
 }
 
-.top-bg .overlay, .video iframe
+.top-bg > *
 {
-	height: 100%;
+	left: 0;
+	top: 0;
+	background-size: cover;
+	height: inherit;
+	width: 100%;
+	display: none;
 }
 
- article, .top-bg, .video iframe
+.video iframe
 {
-	position: absolute;
+	height: 100%;
 }
 
 .content
@@ -127,14 +137,14 @@ section > *:not(:first-child)
 		display: block;
 	}
 	
-	.bottom-bg
-	{
-		position: absolute;
-	}
-	
 	article header > *:not(:first-child)
 	{
 		margin-top: var( --spacing-large );
+	}
+	
+	.bottom-bg
+	{
+		position: absolute;
 	}
 	
 	.top-bg
@@ -170,6 +180,22 @@ section > *:not(:first-child)
 		background: -moz-linear-gradient( bottom, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
 		background: -webkit-linear-gradient( bottom, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* Chrome10-25,Safari5.1-6 */
 		background: linear-gradient( to top, rgba( var(--bg-raw ), 0 ) 50%,rgba( var(--bg-raw ), 1 ) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	}
+}
+
+@media only screen and ( max-width: 767px ) and ( orientation: portrait )
+{	
+	.full-bg
+	{
+		display: none;
+	}
+}
+
+@media only screen and ( orientation: landscape )
+{
+	.wide-tile
+	{
+		display: block;
 	}
 }
 
