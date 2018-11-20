@@ -47,12 +47,6 @@ article h2
 	margin-top: 0;
 }
 
-.top-bg
-{
-	background-position: top center;
-	background-size: cover;
-}
-
 .top-bg, .video
 {
 	overflow: hidden;
@@ -62,10 +56,19 @@ article h2
 {
 	left: 0;
 	top: 0;
-	background-size: cover;
 	height: inherit;
 	width: 100%;
+}
+
+.mobile-bg
+{
 	display: none;
+}
+
+.mobile-bg, .full-bg
+{
+	background-size: cover;
+	background-position: top center;
 }
 
 .video iframe
@@ -185,17 +188,14 @@ section > *:not(:first-child)
 
 @media only screen and ( max-width: 767px ) and ( orientation: portrait )
 {	
+	.mobile-bg
+	{
+		display: block;
+	}
+	
 	.full-bg
 	{
 		display: none;
-	}
-}
-
-@media only screen and ( orientation: landscape )
-{
-	.wide-tile
-	{
-		display: block;
 	}
 }
 
