@@ -5,7 +5,10 @@
 		{
 			"name": "Red Orchestra 2",
 			"platform": "PC Game",
-			"tileImage": "images/RO2.jpg",
+			"image": "images/RO2.jpg",
+			"mobileImage": "images/RO2_M.jpg",
+			"wideImage": "images/RO2_W.jpg",
+			"buttonImage": "images/RO2_B.jpg",
 			"tools":
 			[
 				"Unreal Engine 3",
@@ -91,7 +94,10 @@
 		{
 			"name": "Events Plus",
 			"platform": "Unity Plugin",
-			"tileImage": "images/EP.jpg",
+			"image": "images/EP.jpg",
+			"mobileImage": "images/EP_M.jpg",
+			"wideImage": "images/EP_W.jpg",
+			"buttonImage": "images/EP_B.jpg",
 			"tools":
 			[
 				"Unity3D",
@@ -142,7 +148,10 @@
 		{
 			"name": "ODIN",
 			"platform": "Military Web Application",
-			"tileImage": "images/ODIN.jpg",
+			"image": "images/ODIN.jpg",
+			"mobileImage": "images/ODIN_M.jpg",
+			"wideImage": "images/ODIN_W.jpg",
+			"buttonImage": "images/ODIN_B.jpg",
 			"backgroundPosition": "center top",
 			"tools":
 			[
@@ -203,6 +212,69 @@
 				{
 					"name": "James McCollum",
 					"role": "Backend and database development"
+				}
+			]
+		},
+		"Hunt":
+		{
+			"name": "Hunt",
+			"platform": "PC Game Jam",
+			"image": "images/Hunt.jpg",
+			"mobileImage": "images/Hunt_M.jpg",
+			"wideImage": "images/Hunt_W.jpg",
+			"buttonImage": "images/Hunt_B.jpg",
+			"tools":
+			[
+				"Unity3D",
+				"C#"
+			],
+			"links":
+			[
+				{
+					"name": "Play",
+					"url": "http://www.chassebrook.com/Hunt/",
+					"icon": "images/play.svg"
+				},
+				{
+					"name": "Global Game Jam Entry",
+					"url": "https://globalgamejam.org/2016/games/hunt",
+					"icon": "images/website.svg"
+				}
+			],
+			"video": "https://www.youtube.com/embed/yZjW0vAGO78",
+			"images":
+			[
+				{
+					"thumbnail": "images/Hunt_1_s.jpg",
+					"url": "images/Hunt_1.jpg"
+				},
+				{
+					"thumbnail": "images/Hunt_2_s.jpg",
+					"url": "images/Hunt_2.jpg"
+				},
+				{
+					"thumbnail": "images/Hunt_3_s.jpg",
+					"url": "images/Hunt_3.jpg"
+				}
+			],
+			"description": "Hunt is a short, narrative-driven game created for the 2016 Global Game Jam with the theme of \"ritual\". The player assumes the role of Nanook: a young hunter performing his rite of passage in pursuit of a winter fox. Using the WASD keys and mouse, the player must navigate and successfully throw his spear into the animal to complete the ritual.",
+			"credits":
+			[
+				{
+					"name": "Chris Hassebrook",
+					"role": "Programming and Design"
+				},
+				{
+					"name": "Duncan Iaria",
+					"role": "3D Art, Animation and Design"
+				},
+				{
+					"name": "Daniel Wilson",
+					"role": "Music, Sound"
+				},
+				{
+					"name": "Benjamin George",
+					"role": "2D Art"
 				}
 			]
 		}
