@@ -36,6 +36,7 @@ export default class Project extends Component
 				</div>
 				<div className="top-bg">
 					<div className="mobile-bg" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
+					<div className="wide-bg" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
 					<div className="full-bg" style={ { backgroundImage: "url(" + tempProject.image + ")" } }/>
 					<div className="overlay"/>
 				</div>
@@ -57,7 +58,7 @@ export default class Project extends Component
 								)
 							}
 						</section>
-						<section className="media">
+						<section className={ "media" + ( tempProject.images == null ? "" : " multiple" ) }>
 							{
 								tempProject.video != null &&
 									<div className="video-wrapper">

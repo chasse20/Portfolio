@@ -114,7 +114,7 @@
 
 	.bg > *
 	{
-		background-position: top center;
+		background-position: center top;
 	}
 
 	.arrow
@@ -186,6 +186,11 @@
 /* Tablet */
 @media only screen and ( min-width : 768px )
 {
+	:root
+	{
+		--button-size: 250px;
+	}
+	
 	.projects
 	{
 		pointer-events: none;
@@ -226,7 +231,7 @@
 
 	.project-tile:hover .bg, .project-tile.selected .bg
 	{
-		height: calc( 250px - 1.3em );
+		height: calc( var( --button-size ) - 1.3em );
 	}
 
 	.project-tile:hover .bg > *, .project-tile.selected .bg > *
@@ -277,7 +282,7 @@
 	
 	.bg
 	{
-		height: 250px;
+		height: var( --button-size );
 	}
 	
 	.bg, .info
@@ -303,6 +308,7 @@
 	.button-tile
 	{
 		display: block;
+		height: var( --button-size);
 	}
 
 	.info

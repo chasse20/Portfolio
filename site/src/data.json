@@ -120,17 +120,6 @@
 				}
 			],
 			"video": "https://www.youtube.com/embed/yZjW0vAGO78",
-			"images":
-			[
-				{
-					"thumbnail": "images/EP_1_s.jpg",
-					"url": "images/EP_1.jpg"
-				},
-				{
-					"thumbnail": "images/EP_2_s.jpg",
-					"url": "images/EP_2.jpg"
-				}
-			],
 			"description": "Events Plus is a commercial Unity Plugin that gives developers the power to quickly prototype gameplay and wire up events without the need for code. It incorporates automatic linking and serialization of C# delegates within the Unity3D interface. As the sole developer, I am responsible for programming, support and marketing aspects of the plugin.",
 			"credits":
 			[

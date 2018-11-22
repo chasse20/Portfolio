@@ -60,15 +60,10 @@ article h2
 	width: 100%;
 }
 
-.mobile-bg
-{
-	display: none;
-}
-
-.mobile-bg, .full-bg
+.mobile-bg, .wide-bg, .full-bg
 {
 	background-size: cover;
-	background-position: top center;
+	background-position: center top;
 }
 
 .video iframe
@@ -162,6 +157,11 @@ section > *:not(:first-child)
 		background: linear-gradient( to bottom, rgba( var(--bg-raw ), 0 ) 50%,rgba( var(--bg-raw ), 1 ) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	}
 	
+	.full-bg
+	{
+		display: none;
+	}
+	
 	.bottom-bg
 	{
 		height: 100vh;
@@ -188,12 +188,7 @@ section > *:not(:first-child)
 
 @media only screen and ( max-width: 767px ) and ( orientation: portrait )
 {	
-	.mobile-bg
-	{
-		display: block;
-	}
-	
-	.full-bg
+	.wide-bg
 	{
 		display: none;
 	}
@@ -201,6 +196,11 @@ section > *:not(:first-child)
 
 @media only screen and ( max-width: 767px ) and ( orientation: landscape )
 {
+	.mobile-bg
+	{
+		display: none;
+	}
+	
 	.top-bg
 	{
 		height: 150vh;
@@ -214,8 +214,11 @@ section > *:not(:first-child)
 	{
 		background-size: 150% auto;
 	}
+}
 
-	.media
+@media only screen and ( min-width: 600px ) and ( max-width: 999px )
+{
+	.media.multiple
 	{
 		display: flex;
 		flex-wrap: wrap;
@@ -224,7 +227,7 @@ section > *:not(:first-child)
 		width: initial;
 	}
 
-	.media > *
+	.media.multiple > *
 	{
 		margin-top: var( --spacing-medium );
 		margin-left: var( --spacing-medium );
@@ -260,6 +263,16 @@ section > *:not(:first-child)
 		height: 60vh;
 		min-height: 768px;
 		max-height: 100vh;
+	}
+	
+	.full-bg
+	{
+		display: block;
+	}
+	
+	.mobile-bg, .wide-bg
+	{
+		display: none;
 	}
 	
 	.top-bg .overlay
@@ -323,6 +336,11 @@ section > *:not(:first-child)
 		width: 70%;
 		flex-grow: 1;
 		padding-right: var( --spacing-huge );
+	}
+	
+	.media
+	{
+		margin-top: var( --spacing-huge );
 	}
 	
 	.media, .media > *
