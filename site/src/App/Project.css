@@ -60,15 +60,15 @@ article h2
 	width: 100%;
 }
 
+.top-bg > *, .video iframe
+{
+	height: 100%;
+}
+
 .mobile-bg, .wide-bg, .full-bg
 {
 	background-size: cover;
 	background-position: center top;
-}
-
-.video iframe
-{
-	height: 100%;
 }
 
 .content
