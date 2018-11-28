@@ -33,7 +33,7 @@
 {
 	.projects
 	{
-		height: calc( 100% - var( --navbar-size ) );
+		height: calc( 100vh - var( --navbar-size ) );
 		display: none;
 		overflow: hidden;
 	}
@@ -153,6 +153,7 @@
 	{
 		bottom: 0;
 		padding: 6px var( --spacing-medium );
+		cursor: pointer;
 	}
 
 	.left-control img, .right-control img
