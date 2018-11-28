@@ -23,10 +23,10 @@ export default class Project extends Component
 
 	render()
 	{
-		const tempProject = this._activeProject;
+		var tempProject = this._activeProject;
 		if ( tempProject == null )
 		{
-			return null;
+			tempProject = {};
 		}
 
 		return (
@@ -48,7 +48,7 @@ export default class Project extends Component
 					<div className="content-left">
 						<section>
 							{
-								tempProject.links.map(
+								tempProject.links != null && tempProject.links.map(
 									( tLink ) =>
 									(
 										<a className="link" key={ tLink.url } href={ tLink.url } target="_blank" rel="noopener noreferrer">
@@ -89,7 +89,7 @@ export default class Project extends Component
 							<Button text="Tools" icon="images/tools.svg"/>
 							<ul>
 								{
-									tempProject.tools.map(
+									tempProject.tools != null && tempProject.tools.map(
 										( tTool ) =>
 										(
 											<li className="tool" key={ tTool }>
@@ -106,7 +106,7 @@ export default class Project extends Component
 									<Button text="Credits" icon="images/credits.svg"/>
 									<ul>
 										{
-											tempProject.credits.map(
+											tempProject.credits != null && tempProject.credits.map(
 												( tCredit ) =>
 												(
 													<li className="credit" key={ tCredit.name }>
