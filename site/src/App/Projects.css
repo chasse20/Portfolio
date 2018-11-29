@@ -12,8 +12,12 @@
 
 .projects, .bg, .bg > *, .info
 {
-	height: inherit;
 	width: inherit;
+}
+
+.bg, .bg > *, .info
+{
+	height: inherit;
 }
 
 .bg > *
@@ -34,7 +38,7 @@
 {
 	.projects
 	{
-		height: calc( 100vh - var( --navbar-size ) );
+		height: calc( 100% - var( --navbar-size ) );
 		display: none;
 		overflow: hidden;
 	}
@@ -69,9 +73,9 @@
 		top: 0;
 	}
 	
-	.swipe, .container, .project-tile
+	.swipe, .container
 	{
-		height: inherit;
+		height: 100%;
 	}
 	
 	.container
@@ -105,6 +109,7 @@
 		position: relative;
 		display: inline-flex;
 		width: 100vw;
+		height: inherit;
 	}
 
 	.project-tile h1
