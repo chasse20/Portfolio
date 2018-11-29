@@ -121,50 +121,41 @@ export default class Projects extends Component
 	
 	onProjectSwipeStart( tEvent )
 	{
-		this._isMobile = this.isMobile; // a hack to only allow mobile resolutions to swipe
-		if ( this._isMobile )
-		{
-			this._swipeStart = tEvent.touches[0].clientX;
-		}
+		this._swipeStart = tEvent.touches[0].clientX;
 	}
 	
 	onProjectSwipeEnd( tEvent )
 	{
-		if ( this._isMobile )
+		const tempDistance = this._swipeStart - tEvent.changedTouches[0].clientX;
+		if ( tempDistance <= -60 )
 		{
-			const tempDistance = this._swipeStart - tEvent.changedTouches[0].clientX;
-			if ( tempDistance <= -60 )
-			{
-				this.onScroll( -1 );
-			}
-			else if ( tempDistance >= 60 )
-			{
-				this.onScroll( 1 );
-			}
+			this.onScroll( -1 );
+		}
+		else if ( tempDistance >= 60 )
+		{
+			this.onScroll( 1 );
 		}
 	}
 	
 	onProjectClick( tEvent, tProjectKey )
 	{
-		if ( !this._isMobile )
+		tEvent.stopPropagation();
+		if ( !this.props.isTouch || this.state.selectedProject === tProjectKey )
 		{
-			tEvent.stopPropagation();
-			if ( !this.props.isTouch || this.state.selectedProject === tProjectKey )
-			{
-				this.setState( { selectedProject: null } );
-				window.removeEventListener( "click", this._onPageClick );
-				this.props.history.push( tProjectKey );
-			}
-			else
-			{
-				this.setState( { selectedProject: tProjectKey } );
-				window.addEventListener( "click", this._onPageClick );
-			}
+			this.setState( { selectedProject: null } );
+			window.removeEventListener( "click", this._onPageClick );
+			this.props.history.push( tProjectKey );
+		}
+		else
+		{
+			this.setState( { selectedProject: tProjectKey } );
+			window.addEventListener( "click", this._onPageClick );
 		}
 	}
 	
 	onPageClick( tEvent )
 	{
+		tEvent.stopPropagation();
 		this.setState( { selectedProject: null } );
 		window.removeEventListener( "click", this._onPageClick );
 	}
@@ -172,7 +163,8 @@ export default class Projects extends Component
 	render()
 	{
 		return (
-			<div className={ "projects" + ( this.props.isOpen ? " open" : "" ) } onTouchStart={ ( tEvent ) => { this.onProjectSwipeStart( tEvent ); } } onTouchEnd={ ( tEvent ) => { this.onProjectSwipeEnd( tEvent ); } }>
+			<div className={ "projects" + ( this.props.isOpen ? " open" : "" ) }>
+				<div className="swipe" onTouchStart={ ( tEvent ) => { this.onProjectSwipeStart( tEvent ); } } onTouchEnd={ ( tEvent ) => { this.onProjectSwipeEnd( tEvent ); } }/>
 				<div className="container" ref={ ( tElement ) => { this._scrollElement = tElement; } }>
 					{
 						this.state.projectKeys.map(

@@ -1,5 +1,6 @@
 .projects
 {
+	pointer-events: none;
 	box-sizing: border-box;
 }
 
@@ -9,8 +10,9 @@
 	left: 0;
 }
 
-.projects, .bg, .info
+.projects, .bg, .bg > *, .info
 {
+	height: inherit;
 	width: inherit;
 }
 
@@ -18,7 +20,6 @@
 {
 	top: 0;
 	background-size: cover;
-	height: inherit;
 	width: 100%;
 	display: none;
 }
@@ -43,19 +44,39 @@
 		display: block;
 	}
 	
-	.container
+	.swipe
 	{
-		transform: translateX( -100vw );
+		width: inherit;
 	}
 	
-	.container, .bg, .info, .left-control, .right-control
+	.swipe, .left-control, .right-control, .more
+	{
+		pointer-events: auto;
+	}
+	
+	.swipe, .container, .bg, .info, .left-control, .right-control
 	{
 		position: absolute;
 	}
-
-	.container, .bg, .left-control
+	
+	.swipe, .container, .bg, .info, .left-control
 	{
 		left: 0;
+	}
+	
+	.swipe, .container, .bg, .info
+	{
+		top: 0;
+	}
+	
+	.swipe, .container, .project-tile
+	{
+		height: inherit;
+	}
+	
+	.container
+	{
+		transform: translateX( -100vw );
 	}
 	
 	.container.sliding-right, .container.sliding-left
@@ -74,19 +95,9 @@
 		transform: translateX( 0 );
 	}
 
-	.container, .bg, .info
-	{
-		height: 100%;
-	}
-
 	.container, .project-tile .info
 	{
 		display: flex;
-	}
-
-	.container, .bg
-	{
-		top: 0;
 	}
 
 	.project-tile
@@ -188,7 +199,6 @@
 	
 	.projects
 	{
-		pointer-events: none;
 		padding: var( --spacing-tiny );
 		transition: opacity 0.3s ease;
 		opacity: 0;
@@ -201,11 +211,11 @@
 		transition-delay: 0.2s;
 	}
 	
-	.left-control, .right-control, .more
+	.swipe, .left-control, .right-control, .more
 	{
 		display: none;
 	}
-	
+
 	.container
 	{
 		display: grid;
