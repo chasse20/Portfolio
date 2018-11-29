@@ -6,12 +6,7 @@ import Project from "./Project";
 import "./App.css";
 
 export default class App extends Component
-{
-	componentDidMount()
-	{
-		document.addEventListener( "touchmove", ( tEvent ) => { tEvent.preventDefault(); }, { passive: false } );
-	}
-	
+{	
 	render()
 	{
 		return (

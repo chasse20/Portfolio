@@ -9,7 +9,7 @@
 	left: 0;
 }
 
-.projects, .bg
+.projects, .bg, .info
 {
 	width: inherit;
 }
@@ -48,7 +48,7 @@
 		transform: translateX( -100vw );
 	}
 	
-	.container, .bg, .left-control, .right-control
+	.container, .bg, .info, .left-control, .right-control
 	{
 		position: absolute;
 	}
@@ -74,7 +74,7 @@
 		transform: translateX( 0 );
 	}
 
-	.container, .bg
+	.container, .bg, .info
 	{
 		height: 100%;
 	}
@@ -124,7 +124,6 @@
 	
 	.info
 	{
-		width: inherit;
 		flex-direction: column;
 		justify-content: center;
 		padding: 0 var( --spacing-large );
@@ -135,12 +134,7 @@
 	{
 		margin-top: var( --spacing-large );
 	}
-
-	.info, .left-control, .right-control
-	{
-		z-index: 1;
-	}
-
+	
 	.more
 	{
 		margin-left: auto;
