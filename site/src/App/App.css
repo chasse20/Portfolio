@@ -14,7 +14,7 @@
 	--spacing-medium: 16px;
 	--spacing-large: 30px;
 	--spacing-huge: 70px;
-	--mobile: 0
+	--vh: 1vh;
 }
 
 body
@@ -79,11 +79,6 @@ main
 /* Mobile */
 @media only screen and ( max-width: 767px )
 {
-	:root
-	{
-		--mobile: 1
-	}
-	
 	main
 	{
 		margin-top: var( --navbar-size );

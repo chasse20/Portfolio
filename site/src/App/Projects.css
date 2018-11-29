@@ -38,7 +38,7 @@
 {
 	.projects
 	{
-		height: calc( 100% - var( --navbar-size ) );
+		height: calc( ( 100 * var( --vh ) ) - var( --navbar-size ) );
 		display: none;
 		overflow: hidden;
 	}
@@ -73,9 +73,9 @@
 		top: 0;
 	}
 	
-	.swipe, .container
+	.swipe, .container, .project-tile
 	{
-		height: 100%;
+		height: inherit;
 	}
 	
 	.container
@@ -109,7 +109,6 @@
 		position: relative;
 		display: inline-flex;
 		width: 100vw;
-		height: inherit;
 	}
 
 	.project-tile h1
@@ -206,6 +205,7 @@
 	{
 		padding: var( --spacing-tiny );
 		transition: opacity 0.3s ease;
+		transition-property: opacity;
 		opacity: 0;
 	}
 	
@@ -231,7 +231,6 @@
 	.project-tile
 	{
 		cursor: pointer;
-		transition: transform 0.5s ease;
 	}
 	
 	.project-tile:hover, .project-tile.selected

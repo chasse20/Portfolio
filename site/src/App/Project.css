@@ -1,6 +1,6 @@
 article
 {
-	min-height: calc( 100% - var( --navbar-size ) );
+	min-height: calc( 100vh - var( --navbar-size ) );
 }
 
 article, .top-bg, .content, .content-left, .content-right, .link, .video-wrapper, .video iframe
