@@ -8,11 +8,9 @@ export default class Projects extends Component
 	{
 		super( tProps );
 		
-		this._isMobile = this.isMobile;
-		
 		this.state =
 		{
-			projectKeys: Projects.GenerateKeys( this.props.projects, this._isMobile ),
+			projectKeys: Projects.GenerateKeys( this.props.projects ),
 			selectedProject: null
 		};
 		
@@ -51,7 +49,7 @@ export default class Projects extends Component
 	{
 		if ( tNextProps.projects !== this.props.projects )
 		{
-			this.setState( { projectKeys: Projects.GenerateKeys( this.props.projects, this._isMobile ) } );
+			this.setState( { projectKeys: Projects.GenerateKeys( this.props.projects ) } );
 			
 			return true;
 		}
@@ -62,11 +60,6 @@ export default class Projects extends Component
 	componentWillUnmount()
 	{
 		this.window.clearTimeout( this._scrollTimeout );
-	}
-	
-	get isMobile()
-	{
-		return window.getComputedStyle( document.documentElement ).getPropertyValue( "--mobile" ).indexOf( "1" ) >= 0;
 	}
 
 	onScroll( tDirection )
