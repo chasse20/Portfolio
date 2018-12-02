@@ -30,7 +30,7 @@ export default class Navigation extends Component
 			<nav>
 				<header>
 					<Link to="/" className="logo">
-						<img src="images/logo.svg" alt="logo"/>
+						<img src="images/logo.png" alt="logo"/>
 						<h1>Chris Hassebrook</h1>
 					</Link>
 					<button className={ "menu-toggle" + ( this.state.isOpen ? " open" : "" ) } onClick={ () => { this.onMenuToggle(); } }>

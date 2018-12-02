@@ -230,7 +230,7 @@
 					"icon": "images/website.svg"
 				}
 			],
-			"video": "https://www.youtube.com/embed/yZjW0vAGO78",
+			"video": "https://www.youtube.com/embed/ns3nXUKb_y8",
 			"images":
 			[
 				{
@@ -246,7 +246,7 @@
 					"url": "images/Hunt_3.jpg"
 				}
 			],
-			"description": "Hunt is a short, narrative-driven game created for the 2016 Global Game Jam with the theme of \"ritual\". The player assumes the role of Nanook: a young hunter performing his rite of passage in pursuit of a winter fox. Using the WASD keys and mouse, the player must navigate and successfully throw his spear into the animal to complete the ritual.",
+			"description": "Hunt is a short, narrative-driven game created for the 2016 Global Game Jam (theme: ritual). The player assumes the role of Nanook, a young hunter, performing his rite of passage in pursuit of a winter fox. Nanook must navigate through the wintry woods and successfully throw his spear to complete the spiritual hunt.",
 			"credits":
 			[
 				{
