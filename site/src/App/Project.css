@@ -316,13 +316,14 @@ section > *:not(:first-child)
 	
 	.content-left
 	{
+		padding-left: var(--spacing-huge);
+		padding-right: calc( 0.5 * var( --spacing-huge ) );
 		float: left;
-		width: 30%;
 	}
 	
 	.content-left, .content-right
 	{
-		padding-left: var(--spacing-huge);
+		width: 50%;
 	}
 	
 	.content-left > *, .content-right
@@ -333,9 +334,9 @@ section > *:not(:first-child)
 	.content-right
 	{
 		float: right;
-		width: 70%;
 		flex-grow: 1;
 		padding-right: var( --spacing-huge );
+		padding-left: calc( 0.5 * var( --spacing-huge ) );
 	}
 	
 	.media
