@@ -131,11 +131,6 @@
 	{
 		background-position: center top;
 	}
-
-	.arrow
-	{
-		display: none;
-	}
 	
 	.info
 	{
@@ -196,14 +191,8 @@
 /* Tablet */
 @media only screen and ( min-width : 768px )
 {
-	:root
-	{
-		--button-size: 250px;
-	}
-	
 	.projects
 	{
-		padding: var( --spacing-tiny );
 		transition: opacity 0.3s ease;
 		transition-property: opacity;
 		opacity: 0;
@@ -225,22 +214,17 @@
 	{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-gap: var( --spacing-tiny );
+		grid-auto-rows: 0.33333fr;
+		height: calc( 100vh - var( --navbar-size ) );
 	}
 	
 	.project-tile
 	{
+		position: relative;
 		cursor: pointer;
-	}
-	
-	.project-tile:hover, .project-tile.selected
-	{
+		width: inherit;
+		overflow: hidden;
 		box-shadow: var( --box-shadow );
-	}
-
-	.project-tile:hover .bg, .project-tile.selected .bg
-	{
-		height: calc( var( --button-size ) - 1.3em );
 	}
 
 	.project-tile:hover .bg > *, .project-tile.selected .bg > *
@@ -248,62 +232,16 @@
 		transform: scale( 1.25 );
 	}
 
-	.project-tile:hover .info, .project-tile.selected .info
-	{
-		background-color: var( --button-color );
-		height: calc( 2.6em + var( --spacing-small ) + var( --spacing-small ) );
-	}
-	
 	.project-tile h1
 	{
 		font-size: 1em;
-		padding: var( --spacing-small );
 	}
 	
-	.project-tile h2
+	.bg, .info
 	{
-		margin-top: calc( -1 * var( --spacing-small ) );
-		transition-property: opacity;
-		transition: opacity 0.3s ease;
-		opacity: 0;
-	}
-	
-	.project-tile:hover h2, .project-tile.selected h2
-	{
-		opacity: 1;
-	}
-	
-	.project-tile.selected .arrow
-	{
+		height: 100%;
+		width: 100%;
 		position: absolute;
-		top: 0;
-		display: flex;
-		transform: scaleX( -1 );
-		height: inherit;
-		align-items: center;
-		right: var( --spacing-medium );
-	}
-
-	.project-tile.selected .arrow img
-	{
-		height: 50px;
-	}
-	
-	.bg
-	{
-		height: var( --button-size );
-	}
-	
-	.bg, .info
-	{
-		transition-property: height;
-		transition: height 0.3s ease;
-		position: relative;
-	}
-	
-	.bg, .info
-	{
-		overflow: hidden;
 	}
 	
 	.bg > *
@@ -317,14 +255,26 @@
 	.button-tile
 	{
 		display: block;
-		height: var( --button-size);
 	}
 
 	.info
 	{
-		height: calc( 1.3em + var( --spacing-small ) + var( --spacing-small ) );
-		margin-top: var( --spacing-tiny );
-		background-color: var( --button-color-dark );
+		background-color: var( --button-color );
+		height: auto;
+		position: absolute;
+		bottom: 0;
+		padding: var( --spacing-small ) var( --spacing-large );
+		box-sizing: border-box;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+		transition-property: transform, opacity;
+		transform: translateY( 0 );
+		opacity: 0;
+	}
+	
+	.project-tile:hover .info, .project-tile.selected .info
+	{
+		transform: translateY( 0 );
+		opacity: 1;
 	}
 }
 
@@ -334,10 +284,17 @@
 	.container
 	{
 		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: initial;
+		height: auto;
+	}
+	
+	.project-tile
+	{
+		height: 275px;
 	}
 }
 
-@media only screen and ( min-width: 1100px )
+@media only screen and ( min-width: 1098px )
 {
 	.projects
 	{

@@ -205,3 +205,12 @@ nav header, .logo, .links
 		fill: var( --link-color-hover );
 	}
 }
+
+/* Desktop */
+@media only screen and ( min-width : 1000px )
+{
+	nav
+	{
+		box-shadow: var( --box-shadow );
+	}
+}
