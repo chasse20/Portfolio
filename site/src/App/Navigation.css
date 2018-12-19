@@ -124,7 +124,7 @@ nav header, .logo, .links
 }
 
 /* Tablet */
-@media only screen and ( min-width : 768px )
+@media only screen and ( min-width: 768px )
 {
 	nav
 	{
@@ -207,7 +207,7 @@ nav header, .logo, .links
 }
 
 /* Desktop */
-@media only screen and ( min-width : 1000px )
+@media only screen and ( min-width: 1000px )
 {
 	nav
 	{

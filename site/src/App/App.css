@@ -86,7 +86,7 @@ main
 }
 
 /* Tablet */
-@media only screen and ( min-width : 768px )
+@media only screen and ( min-width: 768px )
 {
 	:root
 	{
@@ -120,7 +120,7 @@ main
 	}
 }
 
-@media only screen and ( min-width : 768px ) and ( orientation: landscape )
+@media only screen and ( min-width: 768px ) and ( orientation: landscape )
 {
 	body
 	{
@@ -129,7 +129,7 @@ main
 }
 
 /* Desktop */
-@media only screen and ( min-width : 1000px )
+@media only screen and ( min-width: 1000px )
 {
 	body
 	{
