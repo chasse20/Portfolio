@@ -3,12 +3,12 @@ article
 	min-height: calc( 100vh - var( --navbar-size ) );
 }
 
-article, .top-bg, .content, .content-left, .content-right, .link, .video-wrapper, .video iframe
+article, article .bg, .top, .content, .media, .text, .link, .video-wrapper, .video iframe
 {
 	width: inherit;
 }
 
- article, .top-bg, .top-bg > *, .video iframe
+ article, article .bg, .bg > *, .top > *, .video iframe
 {
 	position: absolute;
 }
@@ -76,12 +76,12 @@ article h2
 	padding-bottom: var( --spacing-huge );
 }
 
-.content-left, .content-right, .video-wrapper
+.media, .text, .video-wrapper
 {
 	box-sizing: border-box;
 }
 
-.content-right > *:not(:first-child)
+.text > *:not(:first-child)
 {
 	margin-top: var( --spacing-huge );
 }
@@ -218,7 +218,7 @@ section > *:not(:first-child)
 
 @media only screen and ( min-width: 600px ) and ( max-width: 999px )
 {
-	.media.multiple
+	.gallery.multiple
 	{
 		display: flex;
 		flex-wrap: wrap;
@@ -227,7 +227,7 @@ section > *:not(:first-child)
 		width: initial;
 	}
 
-	.media.multiple > *
+	.gallery.multiple > *
 	{
 		margin-top: var( --spacing-medium );
 		margin-left: var( --spacing-medium );
@@ -244,6 +244,7 @@ section > *:not(:first-child)
 		transition: opacity 0.3s ease;
 		transition-property: opacity;
 		pointer-events: none;
+		background-color: var( --bg );
 	}
 	
 	article.open
@@ -290,48 +291,63 @@ section > *:not(:first-child)
 
 @media only screen and ( max-width: 999px )
 {
-	.content-left, .content-right
+	article .text .links
+	{
+		display: none;
+	}
+	
+	.media, .text
 	{
 		padding: 0 var( --spacing-medium );
 	}
 
-	.content-right
+	.text
 	{
 		margin-top: var( --spacing-huge );
 	}
 	
-	.content-left > *:not(:first-child)
+	.media > *:not(:first-child)
 	{
 		margin-top: var( --spacing-huge );
 	}
 }
 
 /* Desktop */
-@media only screen and ( min-width : 1000px )
-{	
+@media only screen and ( min-width: 1000px )
+{
+	article
+	{
+		box-shadow: var( --box-shadow );
+	}
+	
+	article .media .links
+	{
+		display: none;
+	}
+	
 	.content
 	{
 		display: flex;
 	}
 	
-	.content-left
+	.media
 	{
 		padding-left: var(--spacing-huge);
 		padding-right: calc( 0.5 * var( --spacing-huge ) );
 		float: left;
 	}
 	
-	.content-left, .content-right
+	.media, .text
 	{
 		width: 50%;
 	}
 	
-	.content-left > *, .content-right
+	.media > *, .text
 	{
 		margin-top: 0;
 	}
 	
-	.content-right
+	.text
 	{
 		float: right;
 		flex-grow: 1;
@@ -339,17 +355,17 @@ section > *:not(:first-child)
 		padding-left: calc( 0.5 * var( --spacing-huge ) );
 	}
 	
-	.media
+	.gallery
 	{
 		margin-top: var( --spacing-huge );
 	}
 	
-	.media, .media > *
+	.gallery, .gallery > *
 	{
 		margin-left: 0;
 	}
 	
-	.media > *
+	.gallery > *
 	{
 		width: 100%;
 	}

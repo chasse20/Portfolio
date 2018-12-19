@@ -168,9 +168,9 @@ export default class Projects extends Component
 								return (
 									<div className={ "project-tile" + ( this.state.selectedProject === tProjectKey ? " selected" : "" ) } key={ tProjectKey } onClick={ ( tEvent ) => { this.onProjectClick( tEvent, tProjectKey ); } }>
 										<div className="bg">
-											<div className="mobile-tile" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
-											<div className="wide-tile" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
-											<div className="button-tile" style={ { backgroundImage: "url(" + tempProject.buttonImage + ")" } }/>
+											<div className="mobile" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
+											<div className="wide" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
+											<div className="tablet" style={ { backgroundImage: "url(" + tempProject.buttonImage + ")" } }/>
 										</div>
 										<div className="info">
 											<h1>{ tempProject.name }</h1>

@@ -20,6 +20,20 @@ export default class Project extends Component
 		
 		return tNextProps.project !== this.props.project;
 	}
+	
+	/*
+	<div className="bg">
+					<div className="top">
+						<div className="mobile" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
+						<div className="wide" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
+						<div className="full" style={ { backgroundImage: "url(" + tempProject.image + ")" } }/>
+						<div className="overlay"/>
+					</div>
+					<div className="bottom">
+						<div className="overlay"/>
+					</div>
+				</div>
+	*/
 
 	render()
 	{
@@ -31,22 +45,13 @@ export default class Project extends Component
 
 		return (
 			<article className={ this.props.project == null ? null : "open" }>
-				<div className="bottom-bg">
-					<div className="overlay"/>
-				</div>
-				<div className="top-bg">
-					<div className="mobile-bg" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
-					<div className="wide-bg" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
-					<div className="full-bg" style={ { backgroundImage: "url(" + tempProject.image + ")" } }/>
-					<div className="overlay"/>
-				</div>
 				<header>
 					<h1>{ tempProject.name }</h1>
 					<h2>{ tempProject.platform }</h2>
 				</header>
 				<div className="content">
-					<div className="content-left">
-						<section>
+					<div className="media">
+						<section className="links">
 							{
 								tempProject.links != null && tempProject.links.map(
 									( tLink ) =>
@@ -58,7 +63,7 @@ export default class Project extends Component
 								)
 							}
 						</section>
-						<section className={ "media" + ( tempProject.images == null ? "" : " multiple" ) }>
+						<section className={ "gallery" + ( tempProject.images == null ? "" : " multiple" ) }>
 							{
 								tempProject.video != null &&
 									<div className="video-wrapper">
@@ -80,7 +85,19 @@ export default class Project extends Component
 							}
 						</section>
 					</div>
-					<div className="content-right">
+					<div className="text">
+						<section className="links">
+							{
+								tempProject.links != null && tempProject.links.map(
+									( tLink ) =>
+									(
+										<a className="link" key={ tLink.url } href={ tLink.url } target="_blank" rel="noopener noreferrer">
+											<Button text={ tLink.name } icon={ tLink.icon }/>
+										</a>
+									)
+								)
+							}
+						</section>
 						<section>
 							<Button text="Overview" icon="images/overview.svg"/>
 							<p>{ tempProject.description }</p>

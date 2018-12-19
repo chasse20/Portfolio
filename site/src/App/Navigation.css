@@ -1,4 +1,4 @@
-nav header, .logo, .links
+nav header, .logo, nav .links
 {
 	align-items: center;
 }
@@ -8,7 +8,7 @@ nav header, .logo, .links
 	display: inline-flex;
 }
 
-.links svg
+nav .links svg
 {
 	fill:  var( --link-color );
 }
@@ -23,7 +23,7 @@ nav header, .logo, .links
 		z-index: 999;
 	}
 	
-	nav header, .links
+	nav header, nav .links
 	{
 		display: flex;
 	}
@@ -33,7 +33,7 @@ nav header, .logo, .links
 		top: 0;
 	}
 
-	nav, nav header, .links, .menu-toggle-closed, .menu-toggle-opened
+	nav, nav header, nav .links, .menu-toggle-closed, .menu-toggle-opened
 	{
 		left: 0;
 	}
@@ -52,17 +52,17 @@ nav header, .logo, .links
 		justify-content: space-between;
 	}
 	
-	nav header, .links
+	nav header, nav .links
 	{
 		box-sizing: border-box;
 	}
 	
-	nav header, .links
+	nav header, nav .links
 	{
 		width: inherit;
 	}
 
-	nav header, .links, .menu-toggle-closed, .menu-toggle-opened
+	nav header, nav .links, .menu-toggle-closed, .menu-toggle-opened
 	{
 		position: absolute;
 	}
@@ -78,7 +78,7 @@ nav header, .logo, .links
 		width: 30px;
 	}
 
-	.links
+	nav .links
 	{
 		z-index: -1;
 		transform: translateY( -100% );
@@ -89,12 +89,12 @@ nav header, .logo, .links
 		justify-content: space-between;
 	}
 
-	.links.open
+	nav .links.open
 	{
 		transform: translateY( var( --navbar-size ) );
 	}
 	
-	.links svg
+	nav .links svg
 	{
 		height: 50px;
 		width: 50px;
@@ -147,7 +147,7 @@ nav header, .logo, .links
 		transition: color 0.2s;
 	}
 	
-	nav header,  .links, .links a
+	nav header,  nav .links, nav .links a
 	{
 		display: inline-flex;
 	}
@@ -168,39 +168,39 @@ nav header, .logo, .links
 		display: none;
 	}
 	
-	.links svg
+	nav .links svg
 	{
 		height: 40px;
 		width: 40px;
 	}
 	
-	.links h2
+	nav .links h2
 	{
 		text-transform: lowercase;
 	}
 	
-	.links > *:not(:first-child)
+	nav .links > *:not(:first-child)
 	{
 		margin-left: var( --spacing-large );
 	}
 	
-	.links a
+	nav .links a
 	{
 		align-items: center;
 	}
 	
-	.links a > *:not(:first-child)
+	nav .links a > *:not(:first-child)
 	{
 		margin-left: var( --spacing-small );
 	}
 	
-	.links a svg
+	nav .links a svg
 	{
 		transition-property: fill;
 		transition: fill 0.2s;
 	}
 	
-	.links a:hover svg
+	nav .links a:hover svg
 	{
 		fill: var( --link-color-hover );
 	}
