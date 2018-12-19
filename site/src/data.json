@@ -179,12 +179,12 @@
 			"credits":
 			[
 				{
-					"name": "Ryan O'Donnell",
-					"role": "Project lead and user interface design"
+					"name": "Chris Hassebrook",
+					"role": "Lead full-stack developer for WEG, DATE and TC tool. Core backend database and API development."
 				},
 				{
-					"name": "Chris Hassebrook",
-					"role": "Principal full-stack development for frontend, backend and database development"
+					"name": "Ryan O'Donnell",
+					"role": "Project lead and user interface design"
 				},
 				{
 					"name": "Jenny Seburn",
