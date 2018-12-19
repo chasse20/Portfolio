@@ -85,7 +85,7 @@ main
 	}
 }
 
-/* Table */
+/* Tablet */
 @media only screen and ( min-width : 768px )
 {
 	:root
@@ -104,7 +104,7 @@ main
 		background-image: url( "/images/bg.jpg" );
 		background-repeat: no-repeat;
 		background-attachment: fixed;
-		background-position: center top;
+		background-position: center 300px;
 		background-size: cover;
 	}
 	
@@ -117,6 +117,14 @@ main
 	{
 		box-sizing: border-box;
 		position: relative;
+	}
+}
+
+@media only screen and ( min-width : 768px ) and ( orientation: landscape )
+{
+	body
+	{
+		background-position: center 200px;
 	}
 }
 
@@ -133,5 +141,13 @@ main
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 1098px;
+	}
+}
+
+@media only screen and ( min-width: 1098px )
+{
+	body
+	{
+		background-position: center top;
 	}
 }
