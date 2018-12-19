@@ -45,6 +45,14 @@ export default class Project extends Component
 
 		return (
 			<article className={ this.props.project == null ? null : "open" }>
+				<div className="bg">
+					<div className="top">
+						<div className="mobile" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
+						<div className="wide" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
+						<div className="full" style={ { backgroundImage: "url(" + tempProject.image + ")" } }/>
+						<div className="overlay"/>
+					</div>
+				</div>
 				<header>
 					<h1>{ tempProject.name }</h1>
 					<h2>{ tempProject.platform }</h2>

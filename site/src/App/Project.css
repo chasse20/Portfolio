@@ -3,12 +3,12 @@ article
 	min-height: calc( 100vh - var( --navbar-size ) );
 }
 
-article, article .bg, .top, .content, .media, .text, .link, .video-wrapper, .video iframe
+article, article .bg, .top, .top > *, .bottom > *, .content, .media, .text, .link, .video-wrapper, .video iframe
 {
 	width: inherit;
 }
 
- article, article .bg, .bg > *, .top > *, .video iframe
+ article, article .bg, article .bg > *, .top > *, .bottom > *, .video iframe
 {
 	position: absolute;
 }
@@ -17,6 +17,16 @@ article ul
 {
 	list-style-type: square;
 	padding-left: 1.25em;
+}
+
+article .bg
+{
+	overflow: hidden;
+}
+
+article .bg, .top > *, .bottom > *, .video iframe
+{
+	height: 100%;
 }
 
 article header, .content, .video
@@ -47,28 +57,21 @@ article h2
 	margin-top: 0;
 }
 
-.top-bg, .video
+.video
 {
 	overflow: hidden;
 }
 
-.top-bg > *
-{
-	left: 0;
-	top: 0;
-	height: inherit;
-	width: 100%;
-}
-
-.top-bg > *, .video iframe
-{
-	height: 100%;
-}
-
-.mobile-bg, .wide-bg, .full-bg
+.top .mobile, .top .wide, .top .full
 {
 	background-size: cover;
 	background-position: center top;
+}
+
+.top > *, .bottom > *
+{
+	left: 0;
+	top: 0;
 }
 
 .content
@@ -140,17 +143,17 @@ section > *:not(:first-child)
 		margin-top: var( --spacing-large );
 	}
 	
+	.top
+	{
+		height: calc( 100vh - var( --navbar-size ) );
+	}
+	
 	.bottom-bg
 	{
 		position: absolute;
 	}
 	
-	.top-bg
-	{
-		height: calc( 100vh - var( --navbar-size ) );
-	}
-	
-	.top-bg .overlay
+	.top .overlay
 	{
 		background: -moz-linear-gradient( top, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
 		background: -webkit-linear-gradient( top, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* Chrome10-25,Safari5.1-6 */
@@ -201,7 +204,7 @@ section > *:not(:first-child)
 		display: none;
 	}
 	
-	.top-bg
+	.top
 	{
 		height: 150vh;
 	}
@@ -253,17 +256,17 @@ section > *:not(:first-child)
 		pointer-events: auto;
 		transition-delay: 0.2s;
 	}
-
-	.link:hover
-	{
-		color: var( --link-color );
-	}
 	
-	.top-bg
+	.top
 	{
 		height: 60vh;
 		min-height: 768px;
 		max-height: 100vh;
+	}
+
+	.link:hover
+	{
+		color: var( --link-color );
 	}
 	
 	.full-bg
@@ -276,7 +279,7 @@ section > *:not(:first-child)
 		display: none;
 	}
 	
-	.top-bg .overlay
+	.top .overlay
 	{
 		background: -moz-linear-gradient( top, rgba( var(--bg-raw ),0 ) 200px, rgba( var(--bg-raw ), 0.5 ) 300px, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
 		background: -webkit-linear-gradient( top, rgba( var(--bg-raw ),0 ) 200px, rgba( var(--bg-raw ), 0.5 ) 300px, rgba( var(--bg-raw ),1 ) 100% ); /* Chrome10-25,Safari5.1-6 */
