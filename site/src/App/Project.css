@@ -328,45 +328,20 @@ section > *:not(:first-child)
 	.content
 	{
 		display: flex;
+		padding-left: var( --spacing-huge );
+		padding-right: var( --spacing-huge );
+		flex-direction: row-reverse;
+		box-sizing: border-box;
 	}
 	
 	.media
 	{
-		padding-left: var(--spacing-huge);
-		padding-right: calc( 0.5 * var( --spacing-huge ) );
-		float: left;
-	}
-	
-	.media, .text
-	{
-		width: 50%;
-	}
-	
-	.media > *, .text
-	{
-		margin-top: 0;
+		width: 65%;
+		margin-left: var( --spacing-huge );
 	}
 	
 	.text
 	{
-		float: right;
-		flex-grow: 1;
-		padding-right: var( --spacing-huge );
-		padding-left: calc( 0.5 * var( --spacing-huge ) );
-	}
-	
-	.gallery
-	{
-		margin-top: var( --spacing-huge );
-	}
-	
-	.gallery, .gallery > *
-	{
-		margin-left: 0;
-	}
-	
-	.gallery > *
-	{
-		width: 100%;
+		width: 35%;
 	}
 }
