@@ -3,12 +3,12 @@ article
 	min-height: calc( 100vh - var( --navbar-size ) );
 }
 
-article, article .bg, .top, .top > *, .bottom > *, .content, .media, .text, .link, .video-wrapper, .video iframe
+article, article .bg, .top, .bottom, .top > *, .bottom > *, .content, .media, .text, .link, .video-wrapper, .video iframe
 {
 	width: inherit;
 }
 
- article, article .bg, article .bg > *, .top > *, .bottom > *, .video iframe
+ article, article .bg, .top > *, .bottom > *, .video iframe
 {
 	position: absolute;
 }
@@ -22,6 +22,10 @@ article ul
 article .bg
 {
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var( --bg );
 }
 
 article .bg, .top > *, .bottom > *, .video iframe
@@ -29,7 +33,7 @@ article .bg, .top > *, .bottom > *, .video iframe
 	height: 100%;
 }
 
-article header, .content, .video
+article header, .top, .bottom, .content, .video
 {
 	position: relative;
 }
@@ -55,6 +59,16 @@ article h2
 {
 	font-size: 1.6em;
 	margin-top: 0;
+}
+
+article .right
+{
+	border: 1px solid #676767;
+}
+
+article .links .right
+{
+	border: none;
 }
 
 .video
@@ -125,6 +139,24 @@ section > *:not(:first-child)
 	margin-left: 0.5em;
 }
 
+.bottom
+{
+	height: 800px;
+	flex-shrink: 0;
+	background-image: url( "/images/bg.jpg" );
+	background-position: center center;
+	background-size: cover;
+	background-color: #181818;
+	background-repeat: no-repeat;
+}
+
+.bottom .overlay
+{
+	background: -moz-linear-gradient( bottom, rgba( 43, 98, 124 ,0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
+	background: -webkit-linear-gradient( bottom, rgba( 43, 98, 124 ,0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient( to top, rgba( 43, 98, 124 ,0 ) 50%,rgba( var(--bg-raw ), 1 ) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
 /* Mobile */
 @media only screen and ( max-width: 767px )
 {
@@ -148,11 +180,6 @@ section > *:not(:first-child)
 		height: calc( 100vh - var( --navbar-size ) );
 	}
 	
-	.bottom-bg
-	{
-		position: absolute;
-	}
-	
 	.top .overlay
 	{
 		background: -moz-linear-gradient( top, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
@@ -160,32 +187,14 @@ section > *:not(:first-child)
 		background: linear-gradient( to bottom, rgba( var(--bg-raw ), 0 ) 50%,rgba( var(--bg-raw ), 1 ) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	}
 	
+	.bottom
+	{
+		background-position: center bottom;
+	}
+	
 	.full-bg
 	{
 		display: none;
-	}
-	
-	.bottom-bg
-	{
-		height: 100vh;
-		bottom: 0;
-		background-image: url( "/images/bg.jpg" );
-		background-position: 30% bottom;
-		background-size: cover;
-		overflow: hidden;
-	}
-	
-	.bottom-bg, .bottom-bg .overlay
-	{
-		width: inherit;
-	}
-
-	.bottom-bg .overlay
-	{
-		height: 100%;
-		background: -moz-linear-gradient( bottom, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
-		background: -webkit-linear-gradient( bottom, rgba( var(--bg-raw ),0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient( to top, rgba( var(--bg-raw ), 0 ) 50%,rgba( var(--bg-raw ), 1 ) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	}
 }
 
@@ -208,17 +217,14 @@ section > *:not(:first-child)
 	{
 		height: 150vh;
 	}
-}
-
-/* Wide */
-@media only screen and ( min-width: 600px )
-{
-	.bottom-bg
+	
+	.bottom
 	{
 		background-size: 150% auto;
 	}
 }
 
+/* Wide */
 @media only screen and ( min-width: 600px ) and ( max-width: 999px )
 {
 	.gallery.multiple
@@ -247,7 +253,6 @@ section > *:not(:first-child)
 		transition: opacity 0.3s ease;
 		transition-property: opacity;
 		pointer-events: none;
-		background-color: var( --bg );
 	}
 	
 	article.open
@@ -284,11 +289,6 @@ section > *:not(:first-child)
 		background: -moz-linear-gradient( top, rgba( var(--bg-raw ),0 ) 200px, rgba( var(--bg-raw ), 0.5 ) 300px, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
 		background: -webkit-linear-gradient( top, rgba( var(--bg-raw ),0 ) 200px, rgba( var(--bg-raw ), 0.5 ) 300px, rgba( var(--bg-raw ),1 ) 100% ); /* Chrome10-25,Safari5.1-6 */
 		background: linear-gradient( to bottom, rgba( var(--bg-raw ), 0 ) 200px, rgba( var(--bg-raw ), 0.5 ) 300px, rgba( var(--bg-raw ), 1 ) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	}
-
-	.bottom-bg
-	{
-		display: none;
 	}
 }
 
