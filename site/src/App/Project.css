@@ -249,6 +249,8 @@ section > *:not(:first-child)
 {
 	article
 	{
+		height: 100%;
+		overflow: hidden;
 		opacity: 0;
 		transition: opacity 0.3s ease;
 		transition-property: opacity;
@@ -257,6 +259,8 @@ section > *:not(:first-child)
 	
 	article.open
 	{
+		height: initial;
+		overflow: initial;
 		opacity: 1;
 		pointer-events: auto;
 		transition-delay: 0.2s;
