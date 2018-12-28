@@ -82,7 +82,6 @@ export default class Projects extends Component
 		this._isAnimating = false;
 
 		// Swap elements
-		console.log( this.state )
 		const tempArray = [];
 		var tempLastIndex = this.state.projectKeys.length;
 		tempArray.length = tempLastIndex;

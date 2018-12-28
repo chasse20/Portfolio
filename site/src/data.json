@@ -42,52 +42,11 @@
 				}
 			],
 			"description": "Red Orchestra 2 is a realistic, World War 2 shooter created by Tripwire Interactive. I worked with a small development team of other programmers and artists to specifically create the \"Search and Destroy\" mode. \"Search and-Destroy\" is an objective-based game mode where an attacking team of players has to plant a timed bomb onto an objective while the defending team is required to guard that objective.",
-			"credits":
+			"responsibilities":
 			[
-				{
-					"name": "Chris Hassebrook",
-					"role": "Principal gameplay and network programming"
-				},
-				{
-					"name": "Alexandre \"THOR\" Thibodeau",
-					"role": "Project lead and programming lead"
-				},
-				{
-					"name": "Sebastian \"ShirtyKezRat\" Weilhammer",
-					"role": "Level design and additional programming"
-				},
-				{
-					"name": "\"Mad_Fred\"",
-					"role": "Lead level design and art"
-				},
-				{
-					"name": "\"met\"",
-					"role": "Level design"
-				},
-				{
-					"name": "\"GrimReality\"",
-					"role": "Level design and art"
-				},
-				{
-					"name": "\"Piriou\"",
-					"role": "Level design"
-				},
-				{
-					"name": "\"Spaehling\"",
-					"role": "Level design"
-				},
-				{
-					"name": "\"Sauron974\"",
-					"role": "Audio design"
-				},
-				{
-					"name": "Ian Runnels",
-					"role": "Hero asset 3D art"
-				},
-				{
-					"name": "\"Gordon Freeman\"",
-					"role": "Art"
-				}
+				"Worked in a multinational team of 10 other programmers, designers and artists to create a new, multiplayer game mode",
+				"Developed all core gameplay systems including network replication",
+				"Developed visual scripting tools for level designers to use within the Unreal Engine editor"
 			]
 		},
 		"Events_Plus":
@@ -121,7 +80,7 @@
 			],
 			"video": "https://www.youtube.com/embed/yZjW0vAGO78",
 			"description": "Events Plus is a commercial Unity Plugin that gives developers the power to quickly prototype gameplay and wire up events without the need for code. It incorporates automatic linking and serialization of C# delegates within the Unity3D interface. As the sole developer, I am responsible for programming, support and marketing aspects of the plugin.",
-			"credits":
+			"responsibilities":
 			[
 				{
 					"name": "Chris Hassebrook",
@@ -176,7 +135,7 @@
 				}
 			],
 			"description": "The Operational Environment Data Integration Network (ODIN) is a training resource designed for the United States Army Training and Doctrine Command (TRADOC). The goal of the project was to digitize all existing Worldwide Equipment Guide (WEG), Decisive Action Training Environment (DATE 3.0), Force Structures (FS) and Training Publication (TC) data into one, online authoritative resource. It includes both a user-friendly frontend, a visual editor for content management, and machine-readable API endpoints for use in simulations. It has been highly acclaimed by TRADOC and is the flagship for future training digitization efforts.",
-			"credits":
+			"responsibilities":
 			[
 				{
 					"name": "Chris Hassebrook",
@@ -247,7 +206,7 @@
 				}
 			],
 			"description": "Hunt is a short, narrative-driven game created for the 2016 Global Game Jam (theme: ritual). The player assumes the role of Nanook, a young hunter, performing his rite of passage in pursuit of a winter fox. Nanook must navigate through the wintry woods and successfully throw his spear to complete the spiritual hunt.",
-			"credits":
+			"responsibilities":
 			[
 				{
 					"name": "Chris Hassebrook",

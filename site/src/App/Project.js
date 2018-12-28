@@ -113,33 +113,35 @@ export default class Project extends Component
 							<Button text="Overview" icon="images/overview.svg"/>
 							<p>{ tempProject.description }</p>
 						</section>
-						<section>
-							<Button text="Tools" icon="images/tools.svg"/>
-							<ul>
-								{
-									tempProject.tools != null && tempProject.tools.map(
-										( tTool ) =>
-										(
-											<li className="tool" key={ tTool }>
-												{ tTool }
-											</li>
-										)
-									)
-								}
-							</ul>
-						</section>
 						{
-							tempProject.credits != null &&
+							tempProject.tools != null &&
 								<section>
-									<Button text="Credits" icon="images/credits.svg"/>
+									<Button text="Tools" icon="images/tools.svg"/>
 									<ul>
 										{
-											tempProject.credits != null && tempProject.credits.map(
-												( tCredit ) =>
+											tempProject.tools.map(
+												( tTool ) =>
 												(
-													<li className="credit" key={ tCredit.name }>
-														<b>{ tCredit.name }:</b>
-														<span>{ tCredit.role }</span>
+													<li key={ tTool }>
+														{ tTool }
+													</li>
+												)
+											)
+										}
+									</ul>
+								</section>
+						}
+						{
+							tempProject.responsibilities != null &&
+								<section className="responsibilities">
+									<Button text="Responsibilities" icon="images/responsibilities.svg"/>
+									<ul>
+										{
+											tempProject.responsibilities.map(
+												( tResponsibility ) =>
+												(
+													<li key={ tResponsibility }>
+														{ tResponsibility }
 													</li>
 												)
 											)

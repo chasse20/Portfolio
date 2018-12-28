@@ -134,11 +134,6 @@ section > *:not(:first-child)
 	padding-bottom: 56.25%;
 }
 
-.credit span
-{
-	margin-left: 0.5em;
-}
-
 .bottom
 {
 	height: 800px;
@@ -155,6 +150,16 @@ section > *:not(:first-child)
 	background: -moz-linear-gradient( bottom, rgba( 43, 98, 124 ,0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* FF3.6-15 */
 	background: -webkit-linear-gradient( bottom, rgba( 43, 98, 124 ,0 ) 50%, rgba( var(--bg-raw ),1 ) 100% ); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient( to top, rgba( 43, 98, 124 ,0 ) 50%,rgba( var(--bg-raw ), 1 ) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.responsibilities .icon
+{
+	padding: 6px;
+}
+
+.responsibilities ul > *:not( :first-child )
+{
+	margin-top: var( --spacing-small );
 }
 
 /* Mobile */
