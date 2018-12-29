@@ -140,33 +140,6 @@
 				"Developed ElasticSearch integration for handling custom data models and advanced search features",
 				"Core developer for all custom RESTful API's for handling machine-readable data used by multiple types of simulations",
 				"Worked directly with the customer to iterate user interface and functionality for both the front-end and admin sections"
-			],
-			"Ok":
-			[
-				{
-					"name": "Chris Hassebrook",
-					"role": "Lead full-stack developer for WEG, DATE and TC tool. Core backend database and API development."
-				},
-				{
-					"name": "Ryan O'Donnell",
-					"role": "Project lead and user interface design"
-				},
-				{
-					"name": "Jenny Seburn",
-					"role": "Frontend development and lead developer of the Force Structure tool"
-				},
-				{
-					"name": "Eric Monachello",
-					"role": "Frontend development and user interface design"
-				},
-				{
-					"name": "Nadia Aly",
-					"role": "Backend and database development"
-				},
-				{
-					"name": "James McCollum",
-					"role": "Backend and database development"
-				}
 			]
 		},
 		"Hunt":
