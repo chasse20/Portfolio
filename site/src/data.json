@@ -45,7 +45,8 @@
 			"responsibilities":
 			[
 				"Worked in a multinational team of 10 other programmers, designers and artists to create a new, multiplayer game mode",
-				"Developed all core gameplay systems including network replication",
+				"Developed all core gameplay systems including victory conditions and artificial intelligence",
+				"Responsible for integrating network synchronization and replication",
 				"Developed visual scripting tools for level designers to use within the Unreal Engine editor"
 			]
 		},
@@ -82,14 +83,10 @@
 			"description": "Events Plus is a commercial Unity Plugin that gives developers the power to quickly prototype gameplay and wire up events without the need for code. It incorporates automatic linking and serialization of C# delegates within the Unity3D interface. As the sole developer, I am responsible for programming, support and marketing aspects of the plugin.",
 			"responsibilities":
 			[
-				{
-					"name": "Chris Hassebrook",
-					"role": "Programming, support, web design and marketing"
-				},
-				{
-					"name": "Duncan Yewell",
-					"role": "Marketing graphics"
-				}
+				"Sole developer on a for-sale plugin for the Unity 3D Engine, with help from one graphic artist for marketing graphics",
+				"Programmed a high-performance, dynamic delegate system that could serialize all class members directly through the editor",
+				"Created online code API documentation, user manual, tutorial videos, and a product website",
+				"Provided technical support directly to end-users"
 			]
 		},
 		"ODIN":
@@ -136,6 +133,15 @@
 			],
 			"description": "The Operational Environment Data Integration Network (ODIN) is a training resource designed for the United States Army Training and Doctrine Command (TRADOC). The goal of the project was to digitize all existing Worldwide Equipment Guide (WEG), Decisive Action Training Environment (DATE 3.0), Force Structures (FS) and Training Publication (TC) data into one, online authoritative resource. It includes both a user-friendly frontend, a visual editor for content management, and machine-readable API endpoints for use in simulations. It has been highly acclaimed by TRADOC and is the flagship for future training digitization efforts.",
 			"responsibilities":
+			[
+				"Lead full-stack developer on a diverse team of developers and user interface designers on a large-scale MVC application",
+				"Designed and programmed Angular front-end for both the main product and admin editor",
+				"Created a customized plugin for the MediaWiki CMS for customer administration with customized user roles and version approval",
+				"Developed ElasticSearch integration for handling custom data models and advanced search features",
+				"Core developer for all custom RESTful API's for handling machine-readable data used by multiple types of simulations",
+				"Worked directly with the customer to iterate user interface and functionality for both the front-end and admin sections"
+			],
+			"Ok":
 			[
 				{
 					"name": "Chris Hassebrook",
@@ -208,22 +214,10 @@
 			"description": "Hunt is a short, narrative-driven game created for the 2016 Global Game Jam (theme: ritual). The player assumes the role of Nanook, a young hunter, performing his rite of passage in pursuit of a winter fox. Nanook must navigate through the wintry woods and successfully throw his spear to complete the spiritual hunt.",
 			"responsibilities":
 			[
-				{
-					"name": "Chris Hassebrook",
-					"role": "Programming and Design"
-				},
-				{
-					"name": "Duncan Iaria",
-					"role": "3D Art, Animation and Design"
-				},
-				{
-					"name": "Daniel Wilson",
-					"role": "Music, Sound"
-				},
-				{
-					"name": "Benjamin George",
-					"role": "2D Art"
-				}
+				"Sole programmer on a small team consisting of artists and a sound designer",
+				"Programmed basic character movement, dynamic weather effects, victory conditions, animation and audio feedback",
+				"Integrated animation trees of the 3D character rigs into the game",
+				"Co-designed gameplay, story and interactions of the game"
 			]
 		}
 	}
