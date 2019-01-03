@@ -303,7 +303,7 @@
 {
 	.container
 	{
-		grid-auto-rows: minmax( 375px, calc( 0.5 * ( ( 100 * var( --vh ) ) - var( --navbar-size ) ) ) );
+		grid-auto-rows: minmax( 350px, calc( 0.5 * ( ( 100 * var( --vh ) ) - var( --navbar-size ) ) ) );
 	}
 }
 
