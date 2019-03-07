@@ -1,4 +1,4 @@
 # Portfolio
 New portfolio website in React
 
-[Website](www.chassebrook.com)
+[Website](http://www.chassebrook.com)
