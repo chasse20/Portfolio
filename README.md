@@ -1,4 +1,6 @@
 # Portfolio
-New portfolio website in React. Fully responsive.
+New, fully-responsive portfolio website in React.
 
 [Website](http://www.chassebrook.com)
+
+## SCREENSHOTS
