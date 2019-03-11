@@ -1,0 +1,29 @@
+@value buttonBase: "./Button.module.css";
+@value buttonColor from buttonBase;
+
+.button
+{
+	composes: button from buttonBase;
+}
+
+.bar
+{
+	composes: bar from buttonBase;
+}
+
+.h3
+{
+	composes: h3 from buttonBase;
+}
+
+.icon
+{
+	composes: icon from buttonBase;
+}
+
+.right
+{
+	composes: right from buttonBase;
+	background-color: buttonColor;
+	border: none;
+}

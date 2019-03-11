@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Button from "./Button";
-import "./Project.css";
+import Style from "./Project.module.css";
+import ButtonStyle from "./Button.module.css";
+import ButtonLinkStyle from "./ButtonLink.module.css";
 
 export default class Project extends Component
 {
@@ -23,60 +25,57 @@ export default class Project extends Component
 
 	render()
 	{
-		return null;
-		
-		var tempProject = this._activeProject;
-		if ( tempProject == null )
+		if ( this._activeProject == null )
 		{
-			tempProject = {};
+			return null;
 		}
 
 		return (
-			<article className={ this.props.project == null ? null : "open" }>
-				<div className="bg">
-					<div className="top">
-						<div className="mobile" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
-						<div className="wide" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
-						<div className="full" style={ { backgroundImage: "url(" + tempProject.image + ")" } }/>
-						<div className="overlay"/>
+			<article className={ `${ Style.project }` + ( this.props.project == null ? "" : ` ${ Style.projectsOpen }` ) }>
+				<div className={ Style.bg }>
+					<div className={ Style.top }>
+						<div className={ Style.mobile } style={ { backgroundImage: "url(" + this._activeProject.mobileImage + ")" } }/>
+						<div className={ Style.wide } style={ { backgroundImage: "url(" + this._activeProject.wideImage + ")" } }/>
+						<div className={ Style.full } style={ { backgroundImage: "url(" + this._activeProject.image + ")" } }/>
+						<div className={ Style.topOverlay }/>
 					</div>
-					<div className="bottom">
-						<div className="overlay"/>
+					<div className={ Style.bottom }>
+						<div className={ Style.bottomOverlay }/>
 					</div>
 				</div>
-				<header>
-					<h1>{ tempProject.name }</h1>
-					<h2>{ tempProject.platform }</h2>
+				<header className={ Style.header }>
+					<h1 className={ Style.h1 }>{ this._activeProject.name }</h1>
+					<h2 className={ Style.h2 }>{ this._activeProject.platform }</h2>
 				</header>
-				<div className="content">
-					<div className="media">
-						<section className="links">
+				<div className={ Style.content }>
+					<div className={ Style.media }>
+						<section className={ Style.links }>
 							{
-								tempProject.links != null && tempProject.links.map(
+								this._activeProject.links != null && this._activeProject.links.map(
 									( tLink ) =>
 									(
-										<a className="link" key={ tLink.url } href={ tLink.url } target="_blank" rel="noopener noreferrer">
-											<Button text={ tLink.name } icon={ tLink.icon }/>
+										<a className={ Style.a } key={ tLink.url } href={ tLink.url } target="_blank" rel="noopener noreferrer">
+											<Button text={ tLink.name } icon={ tLink.icon } style={ ButtonLinkStyle }/>
 										</a>
 									)
 								)
 							}
 						</section>
-						<section className={ "gallery" + ( tempProject.images == null ? "" : " multiple" ) }>
+						<section className={ `${ Style.gallery }` + ( this._activeProject.images == null ? "" : ` ${ Style.multiple }` ) }>
 							{
-								tempProject.video != null &&
+								/*this._activeProject.video != null &&
 									<div className="video-wrapper">
 										<div className="video">
-											<iframe src={ tempProject.video } frameBorder="0" allow="encrypted-media" allowFullScreen title="video" aria-hidden="true"></iframe>
+											<iframe src={ this._activeProject.video } frameBorder="0" allow="encrypted-media" allowFullScreen title="video" aria-hidden="true"></iframe>
 										</div>
-									</div>
+									</div>*/
 							}
 							{
-								tempProject.images != null &&
-									tempProject.images.map(
+								this._activeProject.images != null &&
+									this._activeProject.images.map(
 										( tImage ) =>
 										(
-											<a className="image" key={ tImage.url } href={ tImage.url } target="_blank" rel="noopener noreferrer">
+											<a className={ Style.image } key={ tImage.url } href={ tImage.url } target="_blank" rel="noopener noreferrer">
 												<img src={ tImage.thumbnail } alt=""/>
 											</a>
 										)
@@ -84,30 +83,30 @@ export default class Project extends Component
 							}
 						</section>
 					</div>
-					<div className="text">
-						<section className="links">
+					<div className={ Style.text }>
+						<section className={ Style.textLinks }>
 							{
-								tempProject.links != null && tempProject.links.map(
+								this._activeProject.links != null && this._activeProject.links.map(
 									( tLink ) =>
 									(
-										<a className="link" key={ tLink.url } href={ tLink.url } target="_blank" rel="noopener noreferrer">
-											<Button text={ tLink.name } icon={ tLink.icon }/>
+										<a className={ Style.a } key={ tLink.url } href={ tLink.url } target="_blank" rel="noopener noreferrer">
+											<Button text={ tLink.name } icon={ tLink.icon } style={ ButtonLinkStyle }/>
 										</a>
 									)
 								)
 							}
 						</section>
 						<section>
-							<Button text="Overview" icon="images/overview.svg"/>
-							<p>{ tempProject.description }</p>
+							<Button text="Overview" icon="images/overview.svg" style={ ButtonStyle }/>
+							<p>{ this._activeProject.description }</p>
 						</section>
 						{
-							tempProject.tools != null &&
+							this._activeProject.tools != null &&
 								<section>
-									<Button text="Tools" icon="images/tools.svg"/>
+									<Button text="Tools" icon="images/tools.svg" style={ ButtonStyle }/>
 									<ul>
 										{
-											tempProject.tools.map(
+											this._activeProject.tools.map(
 												( tTool ) =>
 												(
 													<li key={ tTool }>
@@ -120,12 +119,12 @@ export default class Project extends Component
 								</section>
 						}
 						{
-							tempProject.responsibilities != null &&
-								<section className="responsibilities">
-									<Button text="Responsibilities" icon="images/responsibilities.svg"/>
+							this._activeProject.responsibilities != null &&
+								<section className={ Style.responsibilities }>
+									<Button text="Responsibilities" icon="images/responsibilities.svg" style={ ButtonStyle }/>
 									<ul>
 										{
-											tempProject.responsibilities.map(
+											this._activeProject.responsibilities.map(
 												( tResponsibility ) =>
 												(
 													<li key={ tResponsibility }>
