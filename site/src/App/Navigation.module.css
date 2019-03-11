@@ -30,7 +30,7 @@
 
 .h1
 {
-	composes: heading from app;
+	composes: h1 from app;
 }
 
 .h2
