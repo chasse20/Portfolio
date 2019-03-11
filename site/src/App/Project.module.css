@@ -120,9 +120,19 @@
 	background-color: buttonColor;
 }
 
+.videoWrapper
+{
+	display: none;
+}
+
 .videoWrapper, .image
 {
 	box-shadow: boxShadow;
+}
+
+.visible
+{
+	display: block;
 }
 
 .video

@@ -8,9 +8,31 @@ export default class Project extends Component
 {
 	constructor( tProps )
 	{
+		// Inheritance
 		super( tProps );
 		
+		// Variables
+		this._videoElement = null;
 		this._activeProject = tProps.project;
+		
+		// Events
+		this._onVideoElement = ( tElement ) => { this._videoElement = tElement; };
+	}
+	
+	componentDidMount()
+	{
+		if ( this._activeProject != null )
+		{
+			this._videoElement.src = this._activeProject.video;
+		}
+	}
+	
+	componentDidUpdate( tPreviousProps )
+	{
+		if ( tPreviousProps.location !== this.props.location && this._activeProject != null )
+		{
+			this._videoElement.contentWindow.location.replace( this._activeProject.video );
+		}
 	}
 	
 	shouldComponentUpdate( tNextProps, tNextState )
@@ -62,14 +84,11 @@ export default class Project extends Component
 							}
 						</section>
 						<section className={ `${ Style.gallery }` + ( this._activeProject.images == null ? "" : ` ${ Style.multiple }` ) }>
-							{
-								/*this._activeProject.video != null &&
-									<div className="video-wrapper">
-										<div className="video">
-											<iframe src={ this._activeProject.video } frameBorder="0" allow="encrypted-media" allowFullScreen title="video" aria-hidden="true"></iframe>
-										</div>
-									</div>*/
-							}
+							<div className={ `${ Style.videoWrapper }` + ( this._activeProject.video == null ? "" : ` ${ Style.visible }` ) }>
+								<div className={ Style.video }>
+									<iframe ref={ this._onVideoElement } frameBorder="0" allow="encrypted-media" allowFullScreen title="video" aria-hidden="true"></iframe>
+								</div>
+							</div>
 							{
 								this._activeProject.images != null &&
 									this._activeProject.images.map(
