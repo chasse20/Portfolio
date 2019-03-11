@@ -20,23 +20,11 @@ export default class Project extends Component
 		
 		return tNextProps.project !== this.props.project;
 	}
-	
-	/*
-	<div className="bg">
-					<div className="top">
-						<div className="mobile" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
-						<div className="wide" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
-						<div className="full" style={ { backgroundImage: "url(" + tempProject.image + ")" } }/>
-						<div className="overlay"/>
-					</div>
-					<div className="bottom">
-						<div className="overlay"/>
-					</div>
-				</div>
-	*/
 
 	render()
 	{
+		return null;
+		
 		var tempProject = this._activeProject;
 		if ( tempProject == null )
 		{

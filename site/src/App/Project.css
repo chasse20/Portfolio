@@ -8,6 +8,8 @@ article, article .bg, .top, .bottom, .top > *, .bottom > *, .content, .media, .t
 	width: inherit;
 }
 
+@value gradient: 68, 68, 68;
+
  article, article .bg, .top > *, .bottom > *, .video iframe
 {
 	position: absolute;

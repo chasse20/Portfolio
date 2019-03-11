@@ -1,6 +1,17 @@
+@value app: "./App.module.css";
+@value linkColor, buttonColor, navbarSize, navbarSizeTablet, spacingLarge, spacingMedium, spacingSmall, boxShadow from app;
+@value scrollTime: 0.4s;
+
 .projects
 {
+	--vh: 1vh;
+	--mobile: 0;
 	pointer-events: none;
+}
+
+.projects, .bg, .info, .select
+{
+	width: 100%;
 }
 
 .projects, .info
@@ -8,40 +19,31 @@
 	box-sizing: border-box;
 }
 
-.projects, .project-tile .bg, .project-tile .bg > *, .info
+.projects, .bg, .bg > *, .info, .select
 {
 	position: absolute;
 	left: 0;
 }
 
-.projects, .project-tile .bg > *
-{
-	width: inherit;
-}
-
-.project-tile
+.project
 {
 	position: relative;
 	-webkit-tap-highlight-color: transparent;
 }
 
-.project-tile .bg
+.bg, .select
 {
 	height: 100%;
 }
 
-.project-tile .bg, .info
-{
-	width: 100%;
-}
-
-.project-tile .bg, .project-tile .bg > *
+.bg, .bg > *, .select
 {
 	top: 0;
 }
 
-.project-tile .bg > *
+.bg > *
 {
+	width: inherit;
 	height: inherit;
 	background-size: cover;
 	display: none;
@@ -52,19 +54,45 @@
 	text-align: center;
 }
 
+.h1
+{
+	composes: h1 from app;
+}
+
+.h2
+{
+	composes: h2 from app;
+}
+
+.h3
+{
+	composes: h3 from app;
+}
+
+.more
+{
+	composes: a from app;
+}
+
 /* Mobile */
 @media only screen and ( max-width: 767px )
 {
 	.projects
 	{
-		height: calc( ( 100 * var( --vh ) ) - var( --navbar-size ) );
+		--mobile: 1;
+		height: calc( ( 100 * var( --vh ) ) - navbarSize );
 		display: none;
 		overflow: hidden;
 	}
 	
-	.projects.open
+	.projectsOpen
 	{
 		display: block;
+	}
+	
+	.select
+	{
+		pointer-events: none;
 	}
 	
 	.swipe
@@ -72,17 +100,17 @@
 		width: inherit;
 	}
 	
-	.swipe, .left-control, .right-control, .more
+	.swipe, .leftArrow, .rightArrow, .more
 	{
 		pointer-events: auto;
 	}
 	
-	.swipe, .container, .left-control, .right-control
+	.swipe, .container, .leftArrow, .rightArrow
 	{
 		position: absolute;
 	}
 	
-	.swipe, .container, .left-control
+	.swipe, .container, .leftArrow
 	{
 		left: 0;
 	}
@@ -92,7 +120,7 @@
 		top: 0;
 	}
 	
-	.swipe, .container, .project-tile
+	.swipe, .container, .project
 	{
 		height: inherit;
 	}
@@ -102,18 +130,18 @@
 		transform: translateX( -100vw );
 	}
 	
-	.container.sliding-right, .container.sliding-left
+	.slideRight, .slideLeft
 	{
-		transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+		transition: transform scrollTime cubic-bezier(0.215, 0.61, 0.355, 1);
 		transition-property: transform;
 	}
 
-	.container.sliding-right
+	.slideRight
 	{
 		transform: translateX( -200vw );
 	}
 	
-	.container.sliding-left
+	.slideLeft
 	{
 		transform: translateX( 0 );
 	}
@@ -123,67 +151,74 @@
 		display: flex;
 	}
 
-	.project-tile
+	.project
 	{
 		display: inline-flex;
 		width: 100vw;
-	}
-
-	.project-tile h1
-	{
-		font-size: 3em;
-		line-height: 0.9em;
-	}
-	
-	.project-tile h1, .project-tile h2
-	{
-		text-shadow: var( --box-shadow );
-	}
-
-	.project-tile h2
-	{
-		font-size: 1.6em;
-	}
-
-	.project-tile .mobile, .project-tile .wide
-	{
-		background-position: center top;
 	}
 	
 	.info
 	{
 		flex-direction: column;
 		justify-content: center;
-		padding: 0 var( --spacing-large );
+		padding: 0 spacingLarge;
 		height: 100%;
 	}
 
 	.info > *:not(:first-child)
 	{
-		margin-top: var( --spacing-large );
+		margin-top: spacingLarge;
+	}
+
+	.h1
+	{
+		font-size: 3em;
+		line-height: 0.9em;
+	}
+	
+	.h1, .h2
+	{
+		text-shadow: boxShadow;
+	}
+
+	.h2
+	{
+		font-size: 1.6em;
 	}
 	
 	.more
 	{
 		margin-left: auto;
 		margin-right: auto;
-		background-color: var( --button-color );
-		padding: var( --spacing-small ) var( --spacing-large );
+		background-color: buttonColor;
+		padding: spacingSmall spacingLarge;
 	}
 
-	.left-control, .right-control
+	.mobile, .wide
+	{
+		background-position: center top;
+	}
+
+	.leftArrow, .rightArrow
 	{
 		bottom: 0;
-		padding: 6px var( --spacing-medium );
+		padding: 6px spacingMedium;
 		cursor: pointer;
+		background: transparent;
+		border: none;
+	}
+	
+	.leftArrow:focus, .rightArrow:focus
+	{
+		outline: none;
 	}
 
-	.left-control img, .right-control img
+	.leftArrow img, .rightArrow img
 	{
 		height: 50px;
 	}
 
-	.right-control
+	.rightArrow
 	{
 		right: 0;
 		transform: scaleX( -1 );
@@ -192,7 +227,7 @@
 
 @media only screen and ( max-width: 767px ) and ( orientation: portrait )
 {
-	.project-tile .mobile
+	.mobile
 	{
 		display: block;
 	}
@@ -200,7 +235,7 @@
 
 @media only screen and ( max-width: 767px ) and ( orientation: landscape )
 {
-	.project-tile .wide
+	.wide
 	{
 		display: block;
 	}
@@ -221,18 +256,18 @@
 		opacity: 0;
 	}
 	
-	.projects.open
+	.projectsOpen
 	{
 		pointer-events: auto;
 		transition-delay: 0.2s;
 	}
 	
-	.projects.open, .project-tile:hover .info, .project-tile.selected .info
+	.projectsOpen, .project:hover .info, .projectSelected .info
 	{
 		opacity: 1;
 	}
 	
-	.swipe, .left-control, .right-control, .more
+	.swipe, .leftArrow, .rightArrow, .more
 	{
 		display: none;
 	}
@@ -241,32 +276,32 @@
 	{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-auto-rows: minmax( 375px, calc( 0.5 * ( ( 100 * var( --vh ) ) - var( --navbar-size ) ) ) );
+		grid-auto-rows: minmax( 375px, calc( 0.5 * ( ( 100 * var( --vh ) ) - navbarSizeTablet ) ) );
 	}
 	
-	.project-tile
+	.project
 	{
 		cursor: pointer;
 		overflow: hidden;
-		box-shadow: var( --box-shadow );
+		box-shadow: boxShadow;
 	}
 	
-	.project-tile:hover, .project-tile.selected
+	.project:hover, .projectSelected
 	{
 		z-index: 1;
 	}
 
-	.project-tile:hover .tablet, .project-tile.selected .tablet
+	.project:hover .tablet, .projectSelected .tablet
 	{
 		transform: scale( 1.25 );
 	}
 
-	.project-tile h1
+	.h1
 	{
 		font-size: 1em;
 	}
 	
-	.project-tile .tablet
+	.tablet
 	{
 		background-position: center center;
 		transition: transform 0.5s ease;
@@ -278,14 +313,14 @@
 	.info
 	{
 		bottom: 0;
-		background-color: var( --button-color );
-		padding: var( --spacing-small ) 0;
+		background-color: buttonColor;
+		padding: spacingSmall 0;
 		transition: transform 0.3s ease, opacity 0.3s ease;
 		transition-property: transform, opacity;
 		transform: translateY( 100% );
 	}
 	
-	.project-tile:hover .info, .project-tile.selected .info
+	.project:hover .info, .projectSelected .info
 	{
 		transform: translateY( 0 );
 	}
@@ -303,7 +338,7 @@
 {
 	.container
 	{
-		grid-auto-rows: minmax( 320px, calc( 0.5 * ( ( 100 * var( --vh ) ) - var( --navbar-size ) ) ) );
+		grid-auto-rows: minmax( 320px, calc( 0.5 * ( ( 100 * var( --vh ) ) - navbarSizeTablet ) ) );
 	}
 }
 
@@ -312,7 +347,7 @@
 {
 	.container
 	{
-		grid-auto-rows: minmax( 320px, calc( 0.3333 * ( ( 100 * var( --vh ) ) - var( --navbar-size ) ) ) );
+		grid-auto-rows: minmax( 320px, calc( 0.3333 * ( ( 100 * var( --vh ) ) - navbarSizeTablet ) ) );
 	}
 	
 	.projects

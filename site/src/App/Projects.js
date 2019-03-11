@@ -1,27 +1,131 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import "./Projects.css";
+import Style from "./Projects.module.css";
 
-export default class Projects extends Component
+export default class Projects extends React.Component
 {
 	constructor( tProps )
 	{
 		super( tProps );
 		
+		// State
 		this.state =
 		{
 			projectKeys: Projects.GenerateKeys( this.props.projects ),
-			selectedProject: null
+			selectedProject: null,
+			redirect: null,
+			scrollVelocity: 0
 		};
 		
-		this._scrollElement = null;
+		// Variables
+		this._element = null;
+		this._containerElement = null;
 		this._swipeStart = 0;
-		this._isScrolling = false;
 		this._scrollTimeout = null;
-		this._onPageClick = ( tEvent ) =>
+		
+		// Events
+		this._onElement = ( tComponent ) => { this._element = tComponent; };
+		this._onContainerElement = ( tComponent ) => { this._containerElement = tComponent; };
+		this._onTouchStart = ( tEvent ) => { this._swipeStart = tEvent.touches[0].clientX; };
+		this._onTouchEnd = ( tEvent ) => { this.onTouchEnd( tEvent ); };
+		this._onLeftArrow = () => { this.onScroll( -1 ); };
+		this._onRightArrow = () => { this.onScroll( 1 ); };
+		
+		this._onPageClick = ( tEvent ) => { this.onPageClick( tEvent ); };
+		this._onResize = () => { this._element.style.setProperty( "--vh", window.innerHeight * 0.01 + "px" ); };
+	}
+	
+	componentDidMount()
+	{
+		this.setState( { projectKeys: Projects.GenerateKeys( this.props.projects, this.isMobile ) } );
+		
+		this._onResize();
+		window.addEventListener( "resize", this._onResize );		
+	}
+	
+	componentWillUnmount()
+	{
+		if ( this._scrollTimeout !== null )
 		{
-			this.onPageClick( tEvent );
-		};
+			this.window.clearTimeout( this._scrollTimeout );
+		}
+		
+		window.removeEventListener( "resize", this._onResize );
+	}
+	
+	get isMobile()
+	{
+		return parseInt( window.getComputedStyle( this._element ).getPropertyValue( "--mobile" ) ) === 1;
+	}
+	
+	onTouchEnd( tEvent )
+	{
+		const tempDistance = this._swipeStart - tEvent.changedTouches[0].clientX;
+		if ( tempDistance <= -60 )
+		{
+			this.onScroll( -1 );
+		}
+		else if ( tempDistance >= 60 )
+		{
+			this.onScroll( 1 );
+		}
+	}
+
+	onScroll( tVelocity )
+	{
+		if ( tVelocity !== this.state.scrollVelocity )
+		{
+			this.setState( { scrollVelocity: tVelocity } );
+			
+			this._scrollTimeout = window.setTimeout(
+				() =>
+				{
+					// Swap project elements
+					var tempArray = this.state.projectKeys;
+					if ( this.state.scrollVelocity < 0 )
+					{
+						const tempLastIndex = tempArray.length - 1;
+						const tempLastElement = tempArray[ tempLastIndex ];
+						tempArray = tempArray.slice( 0, tempLastIndex );
+						tempArray.unshift( tempLastElement );
+					}
+					else
+					{
+						const tempFirstElement = tempArray[0];
+						tempArray = tempArray.slice( 1 );
+						tempArray.push( tempFirstElement );
+					}
+					
+					// Apply
+					this.setState(
+						{
+							scrollVelocity: 0,
+							projectKeys: tempArray
+						}
+					);
+				},
+				parseFloat( Style.scrollTime ) * 1000
+			);
+		}
+	}
+	
+	onProjectClick( tEvent, tProjectKey )
+	{
+		tEvent.stopPropagation();
+
+		if ( !this.props.isTouch )
+		{
+			this.props.history.push( tProjectKey );
+		}
+		else if ( this.state.selectedProject === tProjectKey )
+		{
+			this.props.history.push( tProjectKey );
+			this.setState( { selectedProject: null } );
+		}
+		else
+		{
+			this.setState( { selectedProject: tProjectKey } );
+		}
 	}
 	
 	static GenerateKeys( tProjects, tIsMobile )
@@ -34,6 +138,7 @@ export default class Projects extends Component
 				tempProjects.push( tempKey );
 			}
 			
+			// Mobile scrolling needs the last project to be the first
 			if ( tIsMobile )
 			{
 				tempProjects.unshift( tempProjects.pop() );
@@ -45,119 +150,24 @@ export default class Projects extends Component
 		return null;
 	}
 	
-	shouldComponentUpdate( tNextProps, tNextState )
-	{
-		if ( tNextProps.projects !== this.props.projects )
-		{
-			this.setState( { projectKeys: Projects.GenerateKeys( this.props.projects ) } );
-			
-			return true;
-		}
-		
-		return tNextState.projectKeys !== this.state.projectKeys || tNextProps.isOpen !== this.props.isOpen || tNextState.selectedProject !== this.state.selectedProject;
-	}
-
-	componentWillUnmount()
-	{
-		this.window.clearTimeout( this._scrollTimeout );
-	}
-
-	onScroll( tDirection )
-	{
-		if ( !this._isAnimating )
-		{
-			if ( tDirection < 0 )
-			{
-				// swap last to first, set translateX from 100vw to 0
-			}
-
-			this._isAnimating = true;
-			this._scrollElement.classList.add( tDirection > 0 ? "sliding-right" : "sliding-left" );
-			this._scrollTimeout = window.setTimeout( this.onScrollFinish.bind( this, tDirection ), 400 );
-		}
-	}
-
-	onScrollFinish( tDirection )
-	{
-		this._isAnimating = false;
-
-		// Swap elements
-		const tempArray = [];
-		var tempLastIndex = this.state.projectKeys.length;
-		tempArray.length = tempLastIndex;
-		tempLastIndex -= 1;
-		
-		if ( tDirection < 0 )
-		{
-			for ( let i = tempLastIndex; i > 0; --i )
-			{
-				tempArray[i] = this.state.projectKeys[ i - 1 ];
-			}
-			tempArray[0] = this.state.projectKeys[ tempLastIndex  ];
-			
-			this._scrollElement.classList.remove( "sliding-left" );
-		}
-		else if ( tDirection > 0 )
-		{
-			for ( let i = ( tempLastIndex - 1 ); i >= 0; --i )
-			{
-				tempArray[i] = this.state.projectKeys[ i + 1 ];
-			}
-			tempArray[ tempLastIndex ] = this.state.projectKeys[0];
-			
-			this._scrollElement.classList.remove( "sliding-right" );
-		}
-
-		this.setState( { projectKeys: tempArray } );
-	}
-	
-	onProjectSwipeStart( tEvent )
-	{
-		this._swipeStart = tEvent.touches[0].clientX;
-	}
-	
-	onProjectSwipeEnd( tEvent )
-	{
-		const tempDistance = this._swipeStart - tEvent.changedTouches[0].clientX;
-		if ( tempDistance <= -60 )
-		{
-			this.onScroll( -1 );
-		}
-		else if ( tempDistance >= 60 )
-		{
-			this.onScroll( 1 );
-		}
-	}
-	
-	onProjectClick( tEvent, tProjectKey )
-	{
-		tEvent.stopPropagation();
-		if ( !this.props.isTouch || this.state.selectedProject === tProjectKey )
-		{
-			this.setState( { selectedProject: null } );
-			window.removeEventListener( "click", this._onPageClick );
-			this.props.history.push( tProjectKey );
-		}
-		else
-		{
-			this.setState( { selectedProject: tProjectKey } );
-			window.addEventListener( "click", this._onPageClick );
-		}
-	}
-	
-	onPageClick( tEvent )
-	{
-		tEvent.stopPropagation();
-		this.setState( { selectedProject: null } );
-		window.removeEventListener( "click", this._onPageClick );
-	}
-	
 	render()
 	{
+		// Container class
+		var tempContainerClass = `${ Style.container }`;
+		if ( this.state.scrollVelocity < 0 )
+		{
+			tempContainerClass += ` ${ Style.slideLeft }`;
+		}
+		else if ( this.state.scrollVelocity > 0 )
+		{
+			tempContainerClass += ` ${ Style.slideRight }`;
+		}
+		
+		// Render
 		return (
-			<div className={ "projects" + ( this.props.isOpen ? " open" : "" ) }>
-				<div className="swipe" onTouchStart={ ( tEvent ) => { this.onProjectSwipeStart( tEvent ); } } onTouchEnd={ ( tEvent ) => { this.onProjectSwipeEnd( tEvent ); } }/>
-				<div className="container" ref={ ( tElement ) => { this._scrollElement = tElement; } }>
+			<nav className={ `${ Style.projects }` + ( this.props.isOpen ? ` ${ Style.projectsOpen }` : "" ) } ref={ this._onElement }>
+				<div className={ Style.swipe } onTouchStart={ this._onTouchStart } onTouchEnd={ this._onTouchEnd }/>
+				<div className={ tempContainerClass } ref={ this._onContainerElement }>
 					{
 						this.state.projectKeys.map(
 							( tProjectKey ) =>
@@ -165,32 +175,33 @@ export default class Projects extends Component
 								const tempProject = this.props.projects[ tProjectKey ];
 								
 								return (
-									<div className={ "project-tile" + ( this.state.selectedProject === tProjectKey ? " selected" : "" ) } key={ tProjectKey } onClick={ ( tEvent ) => { this.onProjectClick( tEvent, tProjectKey ); } }>
-										<div className="bg">
-											<div className="mobile" style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
-											<div className="wide" style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
-											<div className="tablet" style={ { backgroundImage: "url(" + tempProject.buttonImage + ")" } }/>
+									<div className={ `${ Style.project }` + ( this.state.selectedProject === tProjectKey ? ` ${ Style.projectSelected }` : "" ) } key={ tProjectKey }>
+										<div className={ Style.bg }>
+											<div className={ Style.mobile } style={ { backgroundImage: "url(" + tempProject.mobileImage + ")" } }/>
+											<div className={ Style.wide } style={ { backgroundImage: "url(" + tempProject.wideImage + ")" } }/>
+											<div className={ Style.tablet } style={ { backgroundImage: "url(" + tempProject.buttonImage + ")" } }/>
 										</div>
-										<div className="info">
-											<h1>{ tempProject.name }</h1>
-											<h2>{ tempProject.platform }</h2>
-											<Link className="more" to={ tProjectKey }>
-												<h3>View Info</h3>
+										<div className={ Style.info }>
+											<h1 className={ Style.h1 }>{ tempProject.name }</h1>
+											<h2 className={ Style.h2 }>{ tempProject.platform }</h2>
+											<Link className={ Style.more } to={ tProjectKey }>
+												<h3 className={ Style.h3 }>View Info</h3>
 											</Link>
 										</div>
+										<div className={ Style.select } onClick={ ( tEvent ) => { this.onProjectClick( tEvent, tProjectKey ); } }/>
 									</div>
 								);
 							}
 						)
 					}
 				</div>
-				<button className="left-control" onClick={ () => { this.onScroll( -1 ); } }>
+				<button className={ Style.leftArrow } onClick={ this._onLeftArrow }>
 					<img src="images/arrow.svg" alt="left arrow"/>
 				</button>
-				<button className="right-control" onClick={ () => { this.onScroll( 1 ); } }>
+				<button className={ Style.rightArrow } onClick={ this._onRightArrow }>
 					<img src="images/arrow.svg" alt="right arrow"/>
 				</button>
-			</div>
+			</nav>
 		);
 	}
 }

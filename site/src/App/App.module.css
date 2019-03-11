@@ -1,47 +1,30 @@
-:root
-{
-	--bg-raw: 68, 68, 68;
-	--bg: rgb( var( --bg-raw ) );
-	--navbar-size: 50px;
-	--navbar-bg: #000000;
-	--link-color: #ffffff;
-	--link-color-hover: #00aeff;
-	--button-color: #148bca;
-	--button-color-dark: #313131;
-	--box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.35 );
-	--spacing-tiny: 2px;
-	--spacing-small: 10px;
-	--spacing-medium: 16px;
-	--spacing-large: 30px;
-	--spacing-huge: 70px;
-	--vh: 1vh;
-}
+@value bg: #686868;
+@value navbarSize: 50px;
+@value navbarSizeTablet: 100px;
+@value linkColor: #ffffff;
+@value linkColorHover: #3089dd;
+@value buttonColor: #0b6bc5;
+@value boxShadow: 2px 2px 10px rgba( 0, 0, 0, 0.35 );
+@value spacingTiny: 2px;
+@value spacingSmall: 10px;
+@value spacingMedium: 16px;
+@value spacingLarge: 30px;
+@value spacingHuge: 70px;
 
-body
+.app
 {
 	font-family: Roboto;
-	color: var( --link-color );
-	background-color: var( --bg );
+	color: linkColor;
+	background-color: bg;
 	letter-spacing: 0.02em;
 	font-weight: 300;
+	height: inherit;
+	width: inherit;
 }
 
-body, h1, h2, h3, ul, li, p
+/*body, h1, h2, h3, ul, li, p
 {
 	margin: 0;
-}
-
-h1, h2, h3
-{
-	font-family: Rajdhani, sans-serif;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-}
-
-h2, h3
-{
-	font-weight: 500;
-	font-size: 1em;
 }
 
 a
@@ -57,59 +40,69 @@ a:link, a:hover, a:visited, a:active
 b
 {
 	font-weight: 500;
+}*/
+
+.h1
+{
+	margin: 0;
+	font-family: Rajdhani, sans-serif;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
 }
 
-button
+.h2, .h3
+{
+	composes: h1;
+	font-weight: 500;
+	font-size: 1em;
+}
+
+.a
+{
+	color: linkColor;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.a:link, .a:hover, .a:visited, .a:active
+{
+	text-decoration: none;
+}
+
+.button
 {
 	background: transparent;
 	border: none;
 	padding: 0;
 }
 
-button:focus
+.button:focus
 {
 	outline: none;
 }
 
-main
+.main
 {
-	width: 100%;
+	width: inherit;
 }
 
-a
+/*a
 {
 	-webkit-tap-highlight-color: transparent;
-}
+}*/
 
 /* Mobile */
 @media only screen and ( max-width: 767px )
 {
-	main
+	.main
 	{
-		margin-top: var( --navbar-size );
+		margin-top: navbarSize;
 	}
 }
 
 /* Tablet */
 @media only screen and ( min-width: 768px )
 {
-	:root
-	{
-		--navbar-size: 100px;
-	}
-	
-	html, body
-	{
-		height: 100%;
-		width: 100%;
-	}
-	
-	a:hover, a:active
-	{
-		color: var( --link-color-hover );
-	}
-
-	main
+	.main
 	{
 		box-sizing: border-box;
 		position: relative;
@@ -119,12 +112,12 @@ a
 /* Desktop */
 @media only screen and ( min-width: 1000px )
 {
-	body
+	.app
 	{
 		overflow-y: scroll;
 	}
 	
-	#root
+	.content
 	{
 		margin-left: auto;
 		margin-right: auto;
@@ -134,7 +127,7 @@ a
 
 @media only screen and ( min-width: 1098px )
 {
-	body
+	.app
 	{
 		background-image: url( "/images/bg.jpg" );
 		background-repeat: no-repeat;
