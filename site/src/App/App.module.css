@@ -19,10 +19,6 @@
 	letter-spacing: 0.02em;
 	font-weight: 300;
 	height: inherit;
-}
-
-.app, .main
-{
 	width: inherit;
 }
 
@@ -62,6 +58,11 @@
 .button:focus
 {
 	outline: none;
+}
+
+.main
+{
+	width: 100%;
 }
 
 /* Mobile */

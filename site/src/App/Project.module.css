@@ -2,11 +2,6 @@
 @value bg, linkColor, buttonColor, navbarSize, navbarSizeTablet, spacingHuge, spacingLarge, spacingMedium, spacingSmall, boxShadow from app;
 @value gradient: 68, 68, 68;
 
-.project
-{
-	min-height: calc( 100vh - navbarSize );
-}
-
 .project, .top, .bottom, .top > *, .bottom > *, .content, .media, .text, .a, .videoWrapper, .video iframe
 {
 	width: inherit;
@@ -33,7 +28,7 @@
 	background-color: bg;
 }
 
-.top > *, .bottom > *, .video iframe
+.bg, .top > *, .bottom > *, .video iframe
 {
 	height: 100%;
 }
@@ -165,9 +160,10 @@
 	.project
 	{
 		display: none;
+		min-height: calc( 100vh - navbarSize );
 	}
 	
-	.projectsOpen
+	.projectOpen
 	{
 		display: block;
 	}
@@ -257,11 +253,12 @@
 		transition: opacity 0.3s ease;
 		transition-property: opacity;
 		pointer-events: none;
+		min-height: calc( 100vh - navbarSizeTablet );
 	}
 	
-	.projectsOpen
+	.projectOpen
 	{
-		height: initial;
+		height: auto;
 		overflow: initial;
 		opacity: 1;
 		pointer-events: auto;

@@ -31,7 +31,7 @@ export default class Project extends Component
 		}
 
 		return (
-			<article className={ `${ Style.project }` + ( this.props.project == null ? "" : ` ${ Style.projectsOpen }` ) }>
+			<article className={ `${ Style.project }` + ( this.props.project == null ? "" : ` ${ Style.projectOpen }` ) }>
 				<div className={ Style.bg }>
 					<div className={ Style.top }>
 						<div className={ Style.mobile } style={ { backgroundImage: "url(" + this._activeProject.mobileImage + ")" } }/>
