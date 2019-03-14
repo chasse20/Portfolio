@@ -89,6 +89,65 @@
 				"Provided technical support directly to end-users"
 			]
 		},
+		"Node_Graph_Editor":
+		{
+			"name": "Node Graph Editor",
+			"platform": "Web Application",
+			"image": "images/Graph.jpg",
+			"mobileImage": "images/Graph_M.jpg",
+			"wideImage": "images/Graph_W.jpg",
+			"buttonImage": "images/Graph_B.jpg",
+			"backgroundPosition": "center top",
+			"tools":
+			[
+				"React",
+				"JS",
+				"HTML5",
+				"CSS3",
+				"MobX",
+				"CSS Modules",
+				"d3"
+			],
+			"links":
+			[
+				{
+					"name": "Live Demo",
+					"url": "http://www.chassebrook/graphviz/",
+					"icon": "images/website.svg"
+				},
+				{
+					"name": "Github",
+					"url": "https://github.com/chasse20/React-NodeGraphEditor",
+					"icon": "images/website.svg"
+				}
+			],
+			"video": "https://www.youtube.com/embed/nnaz6QJy8C4",
+			"images":
+			[
+				{
+					"thumbnail": "images/Graph_1_s.jpg",
+					"url": "images/Graph_1.jpg"
+				},
+				{
+					"thumbnail": "images/Graph_2_s.jpg",
+					"url": "images/Graph_2.jpg"
+				},
+				{
+					"thumbnail": "images/Graph_3_s.jpg",
+					"url": "images/Graph_3.jpg"
+				}
+			],
+			"description": "The Operational Environment Data Integration Network (ODIN) is a training resource designed for the United States Army Training and Doctrine Command (TRADOC). The goal of the project was to digitize all existing Worldwide Equipment Guide (WEG), Decisive Action Training Environment (DATE 3.0), Force Structures (FS) and Training Publication (TC) data into one, online authoritative resource. It includes both a user-friendly frontend, a visual editor for content management, and machine-readable API endpoints for use in simulations. It has been highly acclaimed by TRADOC and is the flagship for future training digitization efforts.",
+			"responsibilities":
+			[
+				"Lead full-stack developer on a diverse team of developers and user interface designers on a large-scale MVC application",
+				"Designed and programmed Angular front-end for both the main product and admin editor",
+				"Created a customized plugin for the MediaWiki CMS for customer administration with customized user roles and version approval",
+				"Developed ElasticSearch integration for handling custom data models and advanced search features",
+				"Core developer for all custom RESTful API's for handling machine-readable data used by multiple types of simulations",
+				"Worked directly with the customer to iterate user interface and functionality for both the front-end and admin sections"
+			]
+		},
 		"ODIN":
 		{
 			"name": "ODIN",
