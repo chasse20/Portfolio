@@ -101,7 +101,7 @@
 			"tools":
 			[
 				"React",
-				"JS",
+				"Javascript ES6",
 				"HTML5",
 				"CSS3",
 				"MobX",
@@ -112,7 +112,7 @@
 			[
 				{
 					"name": "Live Demo",
-					"url": "http://www.chassebrook/graphviz/",
+					"url": "http://www.chassebrook.com/graphviz/",
 					"icon": "images/website.svg"
 				},
 				{
@@ -137,15 +137,13 @@
 					"url": "images/Graph_3.jpg"
 				}
 			],
-			"description": "The Operational Environment Data Integration Network (ODIN) is a training resource designed for the United States Army Training and Doctrine Command (TRADOC). The goal of the project was to digitize all existing Worldwide Equipment Guide (WEG), Decisive Action Training Environment (DATE 3.0), Force Structures (FS) and Training Publication (TC) data into one, online authoritative resource. It includes both a user-friendly frontend, a visual editor for content management, and machine-readable API endpoints for use in simulations. It has been highly acclaimed by TRADOC and is the flagship for future training digitization efforts.",
+			"description": "The Node Graph Editor is a cross-browser, web-based tool built in ReactJS. It was originally designed as a foundation for visual scripting, taking inspiration from other tools such as Twine and Unreal Engine's Blueprint. It has since been adapted for visualizing and analyzing node graph data for the United States Army Operational Environment Big Data Project (OE-BDP). Editing features include basic navigation, importing/exporting data, configuring node and edge types, creating nodes and linking nodes.",
 			"responsibilities":
 			[
-				"Lead full-stack developer on a diverse team of developers and user interface designers on a large-scale MVC application",
-				"Designed and programmed Angular front-end for both the main product and admin editor",
-				"Created a customized plugin for the MediaWiki CMS for customer administration with customized user roles and version approval",
-				"Developed ElasticSearch integration for handling custom data models and advanced search features",
-				"Core developer for all custom RESTful API's for handling machine-readable data used by multiple types of simulations",
-				"Worked directly with the customer to iterate user interface and functionality for both the front-end and admin sections"
+				"Sole developer responsible for developing frontend and data modeling within the React framework",
+				"Developed a fully-functional node graph editor inspired by popular game visual scripting tools",
+				"Integrated industry leading packages such as d3, MobX and CSS Modules",
+				"Created JSDOC documentation for all models and serialization formats"
 			]
 		},
 		"ODIN":
