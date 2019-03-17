@@ -1,6 +1,6 @@
 @value app: "./App.module.css";
 @value buttonColor, spacingSmall from app;
-@value buttonColorDark: #313131;
+@value buttonColorDark: #0000007d;
 
 .button
 {
@@ -37,7 +37,6 @@
 {
 	flex-grow: 1;
 	background-color: buttonColorDark;
-	border: 1px solid #676767;
 }
 
 .icon
