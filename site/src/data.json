@@ -141,6 +141,7 @@
 			"responsibilities":
 			[
 				"Sole developer responsible for developing frontend and data modeling within the React framework",
+				"Integrated API within the Microsoft Azure platform",
 				"Developed a fully-functional node graph editor inspired by popular game visual scripting tools",
 				"Integrated industry leading packages such as d3, MobX and CSS Modules",
 				"Created JSDOC documentation for all models and serialization formats"
